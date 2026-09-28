@@ -464,7 +464,7 @@
 .product-page.is-open{display:block}
 .product-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;color:var(--white);font-size:14px;font-weight:600;text-decoration:none}
 .product-back:hover{color:var(--white)}
-.product-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:48px;align-items:start}
+.product-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
 .product-image{background:var(--card-bg);border:1px solid var(--line);border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3}
 .product-image-col{display:flex;flex-direction:column;min-width:0}
 .product-image-note{color:var(--white);font-size:13px;line-height:1.5;margin:10px 0 0;font-style:italic}
@@ -498,11 +498,12 @@
 .product-gallery img.active{opacity:1;border-color:var(--white)}
 .product-info .product-code{display:block;margin-bottom:10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--white)}
 .product-footer{display:flex;align-items:center;gap:16px;margin-top:24px;flex-wrap:wrap;}
-.product-info .product-price{display:block;margin:0;font-family:var(--display);font-size:24px;font-weight:700;color:var(--white)}
+.product-price{display:block;margin:0;font-family:var(--display);font-size:24px;font-weight:700;color:var(--white)}
 .product-info h1{margin:0 0 16px;font-family:var(--display);font-size:clamp(30px,4vw,48px);line-height:1.08;color:var(--white)}
-.product-info .product-description{color:var(--white);font-size:15px;line-height:1.7;margin:0 0 20px}
+.product-info .product-description{color:var(--white);font-size:15px;line-height:1.75;margin:0}
 .product-tech-label{display:block;margin-bottom:12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--white)}
-.product-technical{color:var(--white);font-size:14px;line-height:1.75;margin:0}
+.product-tech-col .product-footer{margin-top:28px}
+.product-technical{color:var(--white);font-size:15px;line-height:1.75;margin:0}
 .product-lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start;margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
 .product-lower.single{grid-template-columns:1fr}
 .product-lower.empty{display:none}
@@ -672,6 +673,12 @@
         <span id="productCode" class="product-code"></span>
         <h1 id="productTitle"></h1>
         <p id="productDescription" class="product-description"></p>
+      </div>
+    </div>
+    <div id="productLower" class="product-lower">
+      <div id="productTechCol" class="product-tech-col">
+        <span id="productTechLabel" class="product-tech-label" style="display:none;">Technical Details</span>
+        <p id="productTechnical" class="product-technical" style="display:none;"></p>
         <div class="product-footer">
           <span id="productPrice" class="product-price"></span>
           <button type="button" class="product-contact" id="productAddToCart">
@@ -679,12 +686,6 @@
             <span id="productAddToCartLabel">Add to Cart</span>
           </button>
         </div>
-      </div>
-    </div>
-    <div id="productLower" class="product-lower">
-      <div id="productTechCol" class="product-tech-col" style="display:none;">
-        <span id="productTechLabel" class="product-tech-label" style="display:none;">Technical Details</span>
-        <p id="productTechnical" class="product-technical" style="display:none;"></p>
       </div>
       <div id="productModelCol" class="product-model-col" style="display:none;">
         <span class="product-tech-label">3D Model</span>
@@ -1592,6 +1593,18 @@
             </div>
           </div>
         </div>
+        <div class="card" data-subcat="figurines" data-model="models/H73.glb" data-price="50" onclick="window.location.hash='home/h73';" data-tech="Standing approximately 900mm tall, the crane is best split into five parts: the body with neck and head, the two wings, and the two legs, joined with registration pins and adhesive so the seams hide along feather lines and the grout channels. The slender legs carry the whole figure, so each one is printed around a hollow 6mm core that takes a steel rod running from the toes up into the body, keeping the pose rigid and the weight centered over the feet. The raised wing is the longest cantilever on the model, so it keys into the shoulder with a pinned socket and a flat bonding face rather than a thin glue joint, with wing tips, crest and tail feathers kept at 2.5mm or thicker. Each mosaic tile is modeled as a slightly raised cell separated by grout channels of about 0.8 to 1mm, which keeps the pattern legible after painting; layer height runs 0.2mm on the body mass and 0.12mm on the wings, head and tile detail. PLA suits indoor display, while PETG with a UV-resistant clear coat is the better choice for a balcony or covered patio. The splayed toes should share one flat contact plane, and a pair of hidden threaded inserts under the feet allows an optional floor plate or ground pins for outdoor placement where wind or pets could tip it. Finishing works best with a dark grout base coat wiped back from the tile faces, then turquoise, teal, gold, coral and cobalt hand-painted tile by tile, a glossy crimson crest, and a gloss clear coat on the tiles only so the grout lines stay matte.">
+          <div class="thumb thumb-img-dark"><img src="images/h73-mosaic-crane-figurine.jpg" alt="Colorful mosaic crane figurine standing on a sunny terracotta balcony, one wing raised high, turquoise body covered in patterned tiles with a red crest"></div>
+          <div class="card-body">
+            <span class="card-tag">Code: H73 · 3D Print Design</span>
+            <h3>Mosaic Crane Figurine</h3>
+            <p>Head raised beneath a crimson crest, this crane figurine stands tall on two slender legs, one wing flung high and the other half open as if about to lift off. Every surface is dressed in hand-set mosaic: turquoise and teal tiles along the long neck and body, patterned millefiori discs across the wings, and gold, coral and cobalt feathers fanning out toward the tips. Dark grout lines trace each piece, so the bird reads like stained glass shaped in the round. Its tall, airy silhouette brings color and movement to a balcony corner, an entryway, or a sunlit living room.</p>
+            <div class="card-footer">
+              <span class="card-price">$50</span>
+              <button type="button" class="card-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1814,13 +1827,12 @@
       technical.textContent = tech;
       technical.style.display = '';
       techLabel.style.display = '';
-      if(techCol) techCol.style.display = '';
     } else {
       technical.textContent = '';
       technical.style.display = 'none';
       techLabel.style.display = 'none';
-      if(techCol) techCol.style.display = 'none';
     }
+    if(techCol) techCol.style.display = '';
     if(modelViewer){
       if(modelCol) modelCol.style.display = 'none';
       modelViewer.removeAttribute('src');

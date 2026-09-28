@@ -856,6 +856,31 @@ footer .wrap{display:block;}
   .mini-row-3 .mini-card:last-child .mini-thumb{aspect-ratio:16/10;}
   .home-about{padding:36px 22px;}
 }
+
+/* ---------- category catalogs ---------- */
+.catalog-meta{display:flex;align-items:flex-end;gap:40px;flex-wrap:wrap;}
+.catalog-meta p{color:var(--ash);font-size:15px;max-width:36ch;line-height:1.55;}
+.catalog-controls{display:flex;align-items:center;gap:10px;}
+.cat-arrow{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:none;border:1px solid var(--line);color:var(--bone);cursor:pointer;transition:border-color .15s,background .15s,color .15s;}
+.cat-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;}
+.cat-arrow:hover{background:var(--bone);color:#000;border-color:var(--bone);}
+.catalog-controls .cat-viewall{margin:0 0 0 14px;}
+.catalog-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px;}
+.catalog-track::-webkit-scrollbar{display:none;}
+.catalog-track .mini-card{flex:0 0 calc((100% - 66px)/4);scroll-snap-align:start;}
+.catalog-track .mini-thumb{aspect-ratio:4/5;}
+.home-block.catalog{margin-top:96px;}
+/* 3D badge: clearly visible bronze */
+.thumb .thumb-3d-badge{background:var(--bronze);color:#000;border:none;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.35);}
+.thumb-3d-badge:hover,.thumb .thumb-3d-badge:hover{background:var(--bone);color:#000;}
+@media (max-width:1100px){.catalog-track .mini-card{flex-basis:calc((100% - 44px)/3);}}
+@media (max-width:640px){
+  .catalog-track{gap:12px;}
+  .catalog-track .mini-card{flex-basis:62%;}
+  .catalog-meta{gap:16px;}
+  .cat-arrow{display:none;}
+  .catalog-controls .cat-viewall{margin:0;}
+}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -1889,6 +1914,81 @@ footer .wrap{display:block;}
           <div class="mini-row mini-row-5" data-codes="h50,h70,h73,h1,h72"></div>
         </div>
 
+        <div class="home-block catalog" data-cat="reliefs">
+          <div class="block-head">
+            <h2>Wall Reliefs &amp; Panels</h2>
+            <div class="catalog-meta">
+              <p>Layered scenes for the wall, from quiet stories to full battlefields.</p>
+              <div class="catalog-controls">
+                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Wall Reliefs &amp; Panels left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Wall Reliefs &amp; Panels right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+                <a href="#reliefs" class="cat-viewall catalog-all">View all</a>
+              </div>
+            </div>
+          </div>
+          <div class="catalog-track"></div>
+        </div>
+
+        <div class="home-block catalog" data-cat="mirrors">
+          <div class="block-head">
+            <h2>Mirrors</h2>
+            <div class="catalog-meta">
+              <p>Sculpted frames where the glass is only half the story.</p>
+              <div class="catalog-controls">
+                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Mirrors left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Mirrors right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+                <a href="#mirrors" class="cat-viewall catalog-all">View all</a>
+              </div>
+            </div>
+          </div>
+          <div class="catalog-track"></div>
+        </div>
+
+        <div class="home-block catalog" data-cat="figurines">
+          <div class="block-head">
+            <h2>Figurines</h2>
+            <div class="catalog-meta">
+              <p>Animals and characters with a pose, a mood and a personality.</p>
+              <div class="catalog-controls">
+                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Figurines left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Figurines right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+                <a href="#figurines" class="cat-viewall catalog-all">View all</a>
+              </div>
+            </div>
+          </div>
+          <div class="catalog-track"></div>
+        </div>
+
+        <div class="home-block catalog" data-cat="vases">
+          <div class="block-head">
+            <h2>Vases &amp; Curios</h2>
+            <div class="catalog-meta">
+              <p>Watertight vessels and shelf sculptures in bold forms and finishes.</p>
+              <div class="catalog-controls">
+                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Vases &amp; Curios left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Vases &amp; Curios right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+                <a href="#vases" class="cat-viewall catalog-all">View all</a>
+              </div>
+            </div>
+          </div>
+          <div class="catalog-track"></div>
+        </div>
+
+        <div class="home-block catalog" data-cat="lamps">
+          <div class="block-head">
+            <h2>Floor Lamps</h2>
+            <div class="catalog-meta">
+              <p>Sculptural floor lamps that are just as striking switched off.</p>
+              <div class="catalog-controls">
+                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Floor Lamps left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Floor Lamps right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+                <a href="#lamps" class="cat-viewall catalog-all">View all</a>
+              </div>
+            </div>
+          </div>
+          <div class="catalog-track"></div>
+        </div>
+
         <div class="home-story">
           <a class="home-story-media" href="#home/h54"><img src="images/h54-phoenix-glass-mosaic.jpg" alt="Phoenix wall relief built from hundreds of angled amber and garnet glass shards" loading="lazy"></a>
           <div class="home-story-text">
@@ -1918,14 +2018,6 @@ footer .wrap{display:block;}
           </ol>
         </div>
 
-        <div class="home-about">
-          <h2>Engineered first, sculpted second</h2>
-          <div class="home-about-text">
-            <p>Every piece starts as a mechanical problem. Wall thickness, support strategy, joints and balance are solved before the surface is sculpted, so each file holds up when it leaves the screen.</p>
-            <p>Designed in Türkiye by Hilal Polat, using SolidWorks and Fusion 360 for structure and Blender and ZBrush for form.</p>
-            <a href="#contact" class="text-link">Get in touch</a>
-          </div>
-        </div>
 
       </div>
     </div>
@@ -2069,6 +2161,36 @@ footer .wrap{display:block;}
       a.querySelector('.mini-name').textContent = h3 ? h3.textContent : '';
       a.querySelector('.mini-price').textContent = src.getAttribute('data-price') ? ('$' + src.getAttribute('data-price')) : '';
       row.appendChild(a);
+    });
+  });
+
+  // Category catalogs on the home page: horizontal rows built from the product cards
+  function buildMini(src){
+    var img = src.querySelector('.thumb img');
+    var h3 = src.querySelector('.card-body h3');
+    var m = (src.getAttribute('onclick') || '').match(/home\/(h\d+)/i);
+    var a = document.createElement('a');
+    a.className = 'mini-card';
+    a.href = '#home/' + (m ? m[1].toLowerCase() : '');
+    a.innerHTML = '<div class="mini-thumb"><img loading="lazy" src="' + (img ? img.getAttribute('src') : '') + '" alt=""></div><span class="mini-name"></span><span class="mini-price"></span>';
+    a.querySelector('img').alt = img ? (img.getAttribute('alt') || '') : '';
+    a.querySelector('.mini-name').textContent = h3 ? h3.textContent : '';
+    a.querySelector('.mini-price').textContent = src.getAttribute('data-price') ? ('$' + src.getAttribute('data-price')) : '';
+    return a;
+  }
+  document.querySelectorAll('.catalog[data-cat]').forEach(function(block){
+    var cat = block.getAttribute('data-cat');
+    var track = block.querySelector('.catalog-track');
+    var items = Array.prototype.filter.call(document.querySelectorAll('#home .grid > .card[onclick]'), function(c){
+      return c.getAttribute('data-subcat') === cat;
+    });
+    items.slice(0, 10).forEach(function(c){ track.appendChild(buildMini(c)); });
+    var all = block.querySelector('.catalog-all');
+    if(all) all.textContent = 'View all ' + items.length;
+    block.querySelectorAll('.cat-arrow').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        track.scrollBy({ left: parseInt(btn.getAttribute('data-dir'), 10) * track.clientWidth * 0.8, behavior: 'smooth' });
+      });
     });
   });
 

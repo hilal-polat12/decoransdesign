@@ -799,15 +799,48 @@ footer .wrap{display:block;}
 .cat-count{font-size:13px;color:var(--ash);align-self:flex-end;padding-bottom:6px;}
 .cat-viewall{font-size:14px;font-weight:500;color:var(--bone);border-bottom:1px solid var(--ash);padding-bottom:3px;align-self:flex-end;margin-bottom:6px;white-space:nowrap;transition:color .15s,border-color .15s;}
 .cat-viewall:hover{color:var(--bronze);border-color:var(--bronze);}
-.home-story{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:center;margin-top:120px;padding-top:88px;border-top:1px solid var(--line);}
-.home-story-media{display:block;overflow:hidden;background:var(--soot);aspect-ratio:4/3;}
+.product-info .product-code{font-size:15.5px;margin-bottom:22px;display:block;}
+.product-info h1{line-height:1.04;font-size:clamp(30px,3.4vw,50px);}
+.home-extras{margin-top:40px;}
+.home-block{margin-top:120px;}
+.block-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:40px;}
+.block-head h2,.home-about h2,.home-story-text h2{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;color:var(--bone);line-height:.95;}
+.block-head h2{font-size:clamp(28px,3.4vw,50px);}
+.block-head p{color:var(--ash);font-size:15px;max-width:40ch;line-height:1.55;}
+.mini-row{display:grid;gap:22px;}
+.mini-row-5{grid-template-columns:repeat(5,1fr);}
+.mini-row-3{grid-template-columns:repeat(3,1fr);}
+.mini-card{display:block;}
+.mini-thumb{aspect-ratio:1/1;overflow:hidden;background:var(--soot);margin-bottom:14px;}
+.mini-tall .mini-thumb{aspect-ratio:4/5;}
+.mini-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1);}
+.mini-card:hover .mini-thumb img{transform:scale(1.04);}
+.mini-name{display:block;font-size:15px;font-weight:600;color:var(--bone);margin-bottom:4px;}
+.mini-price{display:block;font-size:14px;color:var(--ash);}
+.mini-card:hover .mini-name{color:var(--bronze);}
+.home-story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1180px;margin:120px auto 0;}
+.home-story-media{display:block;overflow:hidden;background:var(--soot);aspect-ratio:16/10;}
 .home-story-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);}
 .home-story-media:hover img{transform:scale(1.03);}
-.home-story-text h2{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3.4vw,50px);line-height:.95;letter-spacing:-0.01em;color:var(--bone);margin-bottom:24px;}
-.home-story-text p{color:var(--ink-soft);font-size:16px;line-height:1.7;max-width:46ch;margin-bottom:32px;}
+.home-story-text h2{font-size:clamp(26px,2.8vw,42px);margin-bottom:20px;}
+.home-story-text p{color:var(--ink-soft);font-size:15.5px;line-height:1.7;max-width:44ch;margin-bottom:28px;}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:step;}
+.steps li{counter-increment:step;border-top:2px solid var(--bronze);padding-top:24px;}
+.steps li::before{content:counter(step);display:block;font-family:var(--display);font-stretch:125%;font-weight:800;font-size:44px;line-height:1;color:var(--bronze);margin-bottom:18px;}
+.steps h3{font-size:18px;font-weight:600;color:var(--bone);margin-bottom:10px;}
+.steps p{color:var(--ink-soft);font-size:15px;line-height:1.65;max-width:34ch;}
+.home-about{margin-top:120px;background:var(--soot);padding:72px 64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.home-about h2{font-size:clamp(28px,3.4vw,50px);}
+.home-about-text p{color:var(--ink-soft);font-size:16px;line-height:1.75;margin-bottom:18px;max-width:52ch;}
+.text-link{display:inline-block;margin-top:10px;font-size:15px;font-weight:500;color:var(--bone);border-bottom:1px solid var(--bronze);padding-bottom:3px;}
+.text-link:hover{color:var(--bronze);}
 @media (max-width:1100px){
   .grid{grid-template-columns:repeat(3,1fr);gap:40px 18px;}
-  .home-story{grid-template-columns:1fr;gap:36px;margin-top:88px;padding-top:64px;}
+  .home-story{grid-template-columns:1fr;gap:32px;margin-top:88px;}
+  .home-block{margin-top:88px;}
+  .mini-row-5{grid-template-columns:repeat(3,1fr);}
+  .steps{grid-template-columns:1fr;gap:28px;}
+  .home-about{grid-template-columns:1fr;gap:28px;padding:48px 36px;margin-top:88px;}
 }
 @media (max-width:640px){
   .grid{grid-template-columns:repeat(2,1fr);gap:32px 12px;}
@@ -818,6 +851,10 @@ footer .wrap{display:block;}
   .card-footer .card-add-cart,.card-add-cart{font-size:12px;}
   .cat-head{flex-wrap:wrap;gap:12px;}
   .cat-count{width:100%;order:3;padding:0;}
+  .mini-row-5,.mini-row-3{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .mini-row-3 .mini-card:last-child{grid-column:1 / span 2;}
+  .mini-row-3 .mini-card:last-child .mini-thumb{aspect-ratio:16/10;}
+  .home-about{padding:36px 22px;}
 }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -1709,14 +1746,14 @@ footer .wrap{display:block;}
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="figurines" data-model="models/H65.glb" data-price="100" onclick="window.location.hash='home/h65';" data-tech="Wall thickness: donkey legs and body at 6 to 8 mm minimum, with the dog's legs, cat's raised paw, rooster's tail feathers, and all four sets of ears kept above 1.5 mm to survive handling. Print orientation: upright on the cobblestone base, which acts as the primary contact surface with a thin removable raft beneath it. Every point where one animal stands on another (dog paws on the donkey's back, cat paws on the dog, rooster feet on the cat) needs a reinforced boolean union rather than a simple touching surface, since the stacked tower concentrates its whole load through these few narrow contacts. Layer height runs 0.2mm on the base and donkey body, dropping to 0.12mm on faces, open mouths, fur texture, and the rooster's layered feathers. Separate tinted resin batches or hand-painted PLA suit the donkey's grey, the dog's tan and white, the cat's striped grey-brown, and the rooster's red, orange, and green plumage, with the cobblestones dry-brushed in warm stone tones. Printing the stack as separate animals keyed with hidden pins and bonding them after painting keeps each color clean and makes the tall tower far easier to finish. Running a test print at roughly one third scale is worth doing first, since the dog's four thin legs on the donkey's back carry the highest handling risk in the group.">
-          <div class="thumb thumb-img-dark"><span class="thumb-best-badge">Best</span><img src="images/h65-bremen-town-musicians-figurine.jpg" alt="Bremen Town Musicians figurine with a rooster, cat, dog, and donkey stacked on a round cobblestone base, all four animals singing upward"></div>
+        <div class="card" data-subcat="figurines" data-model="models/H65.glb" data-price="50" onclick="window.location.hash='home/h65';" data-tech="Wall thickness: donkey legs and body at 6 to 8 mm minimum, with the dog's legs, cat's raised paw, rooster's tail feathers, and all four sets of ears kept above 1.5 mm to survive handling. Print orientation: upright on the cobblestone base, which acts as the primary contact surface with a thin removable raft beneath it. Every point where one animal stands on another (dog paws on the donkey's back, cat paws on the dog, rooster feet on the cat) needs a reinforced boolean union rather than a simple touching surface, since the stacked tower concentrates its whole load through these few narrow contacts. Layer height runs 0.2mm on the base and donkey body, dropping to 0.12mm on faces, open mouths, fur texture, and the rooster's layered feathers. Separate tinted resin batches or hand-painted PLA suit the donkey's grey, the dog's tan and white, the cat's striped grey-brown, and the rooster's red, orange, and green plumage, with the cobblestones dry-brushed in warm stone tones. Printing the stack as separate animals keyed with hidden pins and bonding them after painting keeps each color clean and makes the tall tower far easier to finish. Running a test print at roughly one third scale is worth doing first, since the dog's four thin legs on the donkey's back carry the highest handling risk in the group.">
+          <div class="thumb thumb-img-dark"><img src="images/h65-bremen-town-musicians-figurine.jpg" alt="Bremen Town Musicians figurine with a rooster, cat, dog, and donkey stacked on a round cobblestone base, all four animals singing upward"></div>
           <div class="card-body">
             <span class="card-tag">Code: H65 · 3D Print Design</span>
             <h3>Bremen Town Musicians Figurine</h3>
             <p>Inspired by the Grimm fairy tale, this figurine stacks four singing animals into one joyful tower on a round cobblestone base. Grey and weathered, the donkey carries the group with its head thrown back, while a tan and white hound, a striped tabby with one paw raised, and a proud rooster with spread wings climb above it. Every open mouth points skyward, so the whole piece reads as a single chorus rising from the ground. Warm, naturalistic colors and detailed fur and feather textures make it equally at home on a shelf or as a garden accent.</p>
             <div class="card-footer">
-              <span class="card-price">$100</span>
+              <span class="card-price">$50</span>
               <button type="button" class="card-add-cart">Add to Cart</button>
             </div>
           </div>
@@ -1805,14 +1842,14 @@ footer .wrap{display:block;}
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="figurines" data-model="models/H73.glb" data-price="50" onclick="window.location.hash='home/h73';" data-tech="Standing approximately 900mm tall, the crane is best split into five parts: the body with neck and head, the two wings, and the two legs, joined with registration pins and adhesive so the seams hide along feather lines and the grout channels. The slender legs carry the whole figure, so each one is printed around a hollow 6mm core that takes a steel rod running from the toes up into the body, keeping the pose rigid and the weight centered over the feet. The raised wing is the longest cantilever on the model, so it keys into the shoulder with a pinned socket and a flat bonding face rather than a thin glue joint, with wing tips, crest and tail feathers kept at 2.5mm or thicker. Each mosaic tile is modeled as a slightly raised cell separated by grout channels of about 0.8 to 1mm, which keeps the pattern legible after painting; layer height runs 0.2mm on the body mass and 0.12mm on the wings, head and tile detail. PLA suits indoor display, while PETG with a UV-resistant clear coat is the better choice for a balcony or covered patio. The splayed toes should share one flat contact plane, and a pair of hidden threaded inserts under the feet allows an optional floor plate or ground pins for outdoor placement where wind or pets could tip it. Finishing works best with a dark grout base coat wiped back from the tile faces, then turquoise, teal, gold, coral and cobalt hand-painted tile by tile, a glossy crimson crest, and a gloss clear coat on the tiles only so the grout lines stay matte.">
-          <div class="thumb thumb-img-dark"><img src="images/h73-mosaic-crane-figurine.jpg" alt="Colorful mosaic crane figurine standing on a sunny terracotta balcony, one wing raised high, turquoise body covered in patterned tiles with a red crest"></div>
+        <div class="card" data-subcat="figurines" data-model="models/H73.glb" data-price="100" onclick="window.location.hash='home/h73';" data-tech="Standing approximately 900mm tall, the crane is best split into five parts: the body with neck and head, the two wings, and the two legs, joined with registration pins and adhesive so the seams hide along feather lines and the grout channels. The slender legs carry the whole figure, so each one is printed around a hollow 6mm core that takes a steel rod running from the toes up into the body, keeping the pose rigid and the weight centered over the feet. The raised wing is the longest cantilever on the model, so it keys into the shoulder with a pinned socket and a flat bonding face rather than a thin glue joint, with wing tips, crest and tail feathers kept at 2.5mm or thicker. Each mosaic tile is modeled as a slightly raised cell separated by grout channels of about 0.8 to 1mm, which keeps the pattern legible after painting; layer height runs 0.2mm on the body mass and 0.12mm on the wings, head and tile detail. PLA suits indoor display, while PETG with a UV-resistant clear coat is the better choice for a balcony or covered patio. The splayed toes should share one flat contact plane, and a pair of hidden threaded inserts under the feet allows an optional floor plate or ground pins for outdoor placement where wind or pets could tip it. Finishing works best with a dark grout base coat wiped back from the tile faces, then turquoise, teal, gold, coral and cobalt hand-painted tile by tile, a glossy crimson crest, and a gloss clear coat on the tiles only so the grout lines stay matte.">
+          <div class="thumb thumb-img-dark"><span class="thumb-best-badge">Best</span><img src="images/h73-mosaic-crane-figurine.jpg" alt="Colorful mosaic crane figurine standing on a sunny terracotta balcony, one wing raised high, turquoise body covered in patterned tiles with a red crest"></div>
           <div class="card-body">
             <span class="card-tag">Code: H73 · 3D Print Design</span>
             <h3>Mosaic Crane Figurine</h3>
             <p>Head raised beneath a crimson crest, this crane figurine stands tall on two slender legs, one wing flung high and the other half open as if about to lift off. Every surface is dressed in hand-set mosaic: turquoise and teal tiles along the long neck and body, patterned millefiori discs across the wings, and gold, coral and cobalt feathers fanning out toward the tips. Dark grout lines trace each piece, so the bird reads like stained glass shaped in the round. Its tall, airy silhouette brings color and movement to a balcony corner, an entryway, or a sunlit living room.</p>
             <div class="card-footer">
-              <span class="card-price">$50</span>
+              <span class="card-price">$100</span>
               <button type="button" class="card-add-cart">Add to Cart</button>
             </div>
           </div>
@@ -1842,13 +1879,54 @@ footer .wrap{display:block;}
           </div>
         </div>
       </div>
-      <div class="home-story" id="homeStory">
-        <a class="home-story-media" href="#home/h63"><img src="images/h63-meal-eaten-alone.jpg" alt="Wall relief of an elderly man seated alone at a long dinner table set for many" loading="lazy"></a>
-        <div class="home-story-text">
-          <h2>Reliefs that hold a moment</h2>
-          <p>Some pieces tell a fable, some ask a question. The wall reliefs capture a single scene in layered depth, from a quiet supper for one to a banquet that never reaches the people below it.</p>
-          <a href="#reliefs" class="btn-solid">See the wall reliefs</a>
+      <div class="home-extras" id="homeExtras">
+
+        <div class="home-block">
+          <div class="block-head">
+            <h2>Best sellers</h2>
+            <p>The pieces people come back for, one from each category.</p>
+          </div>
+          <div class="mini-row mini-row-5" data-codes="h50,h70,h73,h1,h72"></div>
         </div>
+
+        <div class="home-story">
+          <a class="home-story-media" href="#home/h54"><img src="images/h54-phoenix-glass-mosaic.jpg" alt="Phoenix wall relief built from hundreds of angled amber and garnet glass shards" loading="lazy"></a>
+          <div class="home-story-text">
+            <h2>Reliefs that hold a moment</h2>
+            <p>Each wall relief captures a single scene in layered depth. The Phoenix is built from hundreds of angled shards, so it shifts from gold to garnet as you walk past it.</p>
+            <a href="#reliefs" class="btn-solid">See the wall reliefs</a>
+          </div>
+        </div>
+
+        <div class="home-block">
+          <div class="block-head">
+            <h2>Fables in 3D</h2>
+            <p>Classic tales from Aesop and the Brothers Grimm, each caught in the one moment everyone remembers.</p>
+          </div>
+          <div class="mini-row mini-row-3 mini-tall" data-codes="h64,h65,h66"></div>
+        </div>
+
+        <div class="home-block home-steps">
+          <div class="block-head">
+            <h2>From file to object</h2>
+            <p>Every design is sold as a print-ready 3D file with a commercial license.</p>
+          </div>
+          <ol class="steps">
+            <li><h3>Choose a design</h3><p>Browse the collection and add the pieces you like to your cart.</p></li>
+            <li><h3>Receive the files</h3><p>Get tested, print-ready STL and OBJ files, split into parts where the size needs it.</p></li>
+            <li><h3>Print or have it printed</h3><p>Print it yourself or send it to a print service. Color, texture and size can be customized on request.</p></li>
+          </ol>
+        </div>
+
+        <div class="home-about">
+          <h2>Engineered first, sculpted second</h2>
+          <div class="home-about-text">
+            <p>Every piece starts as a mechanical problem. Wall thickness, support strategy, joints and balance are solved before the surface is sculpted, so each file holds up when it leaves the screen.</p>
+            <p>Designed in Türkiye by Hilal Polat, using SolidWorks and Fusion 360 for structure and Blender and ZBrush for form.</p>
+            <a href="#contact" class="text-link">Get in touch</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1969,6 +2047,29 @@ footer .wrap{display:block;}
   window.addEventListener('load', function(){
     var h = window.location.hash.toLowerCase();
     if(h === '' || h === '#home'){ setTimeout(function(){ window.scrollTo(0,0); }, 0); }
+  });
+
+  // Home mini rows (best sellers, fables): built from the existing product cards
+  document.querySelectorAll('.mini-row[data-codes]').forEach(function(row){
+    row.getAttribute('data-codes').split(',').forEach(function(code){
+      code = code.trim().toLowerCase();
+      var src = null;
+      document.querySelectorAll('#home .grid > .card[onclick]').forEach(function(c){
+        if(!src && (c.getAttribute('onclick') || '').indexOf("home/" + code + "'") !== -1) src = c;
+      });
+      if(!src) return;
+      var img = src.querySelector('.thumb img');
+      var h3 = src.querySelector('.card-body h3');
+      var a = document.createElement('a');
+      a.className = 'mini-card';
+      a.href = '#home/' + code;
+      a.innerHTML = '<div class="mini-thumb"><img loading="lazy" src="' + (img ? img.getAttribute('src') : '') + '" alt=""></div>' +
+        '<span class="mini-name"></span><span class="mini-price"></span>';
+      a.querySelector('img').alt = img ? (img.getAttribute('alt') || '') : '';
+      a.querySelector('.mini-name').textContent = h3 ? h3.textContent : '';
+      a.querySelector('.mini-price').textContent = src.getAttribute('data-price') ? ('$' + src.getAttribute('data-price')) : '';
+      row.appendChild(a);
+    });
   });
 
   // Hero button: scroll to the collection grid
@@ -2250,7 +2351,7 @@ footer .wrap{display:block;}
     .sort(function(a, b){ return codeNum(b) - codeNum(a); })
     .slice(0, NEW_COUNT);
   const viewAll = document.getElementById('viewAllLink');
-  const story = document.getElementById('homeStory');
+  const story = document.getElementById('homeExtras');
   const catCount = document.getElementById('catCount');
   function applySubcat(val){
     navLinks.forEach(function(l){ l.classList.toggle('active', l.getAttribute('data-subcat') === val); });

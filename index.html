@@ -1923,7 +1923,7 @@ footer{padding:44px 0 26px;}
           <div class="mini-row mini-row-5" data-codes="h50,h70,h73,h1,h72"></div>
         </div>
 
-        <div class="home-block catalog" data-cat="reliefs">
+        <div class="home-block catalog" data-cat="reliefs" data-first="h51,h52,h53,h58">
           <div class="block-head">
             <h2>Wall Reliefs &amp; Panels</h2>
             <div class="catalog-meta">
@@ -2192,7 +2192,13 @@ footer{padding:44px 0 26px;}
     var items = Array.prototype.filter.call(document.querySelectorAll('#home .grid > .card[onclick]'), function(c){
       return c.getAttribute('data-subcat') === cat;
     });
-    items.slice(0, 10).forEach(function(c){ track.appendChild(buildMini(c)); });
+    var first = (block.getAttribute('data-first') || '').split(',').map(function(x){ return x.trim().toLowerCase(); }).filter(Boolean);
+    function codeOf(c){ var m = (c.getAttribute('onclick') || '').match(/home\/(h\d+)/i); return m ? m[1].toLowerCase() : ''; }
+    var ordered = first.map(function(code){
+      return items.filter(function(c){ return codeOf(c) === code; })[0];
+    }).filter(Boolean);
+    items.forEach(function(c){ if(ordered.indexOf(c) === -1) ordered.push(c); });
+    ordered.slice(0, 10).forEach(function(c){ track.appendChild(buildMini(c)); });
     var all = block.querySelector('.catalog-all');
     if(all) all.textContent = 'View all ' + items.length;
     block.querySelectorAll('.cat-arrow').forEach(function(btn){

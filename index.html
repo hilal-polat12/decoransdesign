@@ -284,27 +284,27 @@
   .thumb-3d-badge:hover{background:#c49a30;}
   .thumb .thumb-best-badge{
     position:absolute;
-    top:26px;left:-44px;
-    width:170px;
+    top:14px;left:-36px;
+    width:120px;
     z-index:3;
     transform:rotate(-45deg);
     background:linear-gradient(180deg,#E63249 0%,#C41E35 100%);
     color:#fff;
-    font-size:13px;font-weight:800;
-    letter-spacing:0.14em;
+    font-size:10.5px;font-weight:800;
+    letter-spacing:0.12em;
     text-transform:uppercase;
     text-align:center;
-    padding:7px 0;
+    padding:4px 0;
     border-radius:0;
     border:none;
     border-top:1px solid rgba(255,255,255,0.35);
     border-bottom:1px solid rgba(0,0,0,0.35);
-    box-shadow:0 3px 8px rgba(0,0,0,0.45);
+    box-shadow:0 2px 6px rgba(0,0,0,0.4);
     text-shadow:0 1px 1px rgba(0,0,0,0.35);
     pointer-events:none;
   }
   @media (max-width:640px){
-    .thumb .thumb-best-badge{top:20px;left:-48px;width:160px;font-size:11.5px;padding:6px 0;}
+    .thumb .thumb-best-badge{top:12px;left:-34px;width:110px;font-size:9.5px;padding:3px 0;}
   }
 
   .card-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;}
@@ -464,7 +464,7 @@
 .product-page.is-open{display:block}
 .product-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;color:var(--white);font-size:14px;font-weight:600;text-decoration:none}
 .product-back:hover{color:var(--white)}
-.product-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:48px;align-items:start}
+.product-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:48px;align-items:start}
 .product-image{background:var(--card-bg);border:1px solid var(--line);border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3}
 .product-image-col{display:flex;flex-direction:column;min-width:0}
 .product-image-note{color:var(--white);font-size:13px;line-height:1.5;margin:10px 0 0;font-style:italic}
@@ -501,13 +501,19 @@
 .product-info .product-price{display:block;margin:0;font-family:var(--display);font-size:24px;font-weight:700;color:var(--white)}
 .product-info h1{margin:0 0 16px;font-family:var(--display);font-size:clamp(30px,4vw,48px);line-height:1.08;color:var(--white)}
 .product-info .product-description{color:var(--white);font-size:15px;line-height:1.7;margin:0 0 20px}
-.product-info .product-tech-label{display:block;margin-bottom:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--white)}
-.product-info .product-technical{color:var(--white);font-size:13.5px;line-height:1.7;margin:0 0 28px;padding-top:20px;border-top:1px solid var(--line)}
+.product-tech-label{display:block;margin-bottom:12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--white)}
+.product-technical{color:var(--white);font-size:14px;line-height:1.75;margin:0}
+.product-lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start;margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
+.product-lower.single{grid-template-columns:1fr}
+.product-lower.empty{display:none}
+.product-model-col{min-width:0}
+.product-model-box{position:relative;aspect-ratio:4/3;background:var(--card-bg);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.product-model-box model-viewer{display:block;--poster-color:transparent}
 .product-contact{display:inline-flex;padding:12px 20px;border:none;border-radius:4px;color:var(--red);font-size:14px;font-weight:700;text-decoration:none;background:var(--white);font-family:inherit;cursor:pointer;align-items:center;gap:8px}
 .product-contact svg{width:16px;height:16px;stroke:currentColor;fill:none}
 .product-contact:hover{background:#f0e6e6}
 .product-contact.added{background:var(--white);color:var(--red)}
-@media(max-width:800px){.product-layout{grid-template-columns:1fr;gap:28px}}
+@media(max-width:800px){.product-layout{grid-template-columns:1fr;gap:28px}.product-lower{grid-template-columns:1fr;gap:32px;margin-top:40px;padding-top:32px}}
 
 /* C1 dedicated long-form product page */
 .c1-add-cart{margin-top:20px}
@@ -658,9 +664,6 @@
       <div class="product-image-col">
       <div class="product-image">
         <img id="productImage" src="" alt="">
-        <model-viewer id="productModelViewer" style="display:none; width:100%; height:100%;" camera-controls auto-rotate shadow-intensity="1" exposure="1"></model-viewer>
-        <div id="productModelWatermark" class="model-watermark-overlay" style="display:none;"></div>
-        <button type="button" id="productModelToggle" class="product-model-toggle" style="display:none;">View in 3D</button>
         <div id="productGallery" class="product-gallery" style="display:none;"></div>
       </div>
       <p class="product-image-note">Note: Color, texture, and size can be customized on request.</p>
@@ -669,8 +672,6 @@
         <span id="productCode" class="product-code"></span>
         <h1 id="productTitle"></h1>
         <p id="productDescription" class="product-description"></p>
-        <span id="productTechLabel" class="product-tech-label" style="display:none;">Technical Details</span>
-        <p id="productTechnical" class="product-technical" style="display:none;"></p>
         <div class="product-footer">
           <span id="productPrice" class="product-price"></span>
           <button type="button" class="product-contact" id="productAddToCart">
@@ -678,6 +679,21 @@
             <span id="productAddToCartLabel">Add to Cart</span>
           </button>
         </div>
+      </div>
+    </div>
+    <div id="productLower" class="product-lower">
+      <div id="productTechCol" class="product-tech-col" style="display:none;">
+        <span id="productTechLabel" class="product-tech-label" style="display:none;">Technical Details</span>
+        <p id="productTechnical" class="product-technical" style="display:none;"></p>
+      </div>
+      <div id="productModelCol" class="product-model-col" style="display:none;">
+        <span class="product-tech-label">3D Model</span>
+        <div class="product-model-box">
+          <model-viewer id="productModelViewer" style="width:100%; height:100%;" camera-controls auto-rotate shadow-intensity="1" exposure="1"></model-viewer>
+          <div id="productModelWatermark" class="model-watermark-overlay"></div>
+          <button type="button" id="productModelToggle" class="product-model-toggle" style="display:none;">View in 3D</button>
+        </div>
+        <p class="product-image-note">Drag to rotate, scroll or pinch to zoom.</p>
       </div>
     </div>
   </div>
@@ -1783,46 +1799,47 @@
     }
 
     const modelSrc = card.getAttribute('data-model');
-    const modelSrcFallback = modelSrc ? modelSrc.replace('.glb', '-3D.glb') : null;
-    if(modelViewer && modelToggle){
-      image.style.display = '';
-      modelViewer.style.display = 'none';
-      if(modelWatermark) modelWatermark.style.display = 'none';
-      modelToggle.textContent = 'View in 3D';
-      modelToggle.style.display = 'none';
+    const lowerEl = document.getElementById('productLower');
+    const techCol = document.getElementById('productTechCol');
+    const modelCol = document.getElementById('productModelCol');
+    const tech = card.getAttribute('data-tech');
+    function layoutLower(){
+      const hasTech = techCol && techCol.style.display !== 'none';
+      const hasModel = modelCol && modelCol.style.display !== 'none';
+      if(!lowerEl) return;
+      lowerEl.classList.toggle('empty', !hasTech && !hasModel);
+      lowerEl.classList.toggle('single', (hasTech ? 1 : 0) + (hasModel ? 1 : 0) === 1);
+    }
+    if(tech){
+      technical.textContent = tech;
+      technical.style.display = '';
+      techLabel.style.display = '';
+      if(techCol) techCol.style.display = '';
+    } else {
+      technical.textContent = '';
+      technical.style.display = 'none';
+      techLabel.style.display = 'none';
+      if(techCol) techCol.style.display = 'none';
+    }
+    if(modelViewer){
+      if(modelCol) modelCol.style.display = 'none';
       modelViewer.removeAttribute('src');
       if(modelSrc){
-        const activateModel = function(resolvedSrc){
+        const requestedId = id;
+        resolveModelSrc(modelSrc, function(resolvedSrc){
+          if(page.getAttribute('data-current') !== requestedId) return;
           modelViewer.setAttribute('src', resolvedSrc);
-          modelToggle.style.display = '';
-          modelToggle.onclick = function(){
-            const showingModel = modelViewer.style.display !== 'none';
-            if(showingModel){
-              modelViewer.style.display = 'none';
-              if(modelWatermark) modelWatermark.style.display = 'none';
-              image.style.display = '';
-              modelToggle.textContent = 'View in 3D';
-            } else {
-              image.style.display = 'none';
-              modelViewer.style.display = '';
-              if(modelWatermark) modelWatermark.style.display = '';
-              modelToggle.textContent = 'View Photo';
-            }
-          };
+          if(modelCol) modelCol.style.display = '';
+          layoutLower();
           if(sessionStorage.getItem('openIn3D') === '1'){
             sessionStorage.removeItem('openIn3D');
-            image.style.display = 'none';
-            modelViewer.style.display = '';
-            if(modelWatermark) modelWatermark.style.display = '';
-            modelToggle.textContent = 'View Photo';
+            setTimeout(function(){ modelCol.scrollIntoView({behavior:'smooth', block:'center'}); }, 300);
           }
-        };
-        resolveModelSrc(modelSrc, activateModel);
-      } else {
-        modelToggle.style.display = 'none';
-        modelViewer.removeAttribute('src');
+        });
       }
     }
+    page.setAttribute('data-current', id);
+    layoutLower();
 
     const galleryData = card.getAttribute('data-gallery');
     if(gallery){
@@ -1849,17 +1866,6 @@
       } else {
         gallery.style.display = 'none';
       }
-    }
-
-    const tech = card.getAttribute('data-tech');
-    if(tech){
-      technical.textContent = tech;
-      technical.style.display = '';
-      techLabel.style.display = '';
-    } else {
-      technical.textContent = '';
-      technical.style.display = 'none';
-      techLabel.style.display = 'none';
     }
 
     if(backLink){

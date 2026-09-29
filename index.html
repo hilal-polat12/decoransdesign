@@ -871,7 +871,7 @@ footer .wrap{display:block;}
 .catalog-track .mini-thumb{aspect-ratio:4/5;}
 .home-block.catalog{margin-top:96px;}
 /* 3D badge: clearly visible bronze */
-.thumb .thumb-3d-badge{background:var(--bronze);color:#000;border:none;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.35);font-size:15px;padding:9px 16px;letter-spacing:.03em;}
+.thumb .thumb-3d-badge{background:var(--bronze);color:#000;border:none;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.35);}
 .thumb-3d-badge:hover,.thumb .thumb-3d-badge:hover{background:var(--bone);color:#000;}
 @media (max-width:1100px){.catalog-track .mini-card{flex-basis:calc((100% - 44px)/3);}}
 @media (max-width:640px){
@@ -2563,6 +2563,8 @@ footer{padding:44px 0 26px;}
   const cards = document.querySelectorAll('#home .grid > .card');
   const homeSection = document.getElementById('home');
   const hashToSubcat = {
+    '': 'all',
+    '#': 'all',
     '#home': 'all',
     '#vases': 'vases',
     '#lamps': 'lamps',
@@ -2620,7 +2622,7 @@ footer{padding:44px 0 26px;}
       return;
     }
     applySubcat(hashToSubcat[hash]);
-    if(hash === '#home'){
+    if(hash === '#home' || hash === '' || hash === '#'){
       window.scrollTo({top:0, behavior:'auto'});
     } else if(homeSection){
       window.scrollToSection(homeSection);

@@ -971,6 +971,20 @@ footer{padding:44px 0 26px;}
   .product-layout.has-photo-grid{grid-template-columns:1fr;}
   .product-gallery{grid-template-columns:1fr;gap:8px;}
   .product-gallery img:nth-child(3){aspect-ratio:4/3;}
+  /* mobile: photos interleaved with the text instead of three in a row:
+     photo 1, title + description, photo 2, print specs, photo 3, then the technical details */
+  .product-layout.has-photo-grid{gap:0;}
+  .product-layout.has-photo-grid .product-image-col,
+  .product-layout.has-photo-grid .product-info,
+  .product-layout.has-photo-grid .product-gallery{display:contents !important;}
+  .product-layout.has-photo-grid .product-gallery img:nth-child(1){order:1;}
+  .product-layout.has-photo-grid .product-code{order:2;margin-top:24px;}
+  .product-layout.has-photo-grid h2{order:3;}
+  .product-layout.has-photo-grid .product-description{order:4;}
+  .product-layout.has-photo-grid .product-gallery img:nth-child(2){order:5;margin-top:32px;}
+  .product-layout.has-photo-grid .product-specs{order:6;margin:32px 0 0;}
+  .product-layout.has-photo-grid .product-gallery img:nth-child(3){order:7;margin-top:32px;}
+  .product-layout.has-photo-grid .product-image-note{order:8;}
 }
 /* price + cart: second row of the lower section, under the technical list */
 .product-lower > .product-footer{grid-column:1;margin-top:28px;}

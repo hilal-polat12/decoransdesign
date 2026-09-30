@@ -2505,8 +2505,8 @@ The trumpet rim is the widest overhang, so slow it down for a clean edge." data-
   if(logoHome){
     logoHome.addEventListener('click', function(e){
       e.preventDefault();
-      if(window.PRODUCT_ROUTE){ window.location.href = '/#home'; return; }
-      history.pushState(null, '', window.location.pathname + '#home');
+      if(window.PRODUCT_ROUTE){ window.location.href = '/'; return; }
+      history.pushState(null, '', '/');
       window.dispatchEvent(new HashChangeEvent('hashchange'));
       window.scrollTo({top:0, behavior:'auto'});
     });

@@ -1,0 +1,15 @@
+{
+  "buildCommand": "python3 build_pages.py",
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/:cat(vases|lamps|figurines|mirrors|reliefs)/:code(h\\d+)", "destination": "/p/:cat/:code.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "hilalpolat.vercel.app" }],
+      "destination": "https://www.decoransdesign.com/:path*",
+      "permanent": true
+    }
+  ]
+}

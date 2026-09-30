@@ -506,7 +506,7 @@
 .product-info h1,.product-info h2{margin:0 0 16px;font-family:var(--display);font-size:clamp(30px,4vw,48px);line-height:1.08;color:var(--white)}
 .product-info .product-description{color:var(--white);font-size:15px;line-height:1.75;margin:0}
 .product-tech-label{display:block;margin-bottom:12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--white)}
-.product-info .product-footer{margin-top:28px}
+.product-lower .product-footer{margin-top:28px}
 .product-technical{color:var(--white);font-size:15px;line-height:1.75;margin:0}
 .product-lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start;margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
 .product-lower.single{grid-template-columns:1fr}
@@ -927,7 +927,7 @@ footer{padding:44px 0 26px;}
   .product-technical.expanded{max-height:none;-webkit-mask-image:none;mask-image:none;}
   .product-technical[style*="none"] + .tech-more{display:none !important;}
   .tech-more{display:inline-block;margin-top:12px;background:none;border:none;border-bottom:1px solid var(--bronze);padding:0 0 2px;color:var(--bone);font:inherit;font-size:14px;font-weight:500;cursor:pointer;}
-  .product-page.is-open .product-info .product-footer{position:fixed;left:0;right:0;bottom:0;z-index:60;margin:0;padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(0,0,0,.94);border-top:1px solid var(--line);justify-content:space-between;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+  .product-page.is-open .product-lower .product-footer{position:fixed;left:0;right:0;bottom:0;z-index:60;margin:0;padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(0,0,0,.94);border-top:1px solid var(--line);justify-content:space-between;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
   .product-page.is-open .product-footer .product-price{font-size:22px;}
   .product-page.is-open .product-footer .product-contact{padding:13px 22px;}
   body:has(.product-page.is-open) .scroll-top{bottom:84px;}
@@ -963,19 +963,17 @@ footer{padding:44px 0 26px;}
 .product-layout.has-photo-grid{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);}
 .product-gallery{display:none;grid-template-columns:1fr 1fr;gap:10px;padding:0;background:none;}
 .product-gallery img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border:0;border-radius:0;opacity:1;cursor:default;background:#e9e9e9;display:block;}
-/* Print Specs as the 4th grid cell, next to the lifestyle photo, ending level with it */
-.product-gallery .product-specs{margin:0;display:flex;flex-direction:column;min-width:0;align-self:stretch;}
-.product-gallery .product-specs .product-tech-label{margin-bottom:10px;}
-.product-gallery .spec-list{flex:1;grid-auto-rows:1fr;}
-.product-gallery .spec-list dt,.product-gallery .spec-list dd{display:flex;align-items:center;padding:6px 0;}
-.product-gallery .spec-list dt{padding-right:24px;}
-.product-gallery .product-specs-note{margin-top:10px;font-size:12px;}
+/* lifestyle photo (3rd) spans both columns as a wide 4:3 image, prepared so the product is never cut */
+.product-gallery img:nth-child(3){grid-column:1 / -1;aspect-ratio:4/3;}
+/* Print Specs under the product description */
+.product-info .product-specs{margin:36px 0 0;}
 @media (max-width:800px){
   .product-layout.has-photo-grid{grid-template-columns:1fr;}
   .product-gallery{grid-template-columns:1fr;gap:8px;}
-  .product-gallery .product-specs{margin-top:16px;}
-  .product-gallery .spec-list{flex:none;grid-auto-rows:auto;}
+  .product-gallery img:nth-child(3){aspect-ratio:4/3;}
 }
+/* price + cart: second row of the lower section, under the technical list */
+.product-lower > .product-footer{grid-column:1;margin-top:28px;}
 .marquee-code{color:var(--bronze);}
 /* ---------- technical notes: bullet list, level with the 3D model frame ---------- */
 .tech-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);}
@@ -1076,22 +1074,15 @@ footer{padding:44px 0 26px;}
         <span id="productCode" class="product-code"></span>
         <h2 id="productTitle"></h2>
         <p id="productDescription" class="product-description"></p>
-        <div class="product-footer">
-          <span id="productPrice" class="product-price"></span>
-          <button type="button" class="product-contact" id="productAddToCart">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l1 2m0 0l2.2 9.2a1.5 1.5 0 0 0 1.46 1.15h6.9a1.5 1.5 0 0 0 1.46-1.15L20 8H6"/><circle cx="9.5" cy="19.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="17" cy="19.5" r="1.3" fill="currentColor" stroke="none"/></svg>
-            <span id="productAddToCartLabel">Add to Cart</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div id="productLower" class="product-lower">
-      <div id="productTechCol" class="product-tech-col">
         <div id="productSpecs" class="product-specs" style="display:none;">
           <span class="product-tech-label">Print Specs</span>
           <dl id="productSpecList" class="spec-list"></dl>
           <p id="productSpecsNote" class="product-specs-note"></p>
         </div>
+      </div>
+    </div>
+    <div id="productLower" class="product-lower">
+      <div id="productTechCol" class="product-tech-col">
         <span id="productTechLabel" class="product-tech-label" style="display:none;">Technical Details</span>
         <div id="productTechnical" class="product-technical" style="display:none;"></div>
         <button type="button" id="productTechMore" class="tech-more" aria-expanded="false">Read more</button>
@@ -1104,6 +1095,14 @@ footer{padding:44px 0 26px;}
           <button type="button" id="productModelToggle" class="product-model-toggle" style="display:none;">View in 3D</button>
         </div>
         <p class="product-image-note">Drag to rotate, scroll or pinch to zoom.</p>
+      </div>
+      <!-- price + cart close the technical column, below the list (outside it, so the list and the 3D model stay level) -->
+      <div class="product-footer">
+        <span id="productPrice" class="product-price"></span>
+        <button type="button" class="product-contact" id="productAddToCart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l1 2m0 0l2.2 9.2a1.5 1.5 0 0 0 1.46 1.15h6.9a1.5 1.5 0 0 0 1.46-1.15L20 8H6"/><circle cx="9.5" cy="19.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="17" cy="19.5" r="1.3" fill="currentColor" stroke="none"/></svg>
+          <span id="productAddToCartLabel">Add to Cart</span>
+        </button>
       </div>
     </div>
   </div>
@@ -2761,15 +2760,11 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
     const galleryData = card.getAttribute('data-gallery');
     const imageBox = image.closest('.product-image');
     const layoutEl = page.querySelector('.product-layout');
-    const specsBox = document.getElementById('productSpecs');
-    const techColEl = document.getElementById('productTechCol');
     if(gallery){
-      // the Print Specs box sits next to the lifestyle photo in the grid; park it back first
-      if(specsBox && specsBox.parentNode === gallery && techColEl) techColEl.insertBefore(specsBox, techColEl.firstChild);
       gallery.innerHTML = '';
       const entries = galleryData ? galleryData.split(';').map(function(s){ return s.trim(); }).filter(Boolean) : [];
       if(entries.length){
-        // studio | close-up on top, lifestyle | print specs below (all photos uncropped squares)
+        // studio | close-up on top, the wide lifestyle photo across both below
         entries.forEach(function(entry){
           const parts = entry.split('|');
           const img = document.createElement('img');
@@ -2778,8 +2773,6 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
           img.loading = 'lazy';
           gallery.appendChild(img);
         });
-        // desktop only: on phones the specs stay below the description, in the technical section
-        if(specsBox && specsBox.style.display !== 'none' && entries.length === 3 && window.matchMedia('(min-width: 801px)').matches) gallery.appendChild(specsBox);
         gallery.style.display = 'grid';
         if(imageBox) imageBox.style.display = 'none';
         if(layoutEl) layoutEl.classList.add('has-photo-grid');

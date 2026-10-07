@@ -932,7 +932,8 @@ footer{padding:44px 0 26px;}
   .product-page.is-open .product-lower .product-footer{position:fixed;left:0;right:0;bottom:0;z-index:60;margin:0;padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(0,0,0,.94);border-top:1px solid var(--line);justify-content:space-between;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
   .product-page.is-open .product-footer .product-price{font-size:22px;}
   .product-page.is-open .product-footer .product-contact{padding:13px 22px;}
-  body:has(.product-page.is-open) .scroll-top{bottom:84px;}
+  /* the fixed price/cart bar is enough here; a floating button would cover the text */
+  body:has(.product-page.is-open) .scroll-top{display:none;}
 }
 
 /* ---------- mobile header with menu ---------- */

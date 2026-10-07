@@ -3479,29 +3479,30 @@ function resolveModelSrc(src, onFound){
   setTimeout(function(){ onFound(src); }, 0);
 }
 
-// 3D badge on card thumbnails that have a model available (only if the file actually exists)
+// 3D badge on every product card thumbnail; it opens the product page (in 3D view when a model exists)
 (function(){
-  document.querySelectorAll('.card[data-model]').forEach(function(card){
+  document.querySelectorAll('.card[onclick]').forEach(function(card){
     var thumb = card.querySelector('.thumb');
-    if(!thumb) return;
+    if(!thumb || thumb.querySelector('.thumb-3d-badge')) return;
     var primarySrc = card.getAttribute('data-model');
-    var fallbackSrc = primarySrc.replace('.glb', '-3D.glb');
     function addBadge(resolvedSrc){
-      card.setAttribute('data-model-resolved', resolvedSrc);
+      if(resolvedSrc) card.setAttribute('data-model-resolved', resolvedSrc);
       var onclickAttr = card.getAttribute('onclick') || '';
-      var match = onclickAttr.match(/hash\s*=\s*'([^']+)'/);
+      var match = onclickAttr.match(/(?:hash|href)\s*=\s*'([^']+)'/);
       var hash = match ? match[1] : null;
       var badge = document.createElement('a');
       badge.className = 'thumb-3d-badge';
       badge.textContent = '3D';
-      if(hash) badge.href = '#' + hash;
+      if(hash) badge.href = /^\//.test(hash) ? hash : '#' + hash;
       badge.addEventListener('click', function(e){
         e.stopPropagation();
+        if(!resolvedSrc) return;
         sessionStorage.setItem('openIn3D', '1');
       });
       thumb.appendChild(badge);
     }
-    resolveModelSrc(primarySrc, addBadge);
+    if(primarySrc) resolveModelSrc(primarySrc, addBadge);
+    else addBadge(null);
   });
 })();
 

@@ -5,6 +5,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <base href="/">
+<script>
+// Category pages live at real paths (/reliefs, /mirrors, ...). Old #hash links keep working.
+var CATEGORY_PATHS = ['vases', 'lamps', 'figurines', 'mirrors', 'reliefs'];
+function routeHash(){
+  var h = window.location.hash.toLowerCase();
+  if(h) return h;
+  var m = window.location.pathname.toLowerCase().match(/^\/(vases|lamps|figurines|mirrors|reliefs)\/?$/);
+  return m ? '#' + m[1] : '';
+}
+</script>
 <title>Decorans Design | Sculptural 3D Print Files</title>
 <meta name="description" content="Original sculptural home décor designed for 3D printing. Print-ready STL/OBJ files for wall reliefs, mirrors, figurines, vases and floor lamps, with a commercial license.">
 <link rel="canonical" href="https://www.decoransdesign.com/">
@@ -208,7 +218,7 @@
     display:flex;align-items:baseline;justify-content:space-between;
     margin-bottom:24px;
   }
-  .cat-head h2{
+  .cat-head h2,.cat-head h1{
     font-family:var(--display);
     font-size:26px;font-weight:700;
     color:var(--white);
@@ -436,7 +446,7 @@
     .top-links a{white-space:nowrap;font-size:13.5px;padding:6px 8px;}
     .btn-contact{padding:9px 16px;font-size:13px;}
     .wrap{padding:0 20px;}
-    .cat-head h2{font-size:20px;}
+    .cat-head h2,.cat-head h1{font-size:20px;}
     .contact-card{padding:16px;}
   }
   @media (max-width:400px){
@@ -692,7 +702,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 section.category{border-bottom:none;padding:88px 0 96px;}
 #home{padding-top:88px;}
 .cat-head{margin-bottom:44px;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:22px;}
-.cat-head h2,#homeCatTitle.is-all{display:block;font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(30px,4.2vw,60px);line-height:.95;letter-spacing:-0.01em;color:var(--bone);}
+.cat-head h2,.cat-head h1,#homeCatTitle.is-all{display:block;font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(30px,4.2vw,60px);line-height:.95;letter-spacing:-0.01em;color:var(--bone);}
 .cat-count{font-size:13px;color:var(--ash);}
 .grid{grid-template-columns:repeat(3,1fr);gap:56px 28px;}
 .card{border:none;border-radius:0;background:transparent;overflow:visible;}
@@ -800,7 +810,7 @@ footer .wrap{display:block;}
 .card-body h3{font-size:15.5px;margin-bottom:12px;}
 .card-footer .card-price{font-size:14px;}
 .cat-head{gap:24px;}
-.cat-head h2{margin-right:auto;}
+.cat-head h2,.cat-head h1{margin-right:auto;}
 .cat-count{font-size:13px;color:var(--ash);align-self:flex-end;padding-bottom:6px;}
 .cat-viewall{font-size:14px;font-weight:500;color:var(--bone);border-bottom:1px solid var(--ash);padding-bottom:3px;align-self:flex-end;margin-bottom:6px;white-space:nowrap;transition:color .15s,border-color .15s;}
 .cat-viewall:hover{color:var(--bronze);border-color:var(--bronze);}
@@ -1025,12 +1035,12 @@ footer{padding:44px 0 26px;}
   <div class="wrap topbar-inner">
     <a href="/" class="logo brand-lockup" id="logoHome" aria-label="Decorans Design, home"><img src="images/logo-mark.png" alt="" class="brand-mark" width="41" height="40"><span class="brand-word">Decorans Design</span><span class="logo-tagline">Sculptural 3D Print Files</span></a>
     <nav class="navbar-inner" id="mainNav" aria-label="Collection">
-      <a href="#home" class="active subcat-nav-link" data-subcat="all">Home</a>
-      <a href="#reliefs" class="subcat-nav-link" data-subcat="reliefs">Wall Reliefs &amp; Panels</a>
-      <a href="#mirrors" class="subcat-nav-link" data-subcat="mirrors">Mirrors</a>
-      <a href="#figurines" class="subcat-nav-link" data-subcat="figurines">Figurines</a>
-      <a href="#vases" class="subcat-nav-link" data-subcat="vases">Vases &amp; Curios</a>
-      <a href="#lamps" class="subcat-nav-link" data-subcat="lamps">Floor Lamps</a>
+      <a href="/" class="active subcat-nav-link" data-subcat="all">Home</a>
+      <a href="/reliefs" class="subcat-nav-link" data-subcat="reliefs">Wall Reliefs &amp; Panels</a>
+      <a href="/mirrors" class="subcat-nav-link" data-subcat="mirrors">Mirrors</a>
+      <a href="/figurines" class="subcat-nav-link" data-subcat="figurines">Figurines</a>
+      <a href="/vases" class="subcat-nav-link" data-subcat="vases">Vases &amp; Curios</a>
+      <a href="/lamps" class="subcat-nav-link" data-subcat="lamps">Floor Lamps</a>
       <a href="#contact" id="contactLink" class="nav-contact">Contact</a>
     </nav>
     <div class="top-right">
@@ -1057,11 +1067,11 @@ footer{padding:44px 0 26px;}
     <p class="hero-caption">Shown<a href="/lamps/h75">Swan Floor Lamp, H75</a></p>
   </div>
   <div class="cat-tiles">
-    <a class="cat-tile" href="#reliefs"><img src="images/H57.3-2D.jpg" alt="Twin peacocks floral wall relief" loading="lazy"><span>Wall reliefs &amp; panels</span></a>
-    <a class="cat-tile" href="#mirrors"><img src="images/H70.3-2D.jpg" alt="Leopard jungle wall mirror styled above a console" loading="lazy"><span>Mirrors</span></a>
-    <a class="cat-tile" href="#figurines"><img src="images/H65.3-2D.jpg" alt="Bremen Town Musicians figurine" loading="lazy"><span>Figurines</span></a>
-    <a class="cat-tile" href="#vases"><img src="images/H5.3-2D.jpg" alt="Amethyst candle holder styled in a room" loading="lazy"><span>Vases &amp; curios</span></a>
-    <a class="cat-tile" href="#lamps"><img src="images/H72.3-2D.jpg" alt="Crimson tree floor lamp lit in a living room" loading="lazy"><span>Floor lamps</span></a>
+    <a class="cat-tile" href="/reliefs"><img src="images/H57.3-2D.jpg" alt="Twin peacocks floral wall relief" loading="lazy"><span>Wall reliefs &amp; panels</span></a>
+    <a class="cat-tile" href="/mirrors"><img src="images/H70.3-2D.jpg" alt="Leopard jungle wall mirror styled above a console" loading="lazy"><span>Mirrors</span></a>
+    <a class="cat-tile" href="/figurines"><img src="images/H65.3-2D.jpg" alt="Bremen Town Musicians figurine" loading="lazy"><span>Figurines</span></a>
+    <a class="cat-tile" href="/vases"><img src="images/H5.3-2D.jpg" alt="Amethyst candle holder styled in a room" loading="lazy"><span>Vases &amp; curios</span></a>
+    <a class="cat-tile" href="/lamps"><img src="images/H72.3-2D.jpg" alt="Crimson tree floor lamp lit in a living room" loading="lazy"><span>Floor lamps</span></a>
   </div>
 </div>
 
@@ -2316,7 +2326,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="reliefs" data-first="h51,h52,h53,h58">
           <div class="block-head">
             <h2>Wall Reliefs &amp; Panels</h2>
-            <a href="#reliefs" class="cat-viewall catalog-all">View all</a>
+            <a href="/reliefs" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2324,7 +2334,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="mirrors">
           <div class="block-head">
             <h2>Mirrors</h2>
-            <a href="#mirrors" class="cat-viewall catalog-all">View all</a>
+            <a href="/mirrors" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2332,7 +2342,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="figurines">
           <div class="block-head">
             <h2>Figurines</h2>
-            <a href="#figurines" class="cat-viewall catalog-all">View all</a>
+            <a href="/figurines" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2340,7 +2350,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="vases">
           <div class="block-head">
             <h2>Vases &amp; Curios</h2>
-            <a href="#vases" class="cat-viewall catalog-all">View all</a>
+            <a href="/vases" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2348,7 +2358,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="lamps">
           <div class="block-head">
             <h2>Floor Lamps</h2>
-            <a href="#lamps" class="cat-viewall catalog-all">View all</a>
+            <a href="/lamps" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2358,7 +2368,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
           <div class="home-story-text">
             <h2>Reliefs that hold a moment</h2>
             <p>Each wall relief captures a single scene in layered depth. The Phoenix is built from hundreds of angled shards, so it shifts from gold to garnet as you walk past it.</p>
-            <a href="#reliefs" class="btn-solid">See the wall reliefs</a>
+            <a href="/reliefs" class="btn-solid">See the wall reliefs</a>
           </div>
         </div>
 
@@ -2443,11 +2453,11 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
     <div class="footer-top">
       <div class="footer-mark"><img src="images/logo-full.png" alt="Decorans Design" class="footer-logo"></div>
       <nav class="footer-links" aria-label="Footer">
-        <a href="#reliefs">Wall Reliefs &amp; Panels</a>
-        <a href="#mirrors">Mirrors</a>
-        <a href="#figurines">Figurines</a>
-        <a href="#vases">Vases &amp; Curios</a>
-        <a href="#lamps">Floor Lamps</a>
+        <a href="/reliefs">Wall Reliefs &amp; Panels</a>
+        <a href="/mirrors">Mirrors</a>
+        <a href="/figurines">Figurines</a>
+        <a href="/vases">Vases &amp; Curios</a>
+        <a href="/lamps">Floor Lamps</a>
         <a href="#contact">Contact</a>
         <a href="https://www.instagram.com/decoransdesign/" target="_blank" rel="noopener">Instagram</a>
         <a href="#cart">Cart</a>
@@ -2651,6 +2661,27 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
   }
   window.addEventListener('hashchange', updateActiveNav);
   updateActiveNav();
+
+// Category links (/reliefs, /mirrors, ..., /) switch the view in place on the home and category pages
+(function(){
+  var lastPath = window.location.pathname;
+  function isViewPath(href){ return /^\/((vases|lamps|figurines|mirrors|reliefs)\/?)?$/i.test(href || ''); }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if(!a || window.PRODUCT_ROUTE || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var href = a.getAttribute('href');
+    if(!isViewPath(href) || a.id === 'logoHome') return;
+    e.preventDefault();
+    if(href !== window.location.pathname || window.location.hash) history.pushState(null, '', href);
+    lastPath = window.location.pathname;
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+  });
+  window.addEventListener('popstate', function(){
+    if(window.location.pathname === lastPath) return;  // plain hash changes already fire hashchange
+    lastPath = window.location.pathname;
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+  });
+})();
 
 // Product pages: /<category>/<code>, e.g. /vases/h1. The static page for each product is
 // generated at deploy time by build_pages.py and sets window.PRODUCT_ROUTE to its code.
@@ -2878,13 +2909,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
     page.setAttribute('data-current', id);
     renderProductSpecs(id, card.getAttribute('data-subcat'));
     layoutLower();
-
-    const productName = h3 ? h3.textContent.trim() : '';
-    document.title = productName + ' | 3D Printable STL File | Decorans Design';
-    if(metaDescEl){
-      const firstSentence = (description.textContent.match(/^.*?[.!?](\s|$)/) || [description.textContent])[0].trim();
-      metaDescEl.setAttribute('content', productName + ': print-ready STL/OBJ file. ' + firstSentence);
-    }
+    // title and meta description come from the static page built by build_pages.py
 
     // Photo sets are laid out side by side (studio | close-up on top, lifestyle full width below)
     // instead of a single image; products without a set keep the single image.
@@ -2929,7 +2954,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
         backHash = subcat;
         if(subcatLabels[subcat]) labelText = '← Back to ' + subcatLabels[subcat];
       }
-      backLink.href = '#' + backHash;
+      backLink.href = (backHash === subcat) ? '/' + backHash : '#' + backHash;
       backLink.innerHTML = labelText;
     }
 
@@ -2951,7 +2976,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
 
   function applyTopLevelView(){
     const heroEl = document.querySelector('.hero');
-    const h = window.location.hash.toLowerCase();
+    const h = routeHash();
     if(heroEl) heroEl.style.display = (h === '' || h === '#' || h === '#home') ? '' : 'none';
   }
 
@@ -3012,7 +3037,16 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
   const viewAll = document.getElementById('viewAllLink');
   const story = document.getElementById('homeExtras');
   const catCount = document.getElementById('catCount');
+  const HOME_TITLE = 'Decorans Design | Sculptural 3D Print Files';
+  const CATEGORY_TITLES = {
+    reliefs: 'Wall Relief STL Files for 3D Printing | Decorans Design',
+    mirrors: '3D Printable Wall Mirror STL Files | Decorans Design',
+    figurines: '3D Printable Figurine STL Files | Decorans Design',
+    vases: '3D Printable Vase & Curio STL Files | Decorans Design',
+    lamps: '3D Printable Floor Lamp STL Files | Decorans Design'
+  };
   function applySubcat(val){
+    if(!window.PRODUCT_ROUTE) document.title = CATEGORY_TITLES[val] || HOME_TITLE;
     navLinks.forEach(function(l){ l.classList.toggle('active', l.getAttribute('data-subcat') === val); });
     let shown = 0;
     cards.forEach(function(card){
@@ -3037,7 +3071,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
   }
 
   function routeSubcat(){
-    const hash = window.location.hash.toLowerCase();
+    const hash = routeHash();
     if(!Object.prototype.hasOwnProperty.call(hashToSubcat, hash)){
       // Not a Home&Decoration hash (About, Contact, Cart,
       // or a product detail page) — don't leave a stale category highlighted.

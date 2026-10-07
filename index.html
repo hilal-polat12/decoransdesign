@@ -863,13 +863,7 @@ footer .wrap{display:block;}
 }
 
 /* ---------- category catalogs ---------- */
-.catalog-meta{display:flex;align-items:flex-end;gap:40px;flex-wrap:wrap;}
-.catalog-meta p{color:var(--ash);font-size:15px;max-width:36ch;line-height:1.55;}
-.catalog-controls{display:flex;align-items:center;gap:10px;}
-.cat-arrow{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:none;border:1px solid var(--line);color:var(--bone);cursor:pointer;transition:border-color .15s,background .15s,color .15s;}
-.cat-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;}
-.cat-arrow:hover{background:var(--bone);color:#000;border-color:var(--bone);}
-.catalog-controls .cat-viewall{margin:0 0 0 14px;}
+.catalog .block-head{flex-wrap:nowrap;}
 .catalog-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px;}
 .catalog-track::-webkit-scrollbar{display:none;}
 .catalog-track .mini-card{flex:0 0 calc((100% - 66px)/4);scroll-snap-align:start;}
@@ -882,9 +876,6 @@ footer .wrap{display:block;}
 @media (max-width:640px){
   .catalog-track{gap:12px;}
   .catalog-track .mini-card{flex-basis:62%;}
-  .catalog-meta{gap:16px;}
-  .cat-arrow{display:none;}
-  .catalog-controls .cat-viewall{margin:0;}
 }
 
 /* compact footer */
@@ -907,7 +898,7 @@ footer{padding:44px 0 26px;}
   .home-block,.home-block.catalog{margin-top:64px;}
   .home-story{margin-top:64px;gap:24px;}
   .block-head{margin-bottom:24px;padding-bottom:16px;gap:12px;}
-  .block-head p,.catalog-meta p{font-size:14px;}
+  .block-head p{font-size:14px;}
   .mini-row-5{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:12px;}
   .mini-row-5::-webkit-scrollbar{display:none;}
   .mini-row-5 .mini-card{flex:0 0 62%;scroll-snap-align:start;}
@@ -2325,14 +2316,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="reliefs" data-first="h51,h52,h53,h58">
           <div class="block-head">
             <h2>Wall Reliefs &amp; Panels</h2>
-            <div class="catalog-meta">
-              <p>Layered scenes for the wall, from quiet stories to full battlefields.</p>
-              <div class="catalog-controls">
-                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Wall Reliefs &amp; Panels left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Wall Reliefs &amp; Panels right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-                <a href="#reliefs" class="cat-viewall catalog-all">View all</a>
-              </div>
-            </div>
+            <a href="#reliefs" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2340,14 +2324,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="mirrors">
           <div class="block-head">
             <h2>Mirrors</h2>
-            <div class="catalog-meta">
-              <p>Sculpted frames where the glass is only half the story.</p>
-              <div class="catalog-controls">
-                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Mirrors left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Mirrors right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-                <a href="#mirrors" class="cat-viewall catalog-all">View all</a>
-              </div>
-            </div>
+            <a href="#mirrors" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2355,14 +2332,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="figurines">
           <div class="block-head">
             <h2>Figurines</h2>
-            <div class="catalog-meta">
-              <p>Animals and characters with a pose, a mood and a personality.</p>
-              <div class="catalog-controls">
-                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Figurines left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Figurines right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-                <a href="#figurines" class="cat-viewall catalog-all">View all</a>
-              </div>
-            </div>
+            <a href="#figurines" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2370,14 +2340,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="vases">
           <div class="block-head">
             <h2>Vases &amp; Curios</h2>
-            <div class="catalog-meta">
-              <p>Watertight vessels and shelf sculptures in bold forms and finishes.</p>
-              <div class="catalog-controls">
-                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Vases &amp; Curios left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Vases &amp; Curios right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-                <a href="#vases" class="cat-viewall catalog-all">View all</a>
-              </div>
-            </div>
+            <a href="#vases" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2385,14 +2348,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
         <div class="home-block catalog" data-cat="lamps">
           <div class="block-head">
             <h2>Floor Lamps</h2>
-            <div class="catalog-meta">
-              <p>Sculptural floor lamps that are just as striking switched off.</p>
-              <div class="catalog-controls">
-                <button type="button" class="cat-arrow" data-dir="-1" aria-label="Scroll Floor Lamps left"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-                <button type="button" class="cat-arrow" data-dir="1" aria-label="Scroll Floor Lamps right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-                <a href="#lamps" class="cat-viewall catalog-all">View all</a>
-              </div>
-            </div>
+            <a href="#lamps" class="cat-viewall catalog-all">View all</a>
           </div>
           <div class="catalog-track"></div>
         </div>
@@ -2611,11 +2567,6 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
     ordered.slice(0, 10).forEach(function(c){ track.appendChild(buildMini(c)); });
     var all = block.querySelector('.catalog-all');
     if(all) all.textContent = 'View all ' + items.length;
-    block.querySelectorAll('.cat-arrow').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        track.scrollBy({ left: parseInt(btn.getAttribute('data-dir'), 10) * track.clientWidth * 0.8, behavior: 'smooth' });
-      });
-    });
   });
 
   // Mobile menu

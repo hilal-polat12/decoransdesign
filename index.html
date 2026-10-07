@@ -2564,8 +2564,6 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
     }).filter(Boolean);
     items.forEach(function(c){ if(ordered.indexOf(c) === -1) ordered.push(c); });
     ordered.slice(0, 10).forEach(function(c){ track.appendChild(buildMini(c)); });
-    var all = block.querySelector('.catalog-all');
-    if(all) all.textContent = 'View all ' + items.length;
   });
 
   // Mobile menu

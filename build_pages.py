@@ -241,7 +241,10 @@ def build_category(template, key, products):
             for i, p in enumerate(items)]},
     }
     crumbs = dict(breadcrumb([('Home', SITE + '/'), (cat['label'], url)]), **{'@context': 'https://schema.org'})
-    page = page.replace('</head>', '<style>.hero{display:none}</style>\n' + json_ld(collection) + json_ld(crumbs) + '</head>', 1)
+    page = page.replace('</head>', json_ld(collection) + json_ld(crumbs) + '</head>', 1)
+    # hidden inline (not by a stylesheet rule) so the page script can show it again when the
+    # visitor switches to Home without a reload
+    page = set_meta(page, r'<div class="hero">', '<div class="hero" style="display:none">')
     return page
 
 

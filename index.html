@@ -2842,12 +2842,12 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
     if(!isViewPath(href) || a.id === 'logoHome') return;
     e.preventDefault();
     if(href !== window.location.pathname || window.location.hash) history.pushState(null, '', href);
-    lastPath = window.location.pathname;
     window.dispatchEvent(new HashChangeEvent('hashchange'));
   });
+  // every view change (these links, the logo, plain hashes) ends in a hashchange, so track the path there
+  window.addEventListener('hashchange', function(){ lastPath = window.location.pathname; });
   window.addEventListener('popstate', function(){
     if(window.location.pathname === lastPath) return;  // plain hash changes already fire hashchange
-    lastPath = window.location.pathname;
     window.dispatchEvent(new HashChangeEvent('hashchange'));
   });
 })();

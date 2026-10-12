@@ -1,6 +1,7 @@
 {
   "buildCommand": "python3 build_pages.py",
   "outputDirectory": ".",
+  "trailingSlash": false,
   "rewrites": [
     { "source": "/:cat(vases|lamps|figurines|mirrors|reliefs)/:code(h\\d+)", "destination": "/p/:cat/:code.html" },
     { "source": "/:cat(vases|lamps|figurines|mirrors|reliefs)", "destination": "/c/:cat.html" }

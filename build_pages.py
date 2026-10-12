@@ -4,8 +4,10 @@
 Runs on every Vercel deploy (see vercel.json), so the pages are always built from the current
 index.html: each one is index.html with its own title, description, canonical URL, social preview,
 structured data and main content already in the HTML.
-Run locally with: python build_pages.py
+Run locally with: python build_pages.py (and commit sitemap-state.json, which keeps the sitemap dates)
 """
+import datetime
+import hashlib
 import html
 import json
 import os
@@ -50,6 +52,10 @@ CATEGORIES = {
 
 TITLE_MAX = 60
 DESC_MAX = 155
+RELATED_COUNT = 5
+
+# one whole product card of index.html
+CARD_RE = re.compile(r'<div class="card"[^>]*>.*?<div class="card-footer">.*?</div>\s*</div>\s*</div>\s*', re.S)
 
 
 def attr(attrs, name):
@@ -81,8 +87,15 @@ def parse_products(page):
             'thumb': (thumb.group(1), html.unescape(thumb.group(2))) if thumb else ('', ''),
             'gallery': gallery,
             'price': attr(attrs, 'data-price'),
+            'stamp': attrs + body[:body.find('<div class="card-footer">')],
         })
     return products
+
+
+def category_intros(page):
+    m = re.search(r'<script type="application/json" id="categoryIntros">(.*?)</script>', page, re.S)
+    assert m, 'category intros not found'
+    return json.loads(m.group(1))
 
 
 def first_sentence(text):
@@ -164,7 +177,32 @@ def common_cleanup(page, keep_codes):
     return re.sub(r'<div class="card"[^>]*>.*?<div class="card-footer">', slim, page, flags=re.S)
 
 
-def build_page(template, p):
+def product_cleanup(page, code):
+    """A product page never shows the home view (its links reload the page), so everything that
+    belongs to it is left out: the hero, the other products' cards, the home blocks, the homepage's
+    structured data and the category intros."""
+    page = re.sub(r'<script type="application/ld\+json">.*?</script>\n?', '', page, count=1, flags=re.S)
+    page, n = re.subn(r'<div class="hero">.*?(?=<div id="productPage")', '', page, count=1, flags=re.S)
+    assert n == 1, 'hero not found'
+    page, n = CARD_RE.subn(lambda m: m.group(0) if "/" + code + "'" in m.group(0)[:m.group(0).index('>')] else '', page)
+    assert n > 1 and page.count('<div class="card"') == 1, 'product cards not found'
+    page, n = re.subn(r'<div class="home-extras" id="homeExtras">.*?</div>\s*(?=</div>\s*</section>\s*</main>)', '', page,
+                      count=1, flags=re.S)
+    assert n == 1, 'home blocks not found'
+    page, n = re.subn(r'<!--[^>]*-->\n<script type="application/json" id="categoryIntros">.*?</script>\n?', '', page,
+                      count=1, flags=re.S)
+    assert n == 1, 'category intros not found'
+    return page
+
+
+def related_products(p, products):
+    """The next few designs of the same category, wrapping around, so every product is linked equally often."""
+    same = [q for q in products if q['cat'] == p['cat']]
+    i = same.index(p)
+    return (same[i + 1:] + same[:i])[:RELATED_COUNT]
+
+
+def build_page(template, p, products):
     e = lambda s: html.escape(s, quote=True)
     cat = CATEGORIES.get(p['cat'], {'label': p['cat'].title()})
     url = SITE + '/' + p['cat'] + '/' + p['code']
@@ -172,7 +210,7 @@ def build_page(template, p):
     image_abs = SITE + '/' + image
     code_label = 'Code: ' + p['code'].upper() + ' · 3D Print Design'
 
-    page = common_cleanup(template, {p['code']})
+    page = product_cleanup(template, p['code'])
     page = set_head(page, product_title(p['name']), product_description(p), url, 'product', image_abs)
 
     schema = {
@@ -192,7 +230,8 @@ def build_page(template, p):
     crumbs = dict(breadcrumb([('Home', SITE + '/'), (cat['label'], SITE + '/' + p['cat']), (p['name'], url)]),
                   **{'@context': 'https://schema.org'})
     head_extra = (
-        '<script>window.PRODUCT_ROUTE=' + json.dumps(p['code']) + ';</script>\n'
+        '<script>window.PRODUCT_ROUTE=' + json.dumps(p['code']) + ';window.PRODUCT_PATHS='
+        + json.dumps({q['code']: '/' + q['cat'] + '/' + q['code'] for q in products}, separators=(',', ':')) + ';</script>\n'
         '<style>main > section,.hero{display:none}</style>\n' + json_ld(schema) + json_ld(crumbs)
     )
     page = page.replace('</head>', head_extra + '</head>', 1)
@@ -215,10 +254,22 @@ def build_page(template, p):
                         '<div id="productGallery" class="product-gallery" style="display:grid;">' + imgs + '</div>')
         page = set_meta(page, r'<div class="product-layout">', '<div class="product-layout has-photo-grid">')
         page = set_meta(page, r'<div class="product-image">', '<div class="product-image" style="display:none;">')
+
+    related = related_products(p, products)
+    if related:
+        cards = ''.join(
+            '<a class="mini-card" href="/' + q['cat'] + '/' + q['code'] + '"><div class="mini-thumb"><img loading="lazy" src="'
+            + e(q['thumb'][0]) + '" alt="' + e(q['thumb'][1]) + '"></div><span class="mini-name">' + e(q['name']) + '</span>'
+            + ('<span class="mini-price">$' + e(q['price']) + '</span>' if q['price'] else '') + '</a>'
+            for q in related)
+        page = set_meta(page, r'<div id="productRelated" class="product-related"></div>',
+                        '<div id="productRelated" class="product-related"><div class="block-head"><h2>More '
+                        + e(cat['label']) + '</h2><a href="/' + p['cat'] + '" class="cat-viewall">View all</a></div>'
+                        '<div class="mini-row mini-row-5">' + cards + '</div></div>')
     return page
 
 
-def build_category(template, key, products):
+def build_category(template, key, products, intro):
     e = lambda s: html.escape(s, quote=True)
     cat = CATEGORIES[key]
     url = SITE + '/' + key
@@ -228,6 +279,8 @@ def build_category(template, key, products):
     page = set_head(page, cat['title'], cat['desc'], url, 'website')
     page = set_meta(page, r'<h2 id="homeCatTitle" class="is-all">[^<]*</h2>',
                     '<h1 id="homeCatTitle">' + e(cat['label']) + '</h1>')
+    page = set_meta(page, r'<p class="cat-intro" id="catIntro"></p>',
+                    '<p class="cat-intro" id="catIntro">' + e(intro) + '</p>')
 
     collection = {
         '@context': 'https://schema.org',
@@ -254,18 +307,45 @@ def write(path, text):
         f.write(text)
 
 
+def last_modified(stamps):
+    """Sitemap date of each URL: the day its own content (not the shared layout) last changed.
+    sitemap-state.json remembers a fingerprint and date per URL; it is committed, so a deploy only
+    gives today's date to the pages whose content differs from the last committed state."""
+    path = os.path.join(ROOT, 'sitemap-state.json')
+    try:
+        with open(path, encoding='utf-8') as f:
+            old = json.load(f)
+    except (OSError, ValueError):
+        old = {}
+    today = datetime.date.today().isoformat()
+    state = {}
+    for url, stamp in stamps:
+        digest = hashlib.sha1(stamp.encode('utf-8')).hexdigest()[:16]
+        state[url] = old[url] if url in old and old[url][0] == digest else [digest, today]
+    write(path, json.dumps(state, indent=0) + '\n')
+    return {url: date for url, (_, date) in state.items()}
+
+
 def main():
     template = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
     products = parse_products(template)
     assert products, 'no product cards found in index.html'
+    intros = category_intros(template)
     for p in products:
-        write(os.path.join(ROOT, 'p', p['cat'], p['code'] + '.html'), build_page(template, p))
+        write(os.path.join(ROOT, 'p', p['cat'], p['code'] + '.html'), build_page(template, p, products))
     for key in CATEGORIES:
-        write(os.path.join(ROOT, 'c', key + '.html'), build_category(template, key, products))
+        write(os.path.join(ROOT, 'c', key + '.html'), build_category(template, key, products, intros[key]))
 
-    urls = [SITE + '/'] + [SITE + '/' + k for k in CATEGORIES] + [SITE + '/' + p['cat'] + '/' + p['code'] for p in products]
+    def spec(p):
+        m = re.search(r'^\s*' + p['code'] + r':\{.*$', template, re.M)
+        return m.group(0) if m else ''
+    listing = {key: ''.join(p['code'] + p['name'] + p['price'] for p in products if key in ('', p['cat'])) for key in ['', *CATEGORIES]}
+    stamps = [(SITE + '/', listing[''])]
+    stamps += [(SITE + '/' + k, CATEGORIES[k]['title'] + CATEGORIES[k]['desc'] + intros[k] + listing[k]) for k in CATEGORIES]
+    stamps += [(SITE + '/' + p['cat'] + '/' + p['code'], p['stamp'] + spec(p)) for p in products]
+    dates = last_modified(stamps)
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    lines += ['  <url><loc>' + u + '</loc></url>' for u in urls]
+    lines += ['  <url><loc>' + u + '</loc><lastmod>' + dates[u] + '</lastmod></url>' for u, _ in stamps]
     write(os.path.join(ROOT, 'sitemap.xml'), '\n'.join(lines + ['</urlset>', '']))
     print('built', len(products), 'product pages,', len(CATEGORIES), 'category pages and sitemap.xml')
 

@@ -121,7 +121,7 @@ def product_title(name):
 def product_description(p):
     text = first_sentence(p['desc'])
     if 'STL' not in text:
-        text = p['name'] + ': 3D printable STL, OBJ, 3MF and GLB file. ' + text
+        text = p['name'] + ': 3D printable STL, OBJ, 3MF, GLB file. ' + text
     return clip(text, DESC_MAX)
 
 

@@ -121,7 +121,7 @@ def product_title(name):
 def product_description(p):
     text = first_sentence(p['desc'])
     if 'STL' not in text:
-        text = p['name'] + ': 3D printable STL and OBJ file. ' + text
+        text = p['name'] + ': 3D printable STL, OBJ, 3MF and GLB file. ' + text
     return clip(text, DESC_MAX)
 
 
@@ -343,6 +343,8 @@ def main():
     stamps = [(SITE + '/', listing[''])]
     stamps += [(SITE + '/' + k, CATEGORIES[k]['title'] + CATEGORIES[k]['desc'] + intros[k] + listing[k]) for k in CATEGORIES]
     stamps += [(SITE + '/' + p['cat'] + '/' + p['code'], p['stamp'] + spec(p)) for p in products]
+    with open(os.path.join(ROOT, 'faq.html'), encoding='utf-8') as f:
+        stamps.append((SITE + '/faq.html', f.read()))
     dates = last_modified(stamps)
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     lines += ['  <url><loc>' + u + '</loc><lastmod>' + dates[u] + '</lastmod></url>' for u, _ in stamps]

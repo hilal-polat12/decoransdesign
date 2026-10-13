@@ -11,7 +11,7 @@ Static site for www.decoransdesign.com, deployed on Vercel.
   - `sitemap.xml`
 - `p/`, `c/` and `sitemap.xml` are generated and not committed.
 - `sitemap-state.json` is committed: it remembers when each page's content last changed, for the dates in the sitemap.
-- `terms.html`, `license.html`, `refund-policy.html`, `privacy-policy.html` and `404.html` are plain pages styled by `legal.css`.
+- `faq.html`, `terms.html`, `license.html`, `refund-policy.html`, `privacy-policy.html` and `404.html` are plain pages styled by `legal.css`.
 
 ## Editing
 

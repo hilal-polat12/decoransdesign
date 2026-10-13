@@ -19,6 +19,7 @@ a{color:var(--bone);}
 .legal-kicker{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--bronze);margin-bottom:12px;}
 .legal h1{font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:clamp(36px,6vw,64px);line-height:.95;letter-spacing:-.01em;margin-bottom:14px;}
 .legal .legal-group{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--bronze);margin:64px 0 -16px;padding-top:24px;border-top:1px solid var(--line);}
+.legal .legal-group + p{margin-top:30px;}
 .legal-updated{font-size:13px;color:var(--ash);margin-bottom:40px;}
 .legal h2{font-stretch:110%;font-weight:700;font-size:20px;margin:40px 0 12px;}
 .legal p{font-size:15.5px;color:var(--ash);margin-bottom:14px;}

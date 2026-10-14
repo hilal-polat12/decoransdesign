@@ -889,6 +889,15 @@ footer .wrap{display:block;}
 @media (max-width:640px){
   .catalog-track{gap:12px;}
   .catalog-track .mini-card{flex-basis:62%;}
+  /* phones: show the whole square photo, so round mirrors are not cut at the sides */
+  .catalog-track .mini-thumb{aspect-ratio:1/1;}
+  /* product pages: a smaller "More ..." row under the product */
+  .product-related{margin-top:56px;}
+  .product-related .block-head h2{font-size:20px;}
+  .product-related .mini-row-5 .mini-card{flex-basis:40%;}
+  .product-related .mini-row-5 .mini-thumb{aspect-ratio:1/1;margin-bottom:10px;}
+  .product-related .mini-name{font-size:13px;}
+  .product-related .mini-price{font-size:12.5px;}
 }
 
 /* compact footer */
@@ -2848,7 +2857,7 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
       return items.filter(function(c){ return codeOf(c) === code; })[0];
     }).filter(Boolean);
     items.forEach(function(c){ if(ordered.indexOf(c) === -1) ordered.push(c); });
-    ordered.slice(0, 10).forEach(function(c){ track.appendChild(buildMini(c)); });
+    ordered.slice(0, 12).forEach(function(c){ track.appendChild(buildMini(c)); });
   });
 
   // Mobile menu
@@ -3411,8 +3420,15 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
   const cartQuoteSuccess = document.getElementById('cartQuoteSuccess');
 
   function getCart(){
-    try{ return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+    let items;
+    try{ items = JSON.parse(localStorage.getItem(CART_KEY)) || []; }
     catch(e){ return []; }
+    // price, name and photo always come from today's catalog, so a piece added before a change
+    // (for example when prices were $50) shows the current values
+    return items.map(function(i){
+      const card = document.querySelector('#home .grid > .card[onclick*="/' + String(i.code).toLowerCase() + '\'"]');
+      return card ? extractItemFromCard(card) : i;
+    });
   }
   function saveCart(items){
     localStorage.setItem(CART_KEY, JSON.stringify(items));

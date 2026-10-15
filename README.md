@@ -4,7 +4,7 @@ Static site for www.decoransdesign.com, deployed on Vercel.
 
 ## How it is built
 
-- `index.html` is the home page and the single source for everything else: layout, styles, script, the 83 product cards and the category intro texts (`#categoryIntros`).
+- `index.html` is the home page and the single source for everything else: layout, styles, script, the 84 product cards and the category intro texts (`#categoryIntros`).
 - `build_pages.py` runs on every Vercel deploy (`vercel.json`) and generates from `index.html`:
   - one page per product, `/vases/h1` → `p/vases/h1.html`
   - one page per category, `/reliefs` → `c/reliefs.html`

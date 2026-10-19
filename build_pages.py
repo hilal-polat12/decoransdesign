@@ -208,7 +208,7 @@ def build_page(template, p, products):
     url = SITE + '/' + p['cat'] + '/' + p['code']
     image = p['gallery'][0][0] if p['gallery'] else p['thumb'][0]
     image_abs = SITE + '/' + image
-    code_label = 'Code: ' + p['code'].upper() + ' · 3D Print Design'
+    code_label = 'Code: ' + p['code'].upper() + ' · Design File'
 
     page = product_cleanup(template, p['code'])
     page = set_head(page, product_title(p['name']), product_description(p), url, 'product', image_abs)

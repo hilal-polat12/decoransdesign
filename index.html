@@ -1025,6 +1025,7 @@ footer{padding:44px 0 26px;}
 .spec-list dt,.spec-list dd{margin:0;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.45;}
 .spec-list dt{color:var(--ash,rgba(234,228,218,.6));padding-right:28px;}
 .spec-list dd{color:var(--bone);font-weight:500;}
+.spec-list dt.spec-group{grid-column:1 / -1;padding:22px 0 9px;color:var(--bone);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;}
 .product-specs-note{margin-top:12px;font-size:12.5px;line-height:1.55;color:var(--ash,rgba(234,228,218,.6));}
 /* ---------- legal links ---------- */
 .footer-legal{display:flex;flex-wrap:wrap;gap:8px 20px;}
@@ -1114,7 +1115,7 @@ footer{padding:44px 0 26px;}
         <h2 id="productTitle"></h2>
         <p id="productDescription" class="product-description"></p>
         <div id="productSpecs" class="product-specs" style="display:none;">
-          <span class="product-tech-label">Print Specs</span>
+          <span class="product-tech-label">Production Specs</span>
           <dl id="productSpecList" class="spec-list"></dl>
           <p id="productSpecsNote" class="product-specs-note"></p>
         </div>
@@ -1539,7 +1540,7 @@ Decorative curio: it is not designed to hold water or stems." data-gallery="imag
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="vases" data-price="25" onclick="location.href='/vases/h81';" data-tech="Designed for ceramic clay 3D printing (paste extrusion), not for plastic filament.
+        <div class="card" data-subcat="vases" data-price="25" onclick="location.href='/vases/h81';" data-tech="Designed for ceramic clay 3D printing (paste extrusion).
 Print in two parts: the tortoise body with the shell rim, and the mountain on top; join them while leather-hard with scoring and slip along the shell rim, where the seam hides in the growth rings.
 Clay cannot be printed with supports, so print the legs and the lifted head as separate pieces and attach them with slip, or prop the neck with a clay stilt while it dries.
 Use a 1.5-2 mm nozzle and 0.8-1 mm layers; the pagoda, the waterfall and the claw tips are the finest details, so refine them by hand with a modeling tool after printing.
@@ -1556,7 +1557,7 @@ Dry slowly under plastic for several days, bisque fire, then glaze: amber-ochre 
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="vases" data-price="25" onclick="location.href='/vases/h82';" data-tech="Designed for ceramic clay 3D printing (paste extrusion), not for plastic filament.
+        <div class="card" data-subcat="vases" data-price="25" onclick="location.href='/vases/h82';" data-tech="Designed for ceramic clay 3D printing (paste extrusion).
 Print the body and legs upright; clay cannot be printed with supports, so print the raised trunk and the two tusks as separate pieces and attach them with scoring and slip while leather-hard.
 Use a 1.5-2 mm nozzle and 0.8-1 mm layers, then sharpen the skin wrinkles, the saddle border and the tassels by hand with a modeling tool.
 Keep walls at 3-4 mm and the trunk solid; scale the model up by about 12% to make up for drying and firing shrinkage.
@@ -1574,7 +1575,7 @@ Dry slowly, bisque fire, then glaze: deep sapphire blue reactive glaze that pool
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="vases" data-price="25" onclick="location.href='/vases/h83';" data-tech="Designed for ceramic clay 3D printing (paste extrusion), not for plastic filament.
+        <div class="card" data-subcat="vases" data-price="25" onclick="location.href='/vases/h83';" data-tech="Designed for ceramic clay 3D printing (paste extrusion).
 Print the rocky base and the shell upright as one piece; the aperture lip leans outward, so keep it under about 30 degrees or print it separately and attach it with scoring and slip.
 Use a 1.5-2 mm nozzle and 0.8-1 mm layers for the shell and the chamber walls; the corals, fish and the temple medallion are too fine for the nozzle, so carve them into the chambers by hand while leather-hard, or press them from small molds and attach them with slip.
 Keep walls at 3-4 mm; scale the model up by about 12% to make up for drying and firing shrinkage.
@@ -1591,7 +1592,7 @@ Decorative curio: it is not designed to hold water." data-gallery="images/H83.1-
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="vases" data-price="25" onclick="location.href='/vases/h84';" data-tech="Designed for ceramic clay 3D printing (paste extrusion), not for plastic filament.
+        <div class="card" data-subcat="vases" data-price="25" onclick="location.href='/vases/h84';" data-tech="Designed for ceramic clay 3D printing (paste extrusion).
 Print the head, neck and base upright as one hollow piece; the hair stays close to the head, so it builds without supports.
 Clay cannot be printed with supports, so print the lavender cluster as a separate piece and attach it to the back of the head with scoring and slip while leather-hard.
 Use a 1.5-2 mm nozzle and 0.8-1 mm layers, then refine the closed eyelids, the lashes and the lavender buds by hand with a modeling tool.
@@ -3049,90 +3050,91 @@ function productPath(code){
 // Print specs taken from each product's JSON (Decorans-Web.glb-Json). 'obj' = free-standing piece at its modeled size
 // (scales freely); 'wall' = wall relief / mirror modeled at its real size.
 const PRODUCT_SPECS = {
-  h1:{t:'obj',size:[201,188,300],supports:false,overhang:9,g:570,h:13,watertight:true},
-  h2:{t:'obj',size:[151,147,300],supports:false,overhang:1,g:240,h:6,watertight:true},
-  h3:{t:'obj',size:[221,223,300],supports:true,overhang:10,g:800,h:18,watertight:true},
-  h4:{t:'obj',size:[252,215,300],supports:true,overhang:25,g:960,h:22,watertight:true},
-  h5:{t:'obj',size:[297,290,300],supports:false,overhang:2,g:1620,h:37,watertight:true},
-  h6:{t:'obj',size:[184,163,300],supports:true,overhang:14,g:880,h:20,watertight:true},
-  h7:{t:'obj',size:[188,188,300],supports:false,overhang:1,g:810,h:18,watertight:true},
-  h8:{t:'obj',size:[177,168,300],supports:false,overhang:7,g:530,h:12,watertight:true},
-  h9:{t:'obj',size:[260,178,300],supports:true,overhang:10,g:890,h:20,watertight:true},
-  h10:{t:'obj',size:[233,233,300],supports:true,overhang:26,g:1500,h:34,watertight:true},
-  h11:{t:'obj',size:[169,170,300],supports:false,overhang:8,g:630,h:14,watertight:false},
-  h12:{t:'obj',size:[253,168,300],supports:true,overhang:14,g:390,h:9,watertight:true},
-  h13:{t:'obj',size:[283,174,300],supports:false,overhang:6,g:600,h:14,watertight:true},
-  h14:{t:'obj',size:[152,151,300],supports:true,overhang:27,g:460,h:10,watertight:false},
-  h15:{t:'obj',size:[300,299,161],supports:false,overhang:8,g:810,h:18,watertight:true},
-  h16:{t:'obj',size:[157,157,300],supports:true,overhang:12,g:630,h:14,watertight:true},
-  h17:{t:'obj',size:[235,234,300],supports:true,overhang:22,g:910,h:21,watertight:true},
-  h18:{t:'obj',size:[236,126,300],supports:false,overhang:5,g:370,h:8,watertight:true},
-  h19:{t:'obj',size:[182,160,300],supports:false,overhang:1,g:580,h:13,watertight:true},
-  h20:{t:'obj',size:[143,143,300],supports:true,overhang:14,g:500,h:11,watertight:false},
-  h21:{t:'obj',size:[406,412,1000],supports:false,sup:'Not needed',overhang:2,g:5840,h:133,watertight:true},
-  h22:{t:'obj',size:[368,369,1000],supports:false,sup:'Not needed',overhang:7,g:15070,h:342,watertight:false},
-  h23:{t:'obj',size:[421,402,1000],supports:false,sup:'Not needed',overhang:6,g:2960,h:67,watertight:false},
-  h24:{t:'obj',size:[481,544,1000],supports:false,sup:'Not needed',overhang:8,g:7830,h:178,watertight:true},
-  h25:{t:'obj',size:[485,498,1000],supports:false,sup:'Not needed',overhang:13,g:10860,h:247,watertight:true},
-  h26:{t:'obj',size:[324,326,1000],supports:false,sup:'Not needed',overhang:13,g:2130,h:48,watertight:true},
-  h27:{t:'obj',size:[442,442,1000],supports:false,sup:'Not needed',overhang:15,g:7080,h:161,watertight:false},
-  h28:{t:'obj',size:[472,473,1000],supports:false,sup:'Not needed',overhang:17,g:5340,h:121,watertight:true},
-  h29:{t:'obj',size:[483,496,1000],supports:false,sup:'Not needed',overhang:9,g:5450,h:124,watertight:false},
-  h30:{t:'obj',size:[832,797,1000],supports:false,sup:'Not needed',overhang:29,g:7560,h:172,watertight:true},
-  h31:{t:'obj',size:[527,600,350],supports:true,overhang:16,g:3630,h:82,watertight:true},
-  h32:{t:'obj',size:[435,543,600],supports:false,overhang:7,g:8140,h:185,watertight:true},
-  h33:{t:'obj',size:[600,204,421],supports:false,overhang:8,g:1370,h:31,watertight:true},
-  h34:{t:'obj',size:[600,283,370],supports:true,overhang:12,g:2190,h:50,watertight:true},
-  h35:{t:'obj',size:[453,206,600],supports:true,overhang:17,g:1770,h:40,watertight:true},
-  h36:{t:'obj',size:[479,600,405],supports:true,overhang:11,g:2280,h:52,watertight:true},
-  h37:{t:'obj',size:[600,532,281],supports:true,overhang:22,g:1720,h:39,watertight:true},
-  h38:{t:'obj',size:[600,318,285],supports:true,overhang:14,g:850,h:19,watertight:true},
-  h39:{t:'obj',size:[516,440,600],supports:false,overhang:9,g:5530,h:126,watertight:true},
-  h40:{t:'obj',size:[433,600,425],supports:true,overhang:11,g:1130,h:26,watertight:true},
-  h41:{t:'wall',size:[600,597,110],relief:0,keyholes:0,mirror:null,g:2260,h:51,watertight:true},
-  h42:{t:'wall',size:[600,574,104],relief:0,keyholes:0,mirror:null,g:1320,h:30,watertight:true},
-  h43:{t:'wall',size:[353,600,35],relief:0,keyholes:0,mirror:null,g:900,h:20,watertight:false},
-  h44:{t:'wall',size:[600,413,27],relief:0,keyholes:0,mirror:null,g:1400,h:32,watertight:true},
-  h45:{t:'wall',size:[600,423,120],relief:0,keyholes:0,mirror:null,g:2130,h:48,watertight:false},
-  h46:{t:'wall',size:[600,407,42],relief:0,keyholes:0,mirror:null,g:2050,h:47,watertight:true},
-  h47:{t:'wall',size:[600,388,43],relief:0,keyholes:0,mirror:null,g:1950,h:44,watertight:true},
-  h48:{t:'wall',size:[592,600,120],relief:0,keyholes:0,mirror:null,g:3440,h:78,watertight:true},
-  h49:{t:'wall',size:[600,405,30],relief:0,keyholes:0,mirror:null,g:1530,h:35,watertight:true},
-  h50:{t:'wall',size:[700,343,30],relief:23.8,keyholes:2,mirror:null,g:1530,h:35,watertight:true},
-  h51:{t:'wall',size:[600,324,68],relief:0,keyholes:0,mirror:null,g:1500,h:34,watertight:false},
-  h52:{t:'wall',size:[600,375,120],relief:0,keyholes:0,mirror:null,g:2870,h:65,watertight:true},
-  h53:{t:'wall',size:[600,419,101],relief:0,keyholes:0,mirror:null,g:2040,h:46,watertight:true},
-  h54:{t:'wall',size:[600,424,87],relief:0,keyholes:0,mirror:null,g:600,h:14,watertight:true},
-  h55:{t:'wall',size:[600,234,25],relief:0,keyholes:0,mirror:null,g:760,h:17,watertight:false},
-  h56:{t:'wall',size:[600,260,27],relief:0,keyholes:0,mirror:null,g:1090,h:25,watertight:true},
-  h57:{t:'wall',size:[600,437,31],relief:25.4,keyholes:2,mirror:null,g:1690,h:38,watertight:true},
-  h58:{t:'wall',size:[600,334,83],relief:0,keyholes:0,mirror:null,g:1680,h:38,watertight:true},
-  h59:{t:'wall',size:[600,352,32],relief:25.5,keyholes:2,mirror:null,g:1320,h:30,watertight:true},
-  h60:{t:'wall',size:[600,270,50],relief:0,keyholes:0,mirror:null,g:1530,h:35,watertight:false},
-  h61:{t:'wall',size:[431,600,120],relief:0,keyholes:0,mirror:null,g:2360,h:54,watertight:false},
-  h62:{t:'wall',size:[600,600,25],relief:18.7,keyholes:2,mirror:'Ø345 mm round, 3–4 mm thick',g:1470,h:33,watertight:true},
-  h63:{t:'wall',size:[600,348,32],relief:25.7,keyholes:2,mirror:null,g:1290,h:29,watertight:true},
-  h64:{t:'obj',size:[439,531,600],supports:false,overhang:8,g:3950,h:90,watertight:true},
-  h65:{t:'obj',size:[416,394,600],supports:false,overhang:7,g:2160,h:49,watertight:false},
-  h66:{t:'obj',size:[383,290,600],supports:false,overhang:7,g:3220,h:73,watertight:true},
-  h67:{t:'wall',size:[600,422,56],relief:0,keyholes:0,mirror:null,g:2030,h:46,watertight:false},
-  h68:{t:'wall',size:[430,800,50],relief:0,keyholes:0,mirror:null,g:1290,h:29,watertight:false},
-  h69:{t:'wall',size:[600,568,31],relief:25.1,keyholes:2,mirror:'Ø242 mm round, 3–4 mm thick',g:1220,h:28,watertight:true},
-  h70:{t:'wall',size:[475,600,37],relief:31.4,keyholes:2,mirror:'Custom-cut shape, approx. 280 × 306 mm, 3–4 mm thick',g:1400,h:32,watertight:true},
-  h71:{t:'wall',size:[600,375,95],relief:0,keyholes:0,mirror:null,g:1710,h:39,watertight:false},
-  h72:{t:'obj',size:[493,461,1000],supports:false,sup:'Not needed',overhang:19,g:2290,h:52,watertight:false},
-  h73:{t:'obj',size:[600,361,600],supports:true,overhang:13,g:1180,h:27,watertight:false},
-  h74:{t:'obj',size:[553,425,600],supports:true,overhang:14,g:8580,h:195,watertight:true},
-  h75:{t:'obj',size:[1182,471,1000],supports:false,sup:'Not needed',overhang:13,g:6330,h:144,watertight:true},
-  h76:{t:'obj',size:[135,153,300],supports:false,overhang:7,g:310,h:7,watertight:true},
-  h77:{t:'wall',size:[800,794,120],relief:0,keyholes:0,mirror:'Round, approx. Ø415 mm, 3–4 mm thick',g:9160,h:208,watertight:false},
-  h78:{t:'wall',size:[659,800,120],relief:0,keyholes:0,mirror:'Round, approx. Ø345 mm, 3–4 mm thick',g:5410,h:123,watertight:false},
-  h79:{t:'wall',size:[795,800,120],relief:0,keyholes:0,mirror:'Round, approx. Ø365 mm, 3–4 mm thick',g:4020,h:91,watertight:false},
-  h80:{t:'wall',size:[800,799,120],relief:0,keyholes:0,mirror:'Round, approx. Ø395 mm, 3–4 mm thick',g:7140,h:162,watertight:false},
-  // clay: designed for clay 3D printing, so no filament or print time figures; measured from the STL at 300 mm
-  h81:{t:'obj',clay:true,size:[201,300,221],sup:'Not possible in clay; print the head and legs separately (see notes)',overhang:20,watertight:true},
-  h82:{t:'obj',clay:true,size:[300,141,274],sup:'Not possible in clay; print the trunk and tusks separately (see notes)',overhang:11,watertight:false},
-  h83:{t:'obj',clay:true,size:[287,143,300],sup:'Not possible in clay; keep the aperture lip under 30° (see notes)',overhang:7,watertight:true}
+  h1:{t:'obj',size:[201,188,300],supports:false,overhang:9,g:570,h:13,watertight:true,v:1736},
+  h2:{t:'obj',size:[151,147,300],supports:false,overhang:1,g:240,h:6,watertight:true,v:284},
+  h3:{t:'obj',size:[221,223,300],supports:true,overhang:10,g:800,h:18,watertight:true,v:1588},
+  h4:{t:'obj',size:[252,215,300],supports:true,overhang:25,g:960,h:22,watertight:true,v:3127},
+  h5:{t:'obj',size:[297,290,300],supports:false,overhang:2,g:1620,h:37,watertight:true,v:5912},
+  h6:{t:'obj',size:[184,163,300],supports:true,overhang:14,g:880,h:20,watertight:true,v:2985},
+  h7:{t:'obj',size:[188,188,300],supports:false,overhang:1,g:810,h:18,watertight:true,v:2676},
+  h8:{t:'obj',size:[177,168,300],supports:false,overhang:7,g:530,h:12,watertight:true,v:1131},
+  h9:{t:'obj',size:[260,178,300],supports:true,overhang:10,g:890,h:20,watertight:true,v:3486},
+  h10:{t:'obj',size:[233,233,300],supports:true,overhang:26,g:1500,h:34,watertight:true,v:6008},
+  h11:{t:'obj',size:[169,170,300],supports:false,overhang:8,g:630,h:14,watertight:false,v:1915},
+  h12:{t:'obj',size:[253,168,300],supports:true,overhang:14,g:390,h:9,watertight:true,v:626},
+  h13:{t:'obj',size:[283,174,300],supports:false,overhang:6,g:600,h:14,watertight:true,v:1742},
+  h14:{t:'obj',size:[152,151,300],supports:true,overhang:27,g:460,h:10,watertight:false,v:1220},
+  h15:{t:'obj',size:[300,299,161],supports:false,overhang:8,g:810,h:18,watertight:true,v:2797},
+  h16:{t:'obj',size:[157,157,300],supports:true,overhang:12,g:630,h:14,watertight:true,v:2055},
+  h17:{t:'obj',size:[235,234,300],supports:true,overhang:22,g:910,h:21,watertight:true,v:2929},
+  h18:{t:'obj',size:[236,126,300],supports:false,overhang:5,g:370,h:8,watertight:true,v:895},
+  h19:{t:'obj',size:[182,160,300],supports:false,overhang:1,g:580,h:13,watertight:true,v:1578},
+  h20:{t:'obj',size:[143,143,300],supports:true,overhang:14,g:500,h:11,watertight:false,v:1541},
+  h21:{t:'obj',size:[406,412,1000],supports:false,sup:'Not needed',overhang:2,g:5840,h:133,watertight:true,v:21056},
+  h22:{t:'obj',size:[368,369,1000],supports:false,sup:'Not needed',overhang:7,g:15070,h:342,watertight:false,v:71664},
+  h23:{t:'obj',size:[421,402,1000],supports:false,sup:'Not needed',overhang:6,g:2960,h:67,watertight:false,v:11818},
+  h24:{t:'obj',size:[481,544,1000],supports:false,sup:'Not needed',overhang:8,g:7830,h:178,watertight:true,v:25567},
+  h25:{t:'obj',size:[485,498,1000],supports:false,sup:'Not needed',overhang:13,g:10860,h:247,watertight:true,v:45375},
+  h26:{t:'obj',size:[324,326,1000],supports:false,sup:'Not needed',overhang:13,g:2130,h:48,watertight:true,v:6712},
+  h27:{t:'obj',size:[442,442,1000],supports:false,sup:'Not needed',overhang:15,g:7080,h:161,watertight:false,v:24756},
+  h28:{t:'obj',size:[472,473,1000],supports:false,sup:'Not needed',overhang:17,g:5340,h:121,watertight:true,v:17759},
+  h29:{t:'obj',size:[483,496,1000],supports:false,sup:'Not needed',overhang:9,g:5450,h:124,watertight:false,v:18939},
+  h30:{t:'obj',size:[832,797,1000],supports:false,sup:'Not needed',overhang:29,g:7560,h:172,watertight:true,v:25991},
+  h31:{t:'obj',size:[527,600,350],supports:true,overhang:16,g:3630,h:82,watertight:true,v:15769},
+  h32:{t:'obj',size:[435,543,600],supports:false,overhang:7,g:8140,h:185,watertight:true,v:37877},
+  h33:{t:'obj',size:[600,204,421],supports:false,overhang:8,g:1370,h:31,watertight:true,v:4314},
+  h34:{t:'obj',size:[600,283,370],supports:true,overhang:12,g:2190,h:50,watertight:true,v:8840},
+  h35:{t:'obj',size:[453,206,600],supports:true,overhang:17,g:1770,h:40,watertight:true,v:7177},
+  h36:{t:'obj',size:[479,600,405],supports:true,overhang:11,g:2280,h:52,watertight:true,v:9183},
+  h37:{t:'obj',size:[600,532,281],supports:true,overhang:22,g:1720,h:39,watertight:true,v:6492},
+  h38:{t:'obj',size:[600,318,285],supports:true,overhang:14,g:850,h:19,watertight:true,v:2691},
+  h39:{t:'obj',size:[516,440,600],supports:false,overhang:9,g:5530,h:126,watertight:true,v:23812},
+  h40:{t:'obj',size:[433,600,425],supports:true,overhang:11,g:1130,h:26,watertight:true,v:3725},
+  h41:{t:'wall',size:[600,597,110],relief:0,keyholes:0,mirror:null,g:2260,h:51,watertight:true,v:5126},
+  h42:{t:'wall',size:[600,574,104],relief:0,keyholes:0,mirror:null,g:1320,h:30,watertight:true,v:2300},
+  h43:{t:'wall',size:[353,600,35],relief:0,keyholes:0,mirror:null,g:900,h:20,watertight:false,v:2798},
+  h44:{t:'wall',size:[600,413,27],relief:0,keyholes:0,mirror:null,g:1400,h:32,watertight:true,v:3673},
+  h45:{t:'wall',size:[600,423,120],relief:0,keyholes:0,mirror:null,g:2130,h:48,watertight:false,v:7105},
+  h46:{t:'wall',size:[600,407,42],relief:0,keyholes:0,mirror:null,g:2050,h:47,watertight:true,v:5987},
+  h47:{t:'wall',size:[600,388,43],relief:0,keyholes:0,mirror:null,g:1950,h:44,watertight:true,v:5696},
+  h48:{t:'wall',size:[592,600,120],relief:0,keyholes:0,mirror:null,g:3440,h:78,watertight:true,v:12552},
+  h49:{t:'wall',size:[600,405,30],relief:0,keyholes:0,mirror:null,g:1530,h:35,watertight:true,v:4115},
+  h50:{t:'wall',size:[700,343,30],relief:23.8,keyholes:2,mirror:null,g:1530,h:35,watertight:true,v:4084},
+  h51:{t:'wall',size:[600,324,68],relief:0,keyholes:0,mirror:null,g:1500,h:34,watertight:false,v:4278},
+  h52:{t:'wall',size:[600,375,120],relief:0,keyholes:0,mirror:null,g:2870,h:65,watertight:true,v:11023},
+  h53:{t:'wall',size:[600,419,101],relief:0,keyholes:0,mirror:null,g:2040,h:46,watertight:true,v:7526},
+  h54:{t:'wall',size:[600,424,87],relief:0,keyholes:0,mirror:null,g:600,h:14,watertight:true,v:1276},
+  h55:{t:'wall',size:[600,234,25],relief:0,keyholes:0,mirror:null,g:760,h:17,watertight:false,v:1754},
+  h56:{t:'wall',size:[600,260,27],relief:0,keyholes:0,mirror:null,g:1090,h:25,watertight:true,v:3148},
+  h57:{t:'wall',size:[600,437,31],relief:25.4,keyholes:2,mirror:null,g:1690,h:38,watertight:true,v:4945},
+  h58:{t:'wall',size:[600,334,83],relief:0,keyholes:0,mirror:null,g:1680,h:38,watertight:true,v:5267},
+  h59:{t:'wall',size:[600,352,32],relief:25.5,keyholes:2,mirror:null,g:1320,h:30,watertight:true,v:3286},
+  h60:{t:'wall',size:[600,270,50],relief:0,keyholes:0,mirror:null,g:1530,h:35,watertight:false,v:4439},
+  h61:{t:'wall',size:[431,600,120],relief:0,keyholes:0,mirror:null,g:2360,h:54,watertight:false,v:8872},
+  h62:{t:'wall',size:[600,600,25],relief:18.7,keyholes:2,mirror:'Ø345 mm round, 3–4 mm thick',g:1470,h:33,watertight:true,v:3676},
+  h63:{t:'wall',size:[600,348,32],relief:25.7,keyholes:2,mirror:null,g:1290,h:29,watertight:true,v:3571},
+  h64:{t:'obj',size:[439,531,600],supports:false,overhang:8,g:3950,h:90,watertight:true,v:15060},
+  h65:{t:'obj',size:[416,394,600],supports:false,overhang:7,g:2160,h:49,watertight:false,v:7413},
+  h66:{t:'obj',size:[383,290,600],supports:false,overhang:7,g:3220,h:73,watertight:true,v:13649},
+  h67:{t:'wall',size:[600,422,56],relief:0,keyholes:0,mirror:null,g:2030,h:46,watertight:false,v:5492},
+  h68:{t:'wall',size:[430,800,50],relief:0,keyholes:0,mirror:null,g:1290,h:29,watertight:false,v:3836},
+  h69:{t:'wall',size:[600,568,31],relief:25.1,keyholes:2,mirror:'Ø242 mm round, 3–4 mm thick',g:1220,h:28,watertight:true,v:3381},
+  h70:{t:'wall',size:[475,600,37],relief:31.4,keyholes:2,mirror:'Custom-cut shape, approx. 280 × 306 mm, 3–4 mm thick',g:1400,h:32,watertight:true,v:3933},
+  h71:{t:'wall',size:[600,375,95],relief:0,keyholes:0,mirror:null,g:1710,h:39,watertight:false,v:5845},
+  h72:{t:'obj',size:[493,461,1000],supports:false,sup:'Not needed',overhang:19,g:2290,h:52,watertight:false,v:5524},
+  h73:{t:'obj',size:[600,361,600],supports:true,overhang:13,g:1180,h:27,watertight:false,v:3382},
+  h74:{t:'obj',size:[553,425,600],supports:true,overhang:14,g:8580,h:195,watertight:true,v:40021},
+  h75:{t:'obj',size:[1182,471,1000],supports:false,sup:'Not needed',overhang:13,g:6330,h:144,watertight:true,v:25715},
+  h76:{t:'obj',size:[135,153,300],supports:false,overhang:7,g:310,h:7,watertight:true,v:569},
+  h77:{t:'wall',size:[800,794,120],relief:0,keyholes:0,mirror:'Round, approx. Ø415 mm, 3–4 mm thick',g:9160,h:208,watertight:false,v:40860},
+  h78:{t:'wall',size:[659,800,120],relief:0,keyholes:0,mirror:'Round, approx. Ø345 mm, 3–4 mm thick',g:5410,h:123,watertight:false,v:22365},
+  h79:{t:'wall',size:[795,800,120],relief:0,keyholes:0,mirror:'Round, approx. Ø365 mm, 3–4 mm thick',g:4020,h:91,watertight:false,v:12222},
+  h80:{t:'wall',size:[800,799,120],relief:0,keyholes:0,mirror:'Round, approx. Ø395 mm, 3–4 mm thick',g:7140,h:162,watertight:false,v:26679},
+  h81:{t:'obj',size:[201,300,221],supports:true,overhang:20,g:860,h:20,watertight:true,v:3332},
+  h82:{t:'obj',size:[300,141,274],supports:true,overhang:11,g:610,h:14,watertight:false,v:2178},
+  h83:{t:'obj',size:[287,143,300],supports:false,overhang:7,g:1480,h:34,watertight:true,v:5766},
+  // no model file yet: only the height is known
+  h84:{t:'obj',size:[null,null,300]}
 };
 
 function renderProductSpecs(id, subcat){
@@ -3142,35 +3144,77 @@ function renderProductSpecs(id, subcat){
   if(!box || !list) return;
   const s = PRODUCT_SPECS[id];
   if(!s){ box.style.display = 'none'; return; }
+  // rows: [label, value]; [label] alone starts a production-method group
   const rows = [];
-  const weight = s.g >= 1000 ? (Math.round(s.g / 100) / 10) + ' kg' : s.g + ' g';
-  if(s.t === 'obj'){
-    rows.push(['Size', s.size[0] + ' × ' + s.size[1] + ' × ' + s.size[2] + ' mm (width × depth × height)']);
-    // "sup" is the owner's own statement and wins over the measured overhang
-    rows.push(['Supports', s.sup || (s.supports ? 'Needed (about ' + s.overhang + '% overhang)' : 'Usually not needed (about ' + s.overhang + '% overhang)')]);
-    note.textContent = subcat === 'lamps'
-      ? 'Modeled at full floor-lamp height (1 m), which is larger than most home print beds, so plan to print it in sections; custom splits for your printer are available on request.'
-      : 'Modeled at the size above; the model also scales freely. ';
-  } else {
-    rows.push(['Size', s.size[0] + ' × ' + s.size[1] + ' mm, ' + s.size[2] + ' mm deep']);
-    if(s.relief) rows.push(['Relief depth', s.relief + ' mm']);
-    if(s.keyholes) rows.push(['Hanging', s.keyholes + ' built-in keyhole slots']);
-    if(s.mirror) rows.push(['Mirror glass', s.mirror]);
-    note.textContent = 'Modeled at real size, which is larger than most home print beds, so plan to print it in sections; custom splits for your printer are available on request.' + (subcat === 'mirrors' ? ' Mirror glass is not included; have it cut locally to fit the opening.' : '');
+  const kg = function(grams){ return grams >= 1000 ? (Math.round(grams / 100) / 10) + ' kg' : Math.round(grams / 10) * 10 + ' g'; };
+  const SHRINK = 1.12;          // clay shrinks ~10-15% in drying and firing
+  const KILN_MAX = 500;         // larger masters will not fit most studio kilns in one piece
+  const PLASTER_DENSITY = 1.2;  // g/cm3, set casting plaster
+  const known = s.size.filter(function(n){ return n; });
+  const sizeText = known.length < 3
+    ? s.size[2] + ' mm tall'
+    : s.t === 'obj'
+      ? s.size[0] + ' × ' + s.size[1] + ' × ' + s.size[2] + ' mm (width × depth × height)'
+      : s.size[0] + ' × ' + s.size[1] + ' mm, ' + s.size[2] + ' mm deep';
+  const master = s.size.map(function(n){ return n ? Math.round(n * SHRINK) : null; });
+  const masterText = known.length < 3
+    ? master[2] + ' mm tall'
+    : master[0] + ' × ' + master[1] + ' × ' + master[2] + ' mm';
+  const bigForKiln = Math.max.apply(null, master.filter(function(n){ return n; })) > KILN_MAX;
+  const isWall = s.t === 'wall';
+  const steep = s.overhang != null && s.overhang > 10;
+
+  rows.push(['Size', sizeText]);
+  if(s.relief) rows.push(['Relief depth', s.relief + ' mm']);
+  if(s.keyholes) rows.push(['Hanging', s.keyholes + ' built-in keyhole slots']);
+  if(s.mirror) rows.push(['Mirror glass', s.mirror]);
+
+  rows.push(['Ceramic & clay']);
+  rows.push(['Plaster mold', isWall ? 'For slip casting or press molding' : 'For slip casting']);
+  rows.push(['Master model', masterText + ' (scaled up 12% for shrinkage)']);
+  rows.push(['Clay 3D printing', '1.5–2 mm nozzle, 0.8–1 mm layers, 3–4 mm walls']);
+  if(s.overhang != null){
+    rows.push(['Overhangs', steep
+      ? 'About ' + s.overhang + '%; print overhanging parts separately and join them with slip'
+      : 'About ' + s.overhang + '%; prints in one piece']);
   }
-  if(s.clay){
-    rows.push(['Method', 'Clay 3D printing (paste extrusion)']);
-  } else {
-    rows.push(['Filament', '≈ ' + weight]);
+
+  rows.push(['Plaster']);
+  rows.push(['Mold', 'Silicone mold']);
+  if(s.v) rows.push(['Plaster', '≈ ' + kg(s.v * PLASTER_DENSITY) + ' for a solid cast']);
+
+  rows.push(['FDM 3D printing']);
+  if(s.g){
+    rows.push(['Filament', '≈ ' + kg(s.g)]);
     rows.push(['Print time', '≈ ' + s.h + ' h']);
   }
+  if(s.overhang != null){
+    rows.push(['Supports', s.sup || (s.supports ? 'Needed (about ' + s.overhang + '% overhang)' : 'Usually not needed (about ' + s.overhang + '% overhang)')]);
+  }
+
+  rows.push(['Files']);
   if(s.watertight) rows.push(['Mesh', 'Closed (watertight)']);
-  rows.push(['File formats', 'STL, OBJ, 3MF, GLB']);
-  note.textContent = (note.textContent + (s.clay
-    ? ' Scale it up by about 12% before printing to make up for drying and firing shrinkage.'
-    : ' Filament and print time are rough estimates at this size (1.2 mm walls, 15% infill); your slicer and settings will give different figures.')).replace(/\s+/g, ' ').trim();
+  rows.push(['Formats', 'STL, OBJ, 3MF, GLB']);
+
+  const notes = [isWall || subcat === 'lamps'
+    ? 'Modeled at real size; the model also scales freely.'
+    : 'Modeled at the size above; the model also scales freely.'];
+  if(bigForKiln) notes.push('At this size the ceramic master may not fit your kiln; the model can be split for production, contact us for a split version.');
+  if(s.v) notes.push('Plaster is for a solid cast; a hollow (slush) cast uses much less.');
+  if(s.g) notes.push('Filament and print time are rough estimates (1.2 mm walls, 15% infill); your slicer and settings will give different figures.');
+  if(isWall || subcat === 'lamps') notes.push('For FDM, plan to print it in sections; custom splits are available on request.');
+  if(subcat === 'mirrors') notes.push('Mirror glass is not included; have it cut locally to fit the opening.');
+  note.textContent = notes.join(' ');
+
   list.innerHTML = '';
-  rows.forEach(function(r){
+  rows.forEach(function(r, i){
+    if(r.length === 1){
+      const next = rows[i + 1];
+      if(!next || next.length === 1) return;  // skip a group with no rows (no data for that method yet)
+      const h = document.createElement('dt'); h.className = 'spec-group'; h.textContent = r[0];
+      list.appendChild(h);
+      return;
+    }
     const dt = document.createElement('dt'); dt.textContent = r[0];
     const dd = document.createElement('dd'); dd.textContent = r[1];
     list.appendChild(dt); list.appendChild(dd);

@@ -3128,7 +3128,11 @@ const PRODUCT_SPECS = {
   h77:{t:'wall',size:[800,794,120],relief:0,keyholes:0,mirror:'Round, approx. Ø415 mm, 3–4 mm thick',g:9160,h:208,watertight:false},
   h78:{t:'wall',size:[659,800,120],relief:0,keyholes:0,mirror:'Round, approx. Ø345 mm, 3–4 mm thick',g:5410,h:123,watertight:false},
   h79:{t:'wall',size:[795,800,120],relief:0,keyholes:0,mirror:'Round, approx. Ø365 mm, 3–4 mm thick',g:4020,h:91,watertight:false},
-  h80:{t:'wall',size:[800,799,120],relief:0,keyholes:0,mirror:'Round, approx. Ø395 mm, 3–4 mm thick',g:7140,h:162,watertight:false}
+  h80:{t:'wall',size:[800,799,120],relief:0,keyholes:0,mirror:'Round, approx. Ø395 mm, 3–4 mm thick',g:7140,h:162,watertight:false},
+  // clay: designed for clay 3D printing, so no filament or print time figures; measured from the STL at 300 mm
+  h81:{t:'obj',clay:true,size:[201,300,221],sup:'Not possible in clay; print the head and legs separately (see notes)',overhang:20,watertight:true},
+  h82:{t:'obj',clay:true,size:[300,141,274],sup:'Not possible in clay; print the trunk and tusks separately (see notes)',overhang:11,watertight:false},
+  h83:{t:'obj',clay:true,size:[287,143,300],sup:'Not possible in clay; keep the aperture lip under 30° (see notes)',overhang:7,watertight:true}
 };
 
 function renderProductSpecs(id, subcat){
@@ -3154,11 +3158,17 @@ function renderProductSpecs(id, subcat){
     if(s.mirror) rows.push(['Mirror glass', s.mirror]);
     note.textContent = 'Modeled at real size, which is larger than most home print beds, so plan to print it in sections; custom splits for your printer are available on request.' + (subcat === 'mirrors' ? ' Mirror glass is not included; have it cut locally to fit the opening.' : '');
   }
-  rows.push(['Filament', '≈ ' + weight]);
-  rows.push(['Print time', '≈ ' + s.h + ' h']);
+  if(s.clay){
+    rows.push(['Method', 'Clay 3D printing (paste extrusion)']);
+  } else {
+    rows.push(['Filament', '≈ ' + weight]);
+    rows.push(['Print time', '≈ ' + s.h + ' h']);
+  }
   if(s.watertight) rows.push(['Mesh', 'Closed (watertight)']);
   rows.push(['File formats', 'STL, OBJ, 3MF, GLB']);
-  note.textContent = (note.textContent + ' Filament and print time are rough estimates at this size (1.2 mm walls, 15% infill); your slicer and settings will give different figures.').replace(/\s+/g, ' ').trim();
+  note.textContent = (note.textContent + (s.clay
+    ? ' Scale it up by about 12% before printing to make up for drying and firing shrinkage.'
+    : ' Filament and print time are rough estimates at this size (1.2 mm walls, 15% infill); your slicer and settings will give different figures.')).replace(/\s+/g, ' ').trim();
   list.innerHTML = '';
   rows.forEach(function(r){
     const dt = document.createElement('dt'); dt.textContent = r[0];

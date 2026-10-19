@@ -18,11 +18,11 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 BRAND = 'Decorans Design'
 
 CATEGORIES = {
-    'reliefs': {
-        'label': 'Wall Reliefs & Panels',
-        'title': 'Wall Relief STL Files for 3D Printing | Decorans Design',
-        'desc': '3D printable wall relief and wall panel STL files: layered scenes, mosaics and abstract '
-                'panels, modeled at real size and ready to print in sections.',
+    'vases': {
+        'label': 'Vases & Curios',
+        'title': '3D Printable Vase & Curio STL Files | Decorans Design',
+        'desc': '3D printable vase, candle holder and curio STL files: sculptural pieces for shelves '
+                'and tables, ready to print in PLA, PETG or resin.',
     },
     'mirrors': {
         'label': 'Mirrors',
@@ -30,23 +30,23 @@ CATEGORIES = {
         'desc': '3D printable wall mirror frame STL files: sculpted animal, nature and fantasy frames. '
                 'Print the frame in sections and have the glass cut locally.',
     },
+    'lamps': {
+        'label': 'Lamps',
+        'title': '3D Printable Floor Lamp STL Files | Decorans Design',
+        'desc': '3D printable floor lamp STL files: sculptural lamps designed to scale to full height, '
+                'print in sections and light with low-heat LEDs.',
+    },
+    'reliefs': {
+        'label': 'Wall Reliefs',
+        'title': 'Wall Relief STL Files for 3D Printing | Decorans Design',
+        'desc': '3D printable wall relief and wall panel STL files: layered scenes, mosaics and abstract '
+                'panels, modeled at real size and ready to print in sections.',
+    },
     'figurines': {
         'label': 'Figurines',
         'title': '3D Printable Figurine STL Files | Decorans Design',
         'desc': '3D printable figurine STL files: animals, fables and fantasy characters, sculpted in '
                 'detail and ready to print on FDM or resin printers.',
-    },
-    'vases': {
-        'label': 'Vases & Curios',
-        'title': '3D Printable Vase & Curio STL Files | Decorans Design',
-        'desc': '3D printable vase, candle holder and curio STL files: sculptural pieces for shelves '
-                'and tables, ready to print in PLA, PETG or resin.',
-    },
-    'lamps': {
-        'label': 'Floor Lamps',
-        'title': '3D Printable Floor Lamp STL Files | Decorans Design',
-        'desc': '3D printable floor lamp STL files: sculptural lamps designed to scale to full height, '
-                'print in sections and light with low-heat LEDs.',
     },
 }
 

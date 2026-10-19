@@ -20,27 +20,27 @@ BRAND = 'Decorans Design'
 CATEGORIES = {
     'vases': {
         'label': 'Vases & Curios',
-        'title': '3D Printable Vase & Curio STL Files | Decorans Design',
+        'title': 'Ceramic & Plaster Vase Design Files | Decorans Design',
         'desc': 'Vase, candle holder and curio design files for ceramic slip casting, plaster casting and 3D printing. STL, OBJ, 3MF, GLB with a commercial license.',
     },
     'mirrors': {
         'label': 'Mirrors',
-        'title': '3D Printable Wall Mirror STL Files | Decorans Design',
+        'title': 'Plaster & Ceramic Mirror Design Files | Decorans Design',
         'desc': 'Wall mirror frame design files for plaster, ceramic and 3D printing: sculpted animal, nature and fantasy frames. Have the glass cut locally.',
     },
     'lamps': {
         'label': 'Lamps',
-        'title': '3D Printable Floor Lamp STL Files | Decorans Design',
+        'title': 'Plaster & Ceramic Lamp Design Files | Decorans Design',
         'desc': 'Floor lamp design files for plaster, ceramic and 3D printing: sculptural lamps modeled at full height, made in sections, lit with low-heat LEDs.',
     },
     'reliefs': {
         'label': 'Wall Reliefs',
-        'title': 'Wall Relief STL Files for 3D Printing | Decorans Design',
+        'title': 'Plaster & Ceramic Wall Relief Design Files | Decorans Design',
         'desc': 'Wall relief and panel design files for plaster casting, ceramic and 3D printing: layered scenes, mosaics and abstract panels at real wall size.',
     },
     'figurines': {
         'label': 'Figurines',
-        'title': '3D Printable Figurine STL Files | Decorans Design',
+        'title': 'Ceramic & Plaster Figurine Design Files | Decorans Design',
         'desc': 'Figurine design files for ceramic slip casting, plaster casting and 3D printing: animals, fables and fantasy characters sculpted in detail.',
     },
 }
@@ -107,7 +107,7 @@ def clip(text, limit):
 
 
 def product_title(name):
-    for t in (name + ' | 3D Printable STL | ' + BRAND, name + ' STL File | ' + BRAND, name + ' | ' + BRAND):
+    for t in (name + ' | Ceramic & Plaster File | ' + BRAND, name + ' Design File | ' + BRAND, name + ' | ' + BRAND):
         if len(t) <= TITLE_MAX:
             return t
     return name + ' | ' + BRAND

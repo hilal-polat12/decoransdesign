@@ -338,8 +338,9 @@ def main():
     stamps = [(SITE + '/', listing[''])]
     stamps += [(SITE + '/' + k, CATEGORIES[k]['title'] + CATEGORIES[k]['desc'] + intros[k] + listing[k]) for k in CATEGORIES]
     stamps += [(SITE + '/' + p['cat'] + '/' + p['code'], p['stamp'] + spec(p)) for p in products]
-    with open(os.path.join(ROOT, 'faq.html'), encoding='utf-8') as f:
-        stamps.append((SITE + '/faq.html', f.read()))
+    for page in ('faq.html', 'license.html'):
+        with open(os.path.join(ROOT, page), encoding='utf-8') as f:
+            stamps.append((SITE + '/' + page, f.read()))
     dates = last_modified(stamps)
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     lines += ['  <url><loc>' + u + '</loc><lastmod>' + dates[u] + '</lastmod></url>' for u, _ in stamps]

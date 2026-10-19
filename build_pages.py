@@ -21,32 +21,27 @@ CATEGORIES = {
     'vases': {
         'label': 'Vases & Curios',
         'title': '3D Printable Vase & Curio STL Files | Decorans Design',
-        'desc': '3D printable vase, candle holder and curio STL files: sculptural pieces for shelves '
-                'and tables, ready to print in PLA, PETG or resin.',
+        'desc': 'Vase, candle holder and curio design files for ceramic slip casting, plaster casting and 3D printing. STL, OBJ, 3MF, GLB with a commercial license.',
     },
     'mirrors': {
         'label': 'Mirrors',
         'title': '3D Printable Wall Mirror STL Files | Decorans Design',
-        'desc': '3D printable wall mirror frame STL files: sculpted animal, nature and fantasy frames. '
-                'Print the frame in sections and have the glass cut locally.',
+        'desc': 'Wall mirror frame design files for plaster, ceramic and 3D printing: sculpted animal, nature and fantasy frames. Have the glass cut locally.',
     },
     'lamps': {
         'label': 'Lamps',
         'title': '3D Printable Floor Lamp STL Files | Decorans Design',
-        'desc': '3D printable floor lamp STL files: sculptural lamps designed to scale to full height, '
-                'print in sections and light with low-heat LEDs.',
+        'desc': 'Floor lamp design files for plaster, ceramic and 3D printing: sculptural lamps modeled at full height, made in sections, lit with low-heat LEDs.',
     },
     'reliefs': {
         'label': 'Wall Reliefs',
         'title': 'Wall Relief STL Files for 3D Printing | Decorans Design',
-        'desc': '3D printable wall relief and wall panel STL files: layered scenes, mosaics and abstract '
-                'panels, modeled at real size and ready to print in sections.',
+        'desc': 'Wall relief and panel design files for plaster casting, ceramic and 3D printing: layered scenes, mosaics and abstract panels at real wall size.',
     },
     'figurines': {
         'label': 'Figurines',
         'title': '3D Printable Figurine STL Files | Decorans Design',
-        'desc': '3D printable figurine STL files: animals, fables and fantasy characters, sculpted in '
-                'detail and ready to print on FDM or resin printers.',
+        'desc': 'Figurine design files for ceramic slip casting, plaster casting and 3D printing: animals, fables and fantasy characters sculpted in detail.',
     },
 }
 
@@ -120,8 +115,8 @@ def product_title(name):
 
 def product_description(p):
     text = first_sentence(p['desc'])
-    if 'STL' not in text:
-        text = p['name'] + ': 3D printable STL, OBJ, 3MF, GLB file. ' + text
+    if 'design file' not in text:
+        text = p['name'] + ': design file for ceramic, plaster and 3D printing. ' + text
     return clip(text, DESC_MAX)
 
 

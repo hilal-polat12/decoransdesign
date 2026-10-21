@@ -18,3 +18,8 @@ Static site for www.decoransdesign.com, deployed on Vercel.
 - Product: edit its `.card` block in `index.html` (name, description, `data-tech`, `data-gallery`, `data-price`) and its line in `PRODUCT_SPECS`.
 - Category title and description: `CATEGORIES` in `build_pages.py` (and `CATEGORY_TITLES` in `index.html`). Category intro text: `#categoryIntros` in `index.html`.
 - After editing, run `python build_pages.py` and commit `sitemap-state.json` together with the change.
+
+## Product photos
+
+- The clean originals stay on this computer in the `Decorans-2D` folder next to the repo (`H91.1-2D.jpg`, `H91.2-2D.jpg`, `H91.3-2D.jpg`); they never go into this public repo.
+- `tools/make-web-images.ps1` builds the site versions in `images/`: square 1024 px (landscape scenes keep their ratio) with the watermark drawn on. For a new product run `powershell -ExecutionPolicy Bypass -File tools\make-web-images.ps1 -Codes 91`; without `-Codes` it rebuilds every product.

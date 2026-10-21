@@ -279,6 +279,8 @@ function routeHash(){
   .thumb-img img{width:100%;height:100%;object-fit:contain;padding:6px;transition:transform .4s ease;}
   .card:hover .thumb-img img{transform:scale(1.05);}
   .thumb{overflow:hidden;}
+  /* home page "New arrivals" keeps the wider 4:3 cards; category pages show the full square photo */
+  #home:has(#homeCatTitle.is-all) .grid > .card .thumb{aspect-ratio:4/3;}
   .thumb-img-dark img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
   .card:hover .thumb-img-dark img{transform:scale(1.08);}
   .thumb-3d-badge{

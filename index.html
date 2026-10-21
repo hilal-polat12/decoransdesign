@@ -888,8 +888,9 @@ footer .wrap{display:block;}
 .catalog-track::-webkit-scrollbar{display:none;}
 .catalog-track .mini-card{flex:0 0 calc((100% - 66px)/4);scroll-snap-align:start;}
 .catalog-track .mini-thumb{aspect-ratio:4/5;}
-/* wall reliefs are wide panels: a tall box cut off their sides, so this row shows the whole square photo */
-.catalog[data-cat="reliefs"] .catalog-track .mini-thumb{aspect-ratio:1/1;}
+/* wall reliefs and mirrors are wide or round: a tall box cut off their sides, so these rows show the whole square photo */
+.catalog[data-cat="reliefs"] .catalog-track .mini-thumb,
+.catalog[data-cat="mirrors"] .catalog-track .mini-thumb{aspect-ratio:1/1;}
 .home-block.catalog{margin-top:96px;}
 /* 3D badge: clearly visible bronze */
 .thumb .thumb-3d-badge{background:var(--bronze);color:#000;border:none;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.35);}

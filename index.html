@@ -709,6 +709,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .cat-tile:hover img{transform:scale(1.05);filter:brightness(.9);}
 .cat-tile::after{content:"";position:absolute;inset:40% 0 0 0;background:linear-gradient(0deg,rgba(0,0,0,.75),rgba(0,0,0,0));pointer-events:none;}
 .cat-tile span{z-index:1;position:absolute;left:22px;right:22px;bottom:20px;font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(15px,1.5vw,21px);line-height:1.05;color:var(--bone);}
+/* the menu already names the categories, so the tiles show photos only; the label stays for screen readers and search engines */
+.cat-tile span{left:auto;right:auto;bottom:auto;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;}
+.cat-tile::after{display:none;}
+.cat-tile img{filter:brightness(.88);}
+.cat-tile:hover img{filter:brightness(1);}
 
 /* ---------- collection ---------- */
 section.category{border-bottom:none;padding:88px 0 96px;}

@@ -19,9 +19,19 @@ BRAND = 'Decorans Design'
 
 CATEGORIES = {
     'vases': {
-        'label': 'Vases & Curios',
+        'label': 'Vases',
         'title': 'Ceramic & Plaster Vase Design Files | Decorans Design',
-        'desc': 'Vase, candle holder and curio design files for ceramic slip casting, plaster casting and 3D printing. STL, OBJ, 3MF, GLB with a commercial license.',
+        'desc': 'Vase design files for ceramic slip casting, plaster casting and 3D printing: twisted, ringed, spiral and petal forms. STL, OBJ, 3MF, GLB files.',
+    },
+    'curios': {
+        'label': 'Curios',
+        'title': 'Ceramic & Plaster Curio Design Files | Decorans Design',
+        'desc': 'Curio and decorative sculpture design files for ceramic slip casting, plaster casting and 3D printing. STL, OBJ, 3MF, GLB with a commercial license.',
+    },
+    'candle-holders': {
+        'label': 'Candle Holders',
+        'title': 'Ceramic & Plaster Candle Holder Files | Decorans Design',
+        'desc': 'Candle holder design files for ceramic slip casting, plaster casting and 3D printing: tealight, taper and pillar holders. STL, OBJ, 3MF, GLB files.',
     },
     'mirrors': {
         'label': 'Mirrors',

@@ -3,8 +3,8 @@
   "outputDirectory": ".",
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/:cat(vases|lamps|figurines|mirrors|reliefs)/:code(h\\d+)", "destination": "/p/:cat/:code.html" },
-    { "source": "/:cat(vases|lamps|figurines|mirrors|reliefs)", "destination": "/c/:cat.html" }
+    { "source": "/:cat(vases|curios|candle-holders|lamps|figurines|mirrors|reliefs)/:code(h\\d+)", "destination": "/p/:cat/:code.html" },
+    { "source": "/:cat(vases|curios|candle-holders|lamps|figurines|mirrors|reliefs)", "destination": "/c/:cat.html" }
   ],
   "redirects": [
     {
@@ -12,6 +12,8 @@
       "has": [{ "type": "host", "value": "hilalpolat.vercel.app" }],
       "destination": "https://www.decoransdesign.com/:path*",
       "permanent": true
-    }
+    },
+    { "source": "/vases/:code(h1|h11|h12|h13|h14|h15|h16|h17|h19|h76|h81|h83|h84)", "destination": "/curios/:code", "permanent": true },
+    { "source": "/vases/:code(h5|h7|h82|h87|h88|h89|h90)", "destination": "/candle-holders/:code", "permanent": true }
   ]
 }

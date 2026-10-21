@@ -675,6 +675,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .logo{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:19px;letter-spacing:0.02em;text-transform:uppercase;flex:0 0 auto;}
 .logo .logo-tagline{display:none;}
 .topbar .navbar-inner{display:flex;align-items:center;gap:28px;min-height:0;padding:0;margin:0 auto;height:100%;}
+/* seven categories: tighter spacing on narrower desktops so the cart button stays on screen */
+@media (min-width:1101px) and (max-width:1320px){.topbar .navbar-inner{gap:18px;}}
 .topbar .navbar-inner a{font-size:13.5px;font-weight:500;color:var(--bone);padding:0;border-radius:0;background:none;height:100%;display:flex;align-items:center;position:relative;white-space:nowrap;transition:color .15s;}
 .topbar .navbar-inner a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--bronze);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
 .topbar .navbar-inner a:hover{background:none;color:#fff;}

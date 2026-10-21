@@ -286,6 +286,10 @@ function routeHash(){
     #home:has(#homeCatTitle.is-all) .grid{grid-template-columns:repeat(5,1fr);gap:48px 22px;}
     #home:has(#homeCatTitle.is-all) .grid > .card .thumb{aspect-ratio:1/1;}
   }
+  /* phones: square too, so tall pieces (candles, busts) are not cut at the top */
+  @media (max-width:640px){
+    #home:has(#homeCatTitle.is-all) .grid > .card .thumb{aspect-ratio:1/1;}
+  }
   .thumb-img-dark img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
   .card:hover .thumb-img-dark img{transform:scale(1.08);}
   .thumb-3d-badge{
@@ -932,7 +936,9 @@ footer{padding:44px 0 26px;}
   .hero-stage img{object-position:50% 50%;}
   .hero-title{font-size:clamp(38px,11vw,52px);}
   .hero-sub{font-size:15px;margin-top:20px;}
-  .cat-tile span{left:14px;right:14px;bottom:14px;font-size:14px;}
+  /* phones hide the menu behind a button, so the tiles show their category name again */
+  .cat-tile span{left:14px;right:14px;bottom:14px;width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;white-space:normal;font-size:14px;}
+  .cat-tile::after{display:block;}
   .home-block,.home-block.catalog{margin-top:64px;}
   .home-story{margin-top:64px;gap:24px;}
   .block-head{margin-bottom:24px;padding-bottom:16px;gap:12px;}
@@ -940,7 +946,7 @@ footer{padding:44px 0 26px;}
   .mini-row-5{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:12px;}
   .mini-row-5::-webkit-scrollbar{display:none;}
   .mini-row-5 .mini-card{flex:0 0 62%;scroll-snap-align:start;}
-  .mini-row-5 .mini-thumb{aspect-ratio:4/5;}
+  .mini-row-5 .mini-thumb{aspect-ratio:1/1;}  /* square, so the Best sellers photos are not cut at the sides */
   .mini-name{font-size:14px;}
   .steps{gap:0;}
   .steps li{display:grid;grid-template-columns:44px 1fr;column-gap:14px;padding:20px 0;border-top:1px solid var(--line);}

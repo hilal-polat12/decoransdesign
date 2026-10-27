@@ -905,6 +905,52 @@ footer .wrap{display:block;}
 /* 3D badge: clearly visible bronze */
 .thumb .thumb-3d-badge{background:var(--bronze);color:#000;border:none;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.35);}
 .thumb-3d-badge:hover,.thumb .thumb-3d-badge:hover{background:var(--bone);color:#000;}
+/* 24-hour deal: old price struck through in the 3D badge's bronze */
+.price-was{color:var(--bronze);text-decoration:line-through;text-decoration-color:var(--bronze);text-decoration-thickness:1.5px;font-weight:500;margin-right:2px;}
+.product-price-wrap{display:inline-flex;align-items:baseline;gap:12px;}
+.product-price-wrap .price-was{font-family:'Archivo',sans-serif;font-size:20px;}
+.deal-box,.deal-gap,.deal-head{display:none;}
+#home.has-deal .cat-head{display:none;}
+#home.has-deal .deal-box{display:flex;flex-direction:column;border:2px solid var(--bronze);padding:16px;grid-column:1 / -1;order:-3;cursor:pointer;}
+#home.has-deal .deal-head{display:flex;flex-direction:column;align-items:flex-end;gap:12px;grid-column:1 / -1;order:-1;border-bottom:1px solid var(--line);padding-bottom:16px;}
+.deal-head h2{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(24px,2.6vw,38px);line-height:.95;letter-spacing:-0.01em;color:var(--bone);text-align:right;}
+.deal-head .cat-viewall{align-self:flex-end;margin:0;}
+.deal-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
+.deal-label{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:.01em;color:var(--bronze);}
+.deal-timer{font-size:12.5px;color:var(--ash);}
+.deal-clock{font-variant-numeric:tabular-nums;color:var(--bone);font-weight:600;font-size:14px;}
+.deal-thumb{display:block;aspect-ratio:1/1;overflow:hidden;background:var(--soot);}
+.deal-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1);}
+.deal-thumb:hover img{transform:scale(1.04);}
+.deal-body{padding-top:14px;display:flex;flex-direction:column;}
+.deal-body h3{font-family:'Archivo',sans-serif;font-size:15.5px;font-weight:600;line-height:1.3;margin:0 0 10px;color:var(--bone);}
+.deal-body h3 a:hover{color:var(--bronze);}
+.deal-price{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;}
+.deal-price .price-was{font-size:17px;}
+.deal-price strong{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:32px;line-height:1;color:var(--bone);}
+.deal-add{align-self:flex-start;}
+/* wide screens: deal box in column 1, column 2 left empty, the heading and the next 3 pieces in columns 3-5 */
+@media (min-width:1101px){
+  #home.has-deal .deal-box{grid-column:1;grid-row:1 / span 2;justify-content:space-between;}
+  #home.has-deal .deal-gap{display:block;grid-column:2;grid-row:1 / span 2;}
+  #home.has-deal .deal-head{grid-column:3 / -1;grid-row:1;align-self:end;}
+  #home.has-deal .grid > .card.na-1{grid-column:3;grid-row:2;}
+  #home.has-deal .grid > .card.na-2{grid-column:4;grid-row:2;}
+  #home.has-deal .grid > .card.na-3{grid-column:5;grid-row:2;}
+}
+/* narrower screens: the deal box runs across the grid, photo beside the text */
+@media (max-width:1100px){
+  #home.has-deal .deal-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 18px;}
+  #home.has-deal .deal-top{grid-column:1 / -1;}
+  .deal-body{padding-top:0;justify-content:center;}
+}
+@media (max-width:640px){
+  #home.has-deal .deal-box{padding:12px;gap:0 12px;}
+  .deal-label{font-size:15px;}
+  .deal-price strong{font-size:26px;}
+  .deal-body h3{font-size:14px;}
+  .deal-head h2{font-size:24px;}
+}
 @media (max-width:1100px){.catalog-track .mini-card{flex-basis:calc((100% - 44px)/3);}}
 @media (max-width:640px){
   .catalog-track{gap:12px;}
@@ -1166,7 +1212,7 @@ footer{padding:44px 0 26px;}
       </div>
       <!-- price + cart close the technical column, below the list (outside it, so the list and the 3D model stay level) -->
       <div class="product-footer">
-        <span id="productPrice" class="product-price"></span>
+        <span class="product-price-wrap"><s id="productPriceWas" class="price-was" hidden></s><span id="productPrice" class="product-price"></span></span>
         <button type="button" class="product-contact" id="productAddToCart">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l1 2m0 0l2.2 9.2a1.5 1.5 0 0 0 1.46 1.15h6.9a1.5 1.5 0 0 0 1.46-1.15L20 8H6"/><circle cx="9.5" cy="19.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="17" cy="19.5" r="1.3" fill="currentColor" stroke="none"/></svg>
           <span id="productAddToCartLabel">Add to Cart</span>
@@ -2807,6 +2853,80 @@ Use an E14 LED bulb of 5 W or less only (the top is closed, so keep the heat low
           </div>
         </div>
       </div>
+<script>
+// 24-hour deal: one design at a special price until `end` (UTC). After that the box disappears and the
+// normal price comes back by itself. To run a new deal, change only this line.
+window.DEAL = {code: 'h91', price: 1, end: '2026-10-28T11:45:00Z'};
+(function(d){
+  d.active = Date.now() < Date.parse(d.end);
+  // price text with the old price struck through, for any card (used by the mini rows too)
+  window.priceHTML = function(card){
+    var p = card.getAttribute('data-price'), was = card.getAttribute('data-price-was');
+    if(!p) return '';
+    return (was ? '<s class="price-was">$' + was + '</s> ' : '') + '$' + p;
+  };
+  if(!d.active) return;
+  // static "More lamps" rows on other product pages
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a.mini-card[href$="/' + d.code + '"] .mini-price').forEach(function(el){
+      if(!el.querySelector('s')) el.innerHTML = '<s class="price-was">' + el.textContent + '</s> $' + d.price;
+    });
+  });
+  var card = document.querySelector('.grid > .card[onclick*="/' + d.code + '\'"]');
+  if(!card) return;
+  var was = card.getAttribute('data-price');
+  card.setAttribute('data-price-was', was);
+  card.setAttribute('data-price', String(d.price));   // the cart and the product page read this
+  card.querySelector('.card-price').innerHTML = window.priceHTML(card);
+  d.card = card;
+
+  // home: the deal box, an empty column, and the "New arrivals" heading over the right three columns
+  var grid = card.parentNode;
+  var path = (card.getAttribute('onclick').match(/'([^']+)'/) || [])[1] || '/';
+  var img = card.querySelector('.thumb img');
+  var name = card.querySelector('.card-body h3').textContent;
+  var box = document.createElement('div');
+  box.className = 'deal-box';
+  box.innerHTML =
+    '<div class="deal-top"><span class="deal-label">24-Hour Deal</span>' +
+    '<span class="deal-timer">Ends in <b class="deal-clock">--:--:--</b></span></div>' +
+    '<a class="deal-thumb" href="' + path + '"><img src="' + img.getAttribute('src') + '" alt=""></a>' +
+    '<div class="deal-body"><span class="card-tag"></span><h3><a href="' + path + '"></a></h3>' +
+    '<div class="deal-price"><s class="price-was">$' + was + '</s><strong>$' + d.price + '</strong></div>' +
+    '<button type="button" class="card-add-cart deal-add">Add to Cart</button></div>';
+  box.querySelector('img').alt = img.getAttribute('alt') || name;
+  box.querySelector('.card-tag').textContent = card.querySelector('.card-tag').textContent;
+  box.querySelector('h3 a').textContent = name;
+  var gap = document.createElement('div');
+  gap.className = 'deal-gap';
+  var head = document.createElement('div');
+  head.className = 'deal-head';
+  head.innerHTML = '<h2>New arrivals</h2><a href="#all" class="cat-viewall">View all pieces</a>';
+  grid.insertBefore(head, grid.firstChild);
+  grid.insertBefore(gap, head);
+  grid.insertBefore(box, gap);
+
+  // Add to Cart works through the card's own button, so the cart logic stays in one place
+  var add = box.querySelector('.deal-add');
+  var cardBtn = card.querySelector('.card-add-cart');
+  add.addEventListener('click', function(e){ e.stopPropagation(); cardBtn.click(); });
+  // anywhere else on the box opens the product page
+  box.addEventListener('click', function(e){ if(!e.target.closest('a')) location.href = path; });
+  function mirror(){ add.textContent = cardBtn.textContent; add.classList.toggle('in-cart', cardBtn.classList.contains('in-cart')); }
+  new MutationObserver(mirror).observe(cardBtn, {childList: true, characterData: true, subtree: true, attributes: true});
+
+  var clock = box.querySelector('.deal-clock');
+  var endMs = Date.parse(d.end);
+  function tick(){
+    var s = Math.max(0, Math.floor((endMs - Date.now()) / 1000));
+    if(s === 0){ location.reload(); return; }
+    var h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), r = s % 60;
+    clock.textContent = [h, m, r].map(function(n){ return (n < 10 ? '0' : '') + n; }).join(':');
+  }
+  tick();
+  setInterval(tick, 1000);
+})(window.DEAL);
+</script>
       <div class="home-extras" id="homeExtras">
 
         <div class="home-block">
@@ -3071,7 +3191,7 @@ Use an E14 LED bulb of 5 W or less only (the top is closed, so keep the heat low
         '<span class="mini-name"></span><span class="mini-price"></span>';
       a.querySelector('img').alt = img ? (img.getAttribute('alt') || '') : '';
       a.querySelector('.mini-name').textContent = h3 ? h3.textContent : '';
-      a.querySelector('.mini-price').textContent = src.getAttribute('data-price') ? ('$' + src.getAttribute('data-price')) : '';
+      a.querySelector('.mini-price').innerHTML = window.priceHTML(src);
       row.appendChild(a);
     });
   });
@@ -3087,7 +3207,7 @@ Use an E14 LED bulb of 5 W or less only (the top is closed, so keep the heat low
     a.innerHTML = '<div class="mini-thumb"><img loading="lazy" src="' + miniCover(img) + '" alt=""></div><span class="mini-name"></span><span class="mini-price"></span>';
     a.querySelector('img').alt = img ? (img.getAttribute('alt') || '') : '';
     a.querySelector('.mini-name').textContent = h3 ? h3.textContent : '';
-    a.querySelector('.mini-price').textContent = src.getAttribute('data-price') ? ('$' + src.getAttribute('data-price')) : '';
+    a.querySelector('.mini-price').innerHTML = window.priceHTML(src);
     return a;
   }
   document.querySelectorAll('.catalog[data-cat]').forEach(function(block){
@@ -3466,6 +3586,9 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
     title.textContent = h3 ? h3.textContent : '';
     const priceVal = card.getAttribute('data-price');
     if(price) price.textContent = priceVal ? ('$'+priceVal) : '';
+    const priceWas = document.getElementById('productPriceWas');
+    const wasVal = card.getAttribute('data-price-was');
+    if(priceWas){ priceWas.textContent = wasVal ? ('$'+wasVal) : ''; priceWas.hidden = !wasVal; }
     const fullDesc = card.getAttribute('data-full-description');
     description.textContent = fullDesc ? fullDesc : (p ? p.textContent : '');
 
@@ -3661,7 +3784,11 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
   // every view lists the newest pieces (highest code) first
   const byNewest = Array.prototype.slice.call(cards)
     .sort(function(a, b){ return codeNum(b) - codeNum(a); });
-  const newest = byNewest.slice(0, NEW_COUNT);
+  // during a deal its piece sits in the deal box; the grid shows the next 3 beside it and 5 below
+  const dealCard = (window.DEAL && window.DEAL.active && window.DEAL.card) || null;
+  const newest = dealCard ? byNewest.filter(function(c){ return c !== dealCard; }).slice(0, 8)
+                          : byNewest.slice(0, NEW_COUNT);
+  const homeEl = document.getElementById('home');
   const viewAll = document.getElementById('viewAllLink');
   const story = document.getElementById('homeExtras');
   const catCount = document.getElementById('catCount');
@@ -3690,8 +3817,12 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
       else show = card.getAttribute('data-subcat') === val;
       card.style.display = show ? '' : 'none';
       card.style.order = show ? String(byNewest.indexOf(card)) : '';
+      card.classList.remove('na-1', 'na-2', 'na-3');
+      if(val === 'all' && dealCard && newest.indexOf(card) !== -1 && newest.indexOf(card) < 3)
+        card.classList.add('na-' + (newest.indexOf(card) + 1));
       if(show) shown++;
     });
+    if(homeEl) homeEl.classList.toggle('has-deal', val === 'all' && !!dealCard);
     if(catTitle){
       const activeLink = document.querySelector('.navbar-inner .subcat-nav-link[data-subcat="' + val + '"]');
       if(val === 'all') catTitle.textContent = 'New arrivals';

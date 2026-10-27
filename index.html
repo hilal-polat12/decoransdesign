@@ -929,10 +929,17 @@ footer .wrap{display:block;}
 .deal-price .price-was{font-size:17px;}
 .deal-price strong{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:32px;line-height:1;color:var(--bone);}
 .deal-add{align-self:flex-start;}
-/* wide screens: deal box in column 1, column 2 left empty, the heading and the next 3 pieces in columns 3-5 */
+/* wide screens: the deal box over columns 1-2 (photo beside the text), the heading and the next 3 pieces in columns 3-5 */
 @media (min-width:1101px){
-  #home.has-deal .deal-box{grid-column:1;grid-row:1 / span 2;justify-content:space-between;}
-  #home.has-deal .deal-gap{display:block;grid-column:2;grid-row:1 / span 2;}
+  #home.has-deal .deal-box{grid-column:1 / span 2;grid-row:1 / span 2;display:grid;grid-template-columns:minmax(0,1fr) 180px;
+    grid-template-rows:auto 1fr;gap:0 24px;padding:26px;}
+  #home.has-deal .deal-top{grid-column:1 / -1;margin-bottom:20px;}
+  #home.has-deal .deal-thumb{align-self:center;}
+  #home.has-deal .deal-body{padding-top:0;justify-content:center;}
+  #home.has-deal .deal-label{font-size:22px;}
+  #home.has-deal .deal-body h3{font-size:19px;}
+  #home.has-deal .deal-price strong{font-size:44px;}
+  #home.has-deal .deal-price .price-was{font-size:20px;}
   #home.has-deal .deal-head{grid-column:3 / -1;grid-row:1;align-self:end;}
   #home.has-deal .grid > .card.na-1{grid-column:3;grid-row:2;}
   #home.has-deal .grid > .card.na-2{grid-column:4;grid-row:2;}
@@ -2854,20 +2861,31 @@ Use an E14 LED bulb of 5 W or less only (the top is closed, so keep the heat low
         </div>
       </div>
 <script>
-// 24-hour deal: one design at a special price until `end` (UTC). After that the box disappears and the
-// normal price comes back by itself. To run a new deal, change only this line.
-window.DEAL = {code: 'h91', price: 1, end: '2026-10-28T11:40:00Z'};
-(function(d){
-  d.active = Date.now() < Date.parse(d.end);
+// 24-hour deals: one design at a special price at a time. Times are UK time, written as UTC with "Z"
+// (the UK is on GMT = UTC until 28 March 2027; from then until late October, UK time is UTC+1, so
+// 00:00 UK time is written as the previous day's 23:00Z). The deal box always stays on the home page;
+// when the list runs out it shows the last piece at its normal price until a new deal is added here.
+window.DEALS = [
+  {code: 'h91', price: 1, start: '2026-10-27T11:40:00Z', end: '2026-10-28T11:40:00Z'},
+  {code: 'h85', price: 1, start: '2026-10-28T11:40:00Z', end: '2026-10-29T11:40:00Z'}
+];
+(function(list){
+  var now = Date.now(), d = null, ended = false, i;
+  for(i = 0; i < list.length; i++)
+    if(now >= Date.parse(list[i].start) && now < Date.parse(list[i].end)) d = list[i];
+  if(!d) for(i = list.length - 1; i >= 0; i--)
+    if(now >= Date.parse(list[i].end)){ d = list[i]; ended = true; break; }
   // price text with the old price struck through, for any card (used by the mini rows too)
   window.priceHTML = function(card){
     var p = card.getAttribute('data-price'), was = card.getAttribute('data-price-was');
     if(!p) return '';
     return (was ? '<s class="price-was">$' + was + '</s> ' : '') + '$' + p;
   };
-  if(!d.active) return;
-  // static "More lamps" rows on other product pages
-  document.addEventListener('DOMContentLoaded', function(){
+  window.DEAL = d || {};
+  if(!d) return;
+  d.active = !ended;
+  // static "More ..." rows on other product pages
+  if(d.active) document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('a.mini-card[href$="/' + d.code + '"] .mini-price').forEach(function(el){
       if(!el.querySelector('s')) el.innerHTML = '<s class="price-was">' + el.textContent + '</s> $' + d.price;
     });
@@ -2875,9 +2893,11 @@ window.DEAL = {code: 'h91', price: 1, end: '2026-10-28T11:40:00Z'};
   var card = document.querySelector('.grid > .card[onclick*="/' + d.code + '\'"]');
   if(!card) return;
   var was = card.getAttribute('data-price');
-  card.setAttribute('data-price-was', was);
-  card.setAttribute('data-price', String(d.price));   // the cart and the product page read this
-  card.querySelector('.card-price').innerHTML = window.priceHTML(card);
+  if(d.active){
+    card.setAttribute('data-price-was', was);
+    card.setAttribute('data-price', String(d.price));   // the cart and the product page read this
+    card.querySelector('.card-price').innerHTML = window.priceHTML(card);
+  }
   d.card = card;
 
   // home: the deal box, an empty column, and the "New arrivals" heading over the right three columns
@@ -2889,10 +2909,12 @@ window.DEAL = {code: 'h91', price: 1, end: '2026-10-28T11:40:00Z'};
   box.className = 'deal-box';
   box.innerHTML =
     '<div class="deal-top"><span class="deal-label">24-Hour Deal</span>' +
-    '<span class="deal-timer">Ends in <b class="deal-clock">--:--:--</b></span></div>' +
+    (d.active ? '<span class="deal-timer">Ends in <b class="deal-clock">--:--:--</b></span></div>'
+              : '<span class="deal-timer">Next deal coming soon</span></div>') +
     '<a class="deal-thumb" href="' + path + '"><img src="' + img.getAttribute('src') + '" alt=""></a>' +
     '<div class="deal-body"><span class="card-tag"></span><h3><a href="' + path + '"></a></h3>' +
-    '<div class="deal-price"><s class="price-was">$' + was + '</s><strong>$' + d.price + '</strong></div>' +
+    '<div class="deal-price">' + (d.active ? '<s class="price-was">$' + was + '</s><strong>$' + d.price + '</strong>'
+                                           : '<strong>$' + was + '</strong>') + '</div>' +
     '<button type="button" class="card-add-cart deal-add">Add to Cart</button></div>';
   box.querySelector('img').alt = img.getAttribute('alt') || name;
   box.querySelector('.card-tag').textContent = card.querySelector('.card-tag').textContent;
@@ -2915,6 +2937,8 @@ window.DEAL = {code: 'h91', price: 1, end: '2026-10-28T11:40:00Z'};
   function mirror(){ add.textContent = cardBtn.textContent; add.classList.toggle('in-cart', cardBtn.classList.contains('in-cart')); }
   new MutationObserver(mirror).observe(cardBtn, {childList: true, characterData: true, subtree: true, attributes: true});
 
+  if(!d.active) return;
+  // at the end the page reloads, which starts the next deal in the list
   var clock = box.querySelector('.deal-clock');
   var endMs = Date.parse(d.end);
   function tick(){
@@ -2925,7 +2949,7 @@ window.DEAL = {code: 'h91', price: 1, end: '2026-10-28T11:40:00Z'};
   }
   tick();
   setInterval(tick, 1000);
-})(window.DEAL);
+})(window.DEALS);
 </script>
       <div class="home-extras" id="homeExtras">
 
@@ -3785,7 +3809,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
   const byNewest = Array.prototype.slice.call(cards)
     .sort(function(a, b){ return codeNum(b) - codeNum(a); });
   // during a deal its piece sits in the deal box; the grid shows the next 3 beside it and 5 below
-  const dealCard = (window.DEAL && window.DEAL.active && window.DEAL.card) || null;
+  const dealCard = (window.DEAL && window.DEAL.card) || null;
   const newest = dealCard ? byNewest.filter(function(c){ return c !== dealCard; }).slice(0, 8)
                           : byNewest.slice(0, NEW_COUNT);
   const homeEl = document.getElementById('home');

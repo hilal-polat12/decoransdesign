@@ -3315,8 +3315,10 @@ const PRODUCT_SPECS = {
   h88:{t:'obj',size:[null,null,320]},
   h89:{t:'obj',size:[null,null,300]},
   h90:{t:'obj',size:[null,null,180]},
-  // three parts (body, lithophane shade, lid); the overhang rows would read "prints in one piece", so they are left out
-  h91:{t:'obj',size:[128,111,250],g:355,h:24,watertight:true,v:441}
+  // fdm: made only by 3D printing (a lithophane needs translucent filament), so no ceramic or plaster rows
+  h91:{t:'obj',size:[128,111,250],fdm:true,parts:'3 (walnut body, white lithophane shade, bottom lid)',supports:false,sup:'Not needed',
+       g:355,h:24,watertight:true,v:441,
+       estNote:'Filament and print time are rough estimates (shade at 100% infill and 0.12 mm layers, body and lid at 15% infill); your slicer and settings will give different figures.'}
 };
 
 function renderProductSpecs(id, subcat){
@@ -3351,26 +3353,29 @@ function renderProductSpecs(id, subcat){
   if(s.keyholes) rows.push(['Hanging', s.keyholes + ' built-in keyhole slots']);
   if(s.mirror) rows.push(['Mirror glass', s.mirror]);
 
-  rows.push(['Ceramic & clay']);
-  rows.push(['Plaster mold', isWall ? 'For slip casting or press molding' : 'For slip casting']);
-  rows.push(['Master model', masterText + ' (scaled up 12% for shrinkage)']);
-  rows.push(['Clay 3D printing', '1.5–2 mm nozzle, 0.8–1 mm layers, 3–4 mm walls']);
-  if(s.overhang != null){
-    rows.push(['Overhangs', steep
-      ? 'About ' + s.overhang + '%; print overhanging parts separately and join them with slip'
-      : 'About ' + s.overhang + '%; prints in one piece']);
+  if(!s.fdm){
+    rows.push(['Ceramic & clay']);
+    rows.push(['Plaster mold', isWall ? 'For slip casting or press molding' : 'For slip casting']);
+    rows.push(['Master model', masterText + ' (scaled up 12% for shrinkage)']);
+    rows.push(['Clay 3D printing', '1.5–2 mm nozzle, 0.8–1 mm layers, 3–4 mm walls']);
+    if(s.overhang != null){
+      rows.push(['Overhangs', steep
+        ? 'About ' + s.overhang + '%; print overhanging parts separately and join them with slip'
+        : 'About ' + s.overhang + '%; prints in one piece']);
+    }
+
+    rows.push(['Plaster']);
+    rows.push(['Mold', 'Silicone mold']);
+    if(s.v) rows.push(['Plaster', '≈ ' + kg(s.v * PLASTER_DENSITY) + ' for a solid cast']);
   }
 
-  rows.push(['Plaster']);
-  rows.push(['Mold', 'Silicone mold']);
-  if(s.v) rows.push(['Plaster', '≈ ' + kg(s.v * PLASTER_DENSITY) + ' for a solid cast']);
-
   rows.push(['FDM 3D printing']);
+  if(s.parts) rows.push(['Parts', s.parts]);
   if(s.g){
     rows.push(['Filament', '≈ ' + kg(s.g)]);
     rows.push(['Print time', '≈ ' + s.h + ' h']);
   }
-  if(s.overhang != null){
+  if(s.overhang != null || s.sup){
     rows.push(['Supports', s.sup || (s.supports ? 'Needed (about ' + s.overhang + '% overhang)' : 'Usually not needed (about ' + s.overhang + '% overhang)')]);
   }
 
@@ -3381,9 +3386,10 @@ function renderProductSpecs(id, subcat){
   const notes = [isWall || subcat === 'lamps'
     ? 'Modeled at real size; the model also scales freely.'
     : 'Modeled at the size above; the model also scales freely.'];
-  if(bigForKiln) notes.push('At this size the ceramic master may not fit your kiln; the model can be split for production, contact us for a split version.');
-  if(s.v) notes.push('Plaster is for a solid cast; a hollow (slush) cast uses much less.');
-  if(s.g) notes.push('Filament and print time are rough estimates (1.2 mm walls, 15% infill); your slicer and settings will give different figures.');
+  if(s.fdm) notes.push('Made for 3D printing only: the lithophane needs translucent filament, so it is not suited to ceramic or plaster casting.');
+  if(bigForKiln && !s.fdm) notes.push('At this size the ceramic master may not fit your kiln; the model can be split for production, contact us for a split version.');
+  if(s.v && !s.fdm) notes.push('Plaster is for a solid cast; a hollow (slush) cast uses much less.');
+  if(s.g) notes.push(s.estNote || 'Filament and print time are rough estimates (1.2 mm walls, 15% infill); your slicer and settings will give different figures.');
   // small table lamps fit a print bed; only wall pieces and floor-height lamps need sections
   if(isWall || (subcat === 'lamps' && s.size[2] > 400)) notes.push('For FDM, plan to print it in sections; custom splits are available on request.');
   if(subcat === 'mirrors') notes.push('Mirror glass is not included; have it cut locally to fit the opening.');

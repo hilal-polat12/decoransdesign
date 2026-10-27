@@ -2788,18 +2788,18 @@ Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set 
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="lamps" data-price="10" onclick="location.href='/lamps/h91';" data-tech="Modeled at table-lamp height (250 mm tall, about 150 mm across the corners), so every part fits a standard print bed without splitting.
-Print it as separate parts: the hexagonal frame, the six lithophane panels, the pedestal and the stepped base; the panels slide into grooves in the corner posts.
-Lithophane panels: white PLA, printed upright, 0.12 mm layers, 100% infill and slow outer walls. The pattern comes from the panel thickness (about 0.8 to 3 mm), so scale the lamp evenly and never thin the panels.
-Frame and base: walnut-tone wood-fill PLA (a 0.6 mm nozzle helps it flow), or any matte filament stained or painted walnut.
-For porcelain, the panels can be slip cast as thin porcelain lithophanes from a plaster mold taken off a printed master; plaster itself is not translucent, so use it only for the frame and base.
-Light it evenly from the center, for example a warm white (2700 K) LED strip wrapped around a central tube; a single bare bulb leaves bright spots on the panels.
-Use low-heat LED light only, wired with a certified cord set; a 5 V USB LED module is the simplest option." data-gallery="images/H91.1-2D.jpg|Hidden Garden Table Lamp, switched off and on;images/H91.2-2D.jpg|Hidden Garden Table Lamp, close-up detail;images/H91.3-2D.jpg|Hidden Garden Table Lamp, styled in a room">
+        <div class="card" data-subcat="lamps" data-model="models/H91-web.glb" data-price="10" onclick="location.href='/lamps/h91';" data-tech="Modeled at table-lamp height (250 mm tall, 128 mm across the base corners, a 120 mm lamp body), in three parts that each fit a standard print bed; nothing needs supports.
+Body (base, pedestal and frame in one piece): walnut-tone wood-fill PLA or any matte filament, printed upright at 0.2 mm layers; a 0.6 mm nozzle helps wood-fill flow. The inside of the base is a 45 degree cone, so it prints without supports.
+Shade (the six lithophane sides and the closed white top in one piece): white PETG or PLA, printed upside down with the top on the bed, 0.12 mm layers, 100% infill and slow outer walls. The pattern comes from the wall thickness (0.8 to 3 mm), so scale the lamp evenly and never thin the shade.
+The shade drops into the frame from above and lifts out by the two finger notches in the top rim when you change the bulb.
+Lamp holder: an E14 holder on a standard M10 threaded nipple goes through the round seat in the floor of the frame, held by a nut underneath; the cable runs through the hollow base and out of the back.
+Bottom lid: push it in with the three lugs in their slots and turn it about 35 degrees with a coin to lock it; turn it back to open the base for wiring.
+Use an E14 LED bulb of 5 W or less only (the top is closed, so keep the heat low), wired with a certified lamp cord set and switch." data-gallery="images/H91.1-2D.jpg|Hidden Garden Table Lamp, switched off and on;images/H91.2-2D.jpg|Hidden Garden Table Lamp, close-up detail;images/H91.3-2D.jpg|Hidden Garden Table Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H91.1-2D.jpg" alt="Hidden Garden Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
             <span class="card-tag">Code: H91 · Design File</span>
             <h3><a href="/lamps/h91">Hidden Garden Table Lamp</a></h3>
-            <p>Lithophane table lamp design file for 3D printing, shown with a walnut frame and white panels: a hexagonal lantern of six lithophane panels held in a slim wooden frame on a stepped hexagonal base. Switched off, the panels look plain white with only a faint relief; switched on, light passing through their changing thickness reveals an Iznik garden of tulips, carnations and saz leaves in warm amber tones. A quiet surprise for a bedside table, a reading corner or a gift, and at 25 cm tall it prints on most home printers.</p>
+            <p>Lithophane table lamp design file for 3D printing, shown with a walnut frame and white panels: a hexagonal lantern whose lithophane shade, closed by a white hexagon on top, sits in a slim walnut frame on a stepped hexagonal base. Switched off, the panels look plain white with only a faint relief; switched on, light passing through their changing thickness reveals an Iznik garden of tulips, carnations and saz leaves in warm amber tones. A quiet surprise for a bedside table, a reading corner or a gift, and at 25 cm tall it prints on most home printers.</p>
             <div class="card-footer">
               <span class="card-price">$10</span>
               <button type="button" class="card-add-cart">Add to Cart</button>
@@ -3315,7 +3315,8 @@ const PRODUCT_SPECS = {
   h88:{t:'obj',size:[null,null,320]},
   h89:{t:'obj',size:[null,null,300]},
   h90:{t:'obj',size:[null,null,180]},
-  h91:{t:'obj',size:[null,null,250]}
+  // three parts (body, lithophane shade, lid); the overhang rows would read "prints in one piece", so they are left out
+  h91:{t:'obj',size:[128,111,250],g:355,h:24,watertight:true,v:441}
 };
 
 function renderProductSpecs(id, subcat){

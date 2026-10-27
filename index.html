@@ -1247,11 +1247,11 @@ footer{padding:44px 0 26px;}
       <label for="customerEmail">Your email address</label>
       <div class="cart-quote-row">
         <input type="email" id="customerEmail" placeholder="you@example.com">
-        <button type="button" class="btn-quote" id="requestQuoteBtn">Request a Quote</button>
+        <button type="button" class="btn-quote" id="requestQuoteBtn">Send Order</button>
       </div>
       <p class="cart-quote-error" id="cartQuoteError">Please enter a valid email address first.</p>
-      <p class="cart-quote-success" id="cartQuoteSuccess" style="display:none;">Thanks! Your request has been sent — you'll receive an email within 24 hours.</p>
-      <p class="cart-quote-note">You will receive an email within 24 hours — please check your inbox.</p>
+      <p class="cart-quote-success" id="cartQuoteSuccess" style="display:none;">Thanks! Your order has been sent. Within 24 hours you'll receive a secure Payoneer payment link by email.</p>
+      <p class="cart-quote-note"><strong>Pay by card:</strong> after you send your order, we email you a secure Payoneer payment link within 24 hours. Pay by credit or debit card (or Payoneer balance); your files are emailed right after payment.</p>
       <p class="cart-legal-note">All items are digital design files; nothing is shipped. Purchases are covered by our <a href="terms.html">Terms of Sale</a>, <a href="license.html">File License</a> and <a href="refund-policy.html">Refund Policy</a>.</p>
     </div>
   </div>
@@ -4072,7 +4072,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
   // Re-sync whenever a product page is opened
   window.addEventListener('hashchange', syncProductButton);
 
-  // Request a quote — sent via Formspree
+  // Send the order — sent via Formspree; the owner replies with a Payoneer payment link
   const FORM_ENDPOINT = 'https://formspree.io/f/mvkopewb';
   function isValidEmail(value){
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -4090,9 +4090,12 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
       cartQuoteError.style.display = 'none';
       if(cartQuoteSuccess) cartQuoteSuccess.style.display = 'none';
 
+      // the order with prices and total, so the Payoneer payment request can be made for the right amount
       const items = getCart();
-      const lines = items.map(function(i){ return '- ' + i.code + ': ' + i.title; }).join('\n');
-      const message = 'Price quote request for the following pieces:\n\n' + lines;
+      const total = items.reduce(function(sum, i){ return sum + (i.price || 0); }, 0);
+      const lines = items.map(function(i){ return '- ' + i.code + ': ' + i.title + (i.price ? '  $' + i.price : ''); }).join('\n');
+      const message = 'New order, to be paid through a Payoneer payment link:\n\n' + lines +
+        '\n\nTotal: $' + total + '\nCustomer email: ' + email;
 
       requestQuoteBtn.disabled = true;
       requestQuoteBtn.textContent = 'Sending...';
@@ -4106,7 +4109,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
         body: JSON.stringify({
           email: email,
           message: message,
-          _subject: 'Price Quote Request — Decorans Design'
+          _subject: 'New Order $' + total + ' — Decorans Design'
         })
       }).then(function(res){
         if(res.ok){
@@ -4121,7 +4124,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
         cartQuoteError.style.display = 'block';
       }).finally(function(){
         requestQuoteBtn.disabled = false;
-        requestQuoteBtn.textContent = 'Request a Quote';
+        requestQuoteBtn.textContent = 'Send Order';
       });
     });
   }

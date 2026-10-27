@@ -3651,9 +3651,10 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
     const m = (card.getAttribute('onclick') || '').match(/\/h(\d+)'/i);
     return m ? parseInt(m[1], 10) : 0;
   }
-  const newest = Array.prototype.slice.call(cards)
-    .sort(function(a, b){ return codeNum(b) - codeNum(a); })
-    .slice(0, NEW_COUNT);
+  // every view lists the newest pieces (highest code) first
+  const byNewest = Array.prototype.slice.call(cards)
+    .sort(function(a, b){ return codeNum(b) - codeNum(a); });
+  const newest = byNewest.slice(0, NEW_COUNT);
   const viewAll = document.getElementById('viewAllLink');
   const story = document.getElementById('homeExtras');
   const catCount = document.getElementById('catCount');
@@ -3681,7 +3682,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
       else if(val === 'every') show = true;
       else show = card.getAttribute('data-subcat') === val;
       card.style.display = show ? '' : 'none';
-      card.style.order = (val === 'all' && show) ? String(newest.indexOf(card)) : '';
+      card.style.order = show ? String(byNewest.indexOf(card)) : '';
       if(show) shown++;
     });
     if(catTitle){

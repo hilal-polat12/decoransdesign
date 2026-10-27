@@ -278,7 +278,8 @@ def build_category(template, key, products, intro):
     e = lambda s: html.escape(s, quote=True)
     cat = CATEGORIES[key]
     url = SITE + '/' + key
-    items = [p for p in products if p['cat'] == key]
+    # newest first (highest code), the same order the page script shows
+    items = sorted((p for p in products if p['cat'] == key), key=lambda p: -int(p['code'][1:]))
 
     page = common_cleanup(template, {p['code'] for p in items})
     page = set_head(page, cat['title'], cat['desc'], url, 'website')

@@ -41,7 +41,7 @@ CATEGORIES = {
     'lamps': {
         'label': 'Lamps',
         'title': 'Plaster & Ceramic Lamp Design Files | Decorans Design',
-        'desc': 'Floor lamp design files for plaster, ceramic and 3D printing: sculptural lamps modeled at full height, made in sections, lit with low-heat LEDs.',
+        'desc': 'Floor and table lamp design files for plaster, ceramic and 3D printing: sculptural floor lamps made in sections and lithophane table lamps, lit with low-heat LEDs.',
     },
     'reliefs': {
         'label': 'Wall Reliefs',

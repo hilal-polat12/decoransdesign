@@ -33,25 +33,25 @@ CATEGORIES = {
         'title': 'Ceramic & Plaster Candle Holder Files | Decorans Design',
         'desc': 'Candle holder design files for ceramic slip casting, plaster casting and 3D printing: tealight, taper and pillar holders. STL, OBJ, 3MF, GLB files.',
     },
-    'mirrors': {
-        'label': 'Mirrors',
-        'title': 'Plaster & Ceramic Mirror Design Files | Decorans Design',
-        'desc': 'Wall mirror frame design files for plaster, ceramic and 3D printing: sculpted animal, nature and fantasy frames. Have the glass cut locally.',
-    },
     'lamps': {
         'label': 'Lamps',
         'title': 'Plaster & Ceramic Lamp Design Files | Decorans Design',
         'desc': 'Floor and table lamp design files for plaster, ceramic and 3D printing: sculptural floor lamps made in sections and lithophane table lamps, lit with low-heat LEDs.',
     },
-    'reliefs': {
-        'label': 'Wall Reliefs',
-        'title': 'Plaster & Ceramic Wall Relief Design Files | Decorans Design',
-        'desc': 'Wall relief and panel design files for plaster casting, ceramic and 3D printing: layered scenes, mosaics and abstract panels at real wall size.',
-    },
     'figurines': {
         'label': 'Figurines',
         'title': 'Ceramic & Plaster Figurine Design Files | Decorans Design',
         'desc': 'Figurine design files for ceramic slip casting, plaster casting and 3D printing: animals, fables and fantasy characters sculpted in detail.',
+    },
+    'mirrors': {
+        'label': 'Mirrors',
+        'title': 'Plaster & Ceramic Mirror Design Files | Decorans Design',
+        'desc': 'Wall mirror frame design files for plaster, ceramic and 3D printing: sculpted animal, nature and fantasy frames. Have the glass cut locally.',
+    },
+    'reliefs': {
+        'label': 'Wall Reliefs',
+        'title': 'Plaster & Ceramic Wall Relief Design Files | Decorans Design',
+        'desc': 'Wall relief and panel design files for plaster casting, ceramic and 3D printing: layered scenes, mosaics and abstract panels at real wall size.',
     },
 }
 

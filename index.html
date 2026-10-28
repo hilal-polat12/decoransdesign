@@ -3301,7 +3301,9 @@ window.DEALS = [
     var ordered = first.map(function(code){
       return items.filter(function(c){ return codeOf(c) === code; })[0];
     }).filter(Boolean);
-    items.forEach(function(c){ if(ordered.indexOf(c) === -1) ordered.push(c); });
+    // after any hand-picked first designs, the newest designs first (highest product code)
+    items.slice().sort(function(a, b){ return parseInt(codeOf(b).slice(1), 10) - parseInt(codeOf(a).slice(1), 10); })
+      .forEach(function(c){ if(ordered.indexOf(c) === -1) ordered.push(c); });
     ordered.slice(0, 12).forEach(function(c){ track.appendChild(buildMini(c)); });
   });
 

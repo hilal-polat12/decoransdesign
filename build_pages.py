@@ -20,37 +20,37 @@ BRAND = 'Decorans Design'
 CATEGORIES = {
     'vases': {
         'label': 'Vases',
-        'title': 'Ceramic & Plaster Vase Design Files | Decorans Design',
+        'title': '3D Print, Plaster & Ceramic Vase Design Files | Decorans Design',
         'desc': 'Vase design files for ceramic slip casting, plaster casting and 3D printing: twisted, ringed, spiral and petal forms. STL, OBJ, 3MF, GLB files.',
     },
     'curios': {
         'label': 'Curios',
-        'title': 'Ceramic & Plaster Curio Design Files | Decorans Design',
+        'title': '3D Print, Plaster & Ceramic Curio Design Files | Decorans Design',
         'desc': 'Curio and decorative sculpture design files for ceramic slip casting, plaster casting and 3D printing. STL, OBJ, 3MF, GLB with a commercial license.',
     },
     'candle-holders': {
         'label': 'Candle Holders',
-        'title': 'Ceramic & Plaster Candle Holder Files | Decorans Design',
+        'title': '3D Print, Plaster & Ceramic Candle Holder Files | Decorans Design',
         'desc': 'Candle holder design files for ceramic slip casting, plaster casting and 3D printing: tealight, taper and pillar holders. STL, OBJ, 3MF, GLB files.',
     },
     'lamps': {
         'label': 'Lamps',
-        'title': 'Plaster & Ceramic Lamp Design Files | Decorans Design',
-        'desc': 'Floor and table lamp design files for plaster, ceramic and 3D printing: sculptural floor lamps made in sections and lithophane table lamps, lit with low-heat LEDs.',
+        'title': '3D Print, Plaster & Ceramic Lamp Design Files | Decorans Design',
+        'desc': 'Floor and table lamp design files for 3D printing, plaster and ceramic: sculptural floor lamps made in sections and 3D printed table lamps that glow through their panels, lit with low-heat LEDs.',
     },
     'figurines': {
         'label': 'Figurines',
-        'title': 'Ceramic & Plaster Figurine Design Files | Decorans Design',
+        'title': '3D Print, Plaster & Ceramic Figurine Design Files | Decorans Design',
         'desc': 'Figurine design files for ceramic slip casting, plaster casting and 3D printing: animals, fables and fantasy characters sculpted in detail.',
     },
     'mirrors': {
         'label': 'Mirrors',
-        'title': 'Plaster & Ceramic Mirror Design Files | Decorans Design',
+        'title': '3D Print, Plaster & Ceramic Mirror Design Files | Decorans Design',
         'desc': 'Wall mirror frame design files for plaster, ceramic and 3D printing: sculpted animal, nature and fantasy frames. Have the glass cut locally.',
     },
     'reliefs': {
         'label': 'Wall Reliefs',
-        'title': 'Plaster & Ceramic Wall Relief Design Files | Decorans Design',
+        'title': '3D Print, Plaster & Ceramic Wall Relief Design Files | Decorans Design',
         'desc': 'Wall relief and panel design files for plaster casting, ceramic and 3D printing: layered scenes, mosaics and abstract panels at real wall size.',
     },
 }

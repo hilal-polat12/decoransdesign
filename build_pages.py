@@ -201,10 +201,10 @@ def product_cleanup(page, code):
 
 
 def related_products(p, products):
-    """The next few designs of the same category, wrapping around, so every product is linked equally often."""
-    same = [q for q in products if q['cat'] == p['cat']]
-    i = same.index(p)
-    return (same[i + 1:] + same[:i])[:RELATED_COUNT]
+    """The newest designs of the same category (highest product code first), leaving out this one."""
+    same = [q for q in products if q['cat'] == p['cat'] and q is not p]
+    same.sort(key=lambda q: int(q['code'][1:]), reverse=True)
+    return same[:RELATED_COUNT]
 
 
 def build_page(template, p, products):

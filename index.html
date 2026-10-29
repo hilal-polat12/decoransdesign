@@ -2949,11 +2949,11 @@ Use a warm white (2700 K) frosted E14 LED bulb of 5 W or less, wired with a cert
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="lamps" data-price="10" onclick="location.href='/lamps/h97';" data-tech="Designed for 3D printing at table-lamp size (about 270 mm tall), as an egg-shaped coffee bean that stands straight on the table, in 3 parts.
-Body: hundreds of small coffee beans, each with its centre groove, joined into an open lattice in matte dark brown PLA. The S-shaped crease down the front is left fully open, so the light pours out of it in one bright line.
-Crown: the top of the bean, a small dome under a pile of larger loose beans, which sits on the body.
-Lid: the bottom of the lamp with the lamp post; the bulb comes out with it.
-Use a warm white (2700 K) frosted E14 LED bulb of 5 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H97.1-2D.jpg|Coffee Bean Table Lamp, switched off and on;images/H97.2-2D.jpg|Coffee Bean Table Lamp, close-up of the glowing crease and the beans on top;images/H97.3-2D.jpg|Coffee Bean Table Lamp, styled on a coffee corner sideboard">
+        <div class="card" data-subcat="lamps" data-model="models/H97-web.glb" data-price="10" onclick="location.href='/lamps/h97';" data-tech="Modeled at table-lamp size (271 mm tall, 177 mm across the egg), in 3 parts in one colour; the body and the lid print without supports. The body needs a print bed of at least 180 x 180 mm and 245 mm of height.
+Body (the egg up to where its wall turns to 45 degrees): 657 coffee beans, 17 x 12.5 x 5 mm, each with its S-shaped centre groove, joined row on row into an open lattice. Every bean rests on the two below it and its lower tip is cut at a slant, so the lattice prints upright without supports. The S-shaped crease down the front is left fully open, framed by a 3 mm lip, so the light pours out of it in one bright line and glows between the beans.
+Crown (the top of the egg): the same rows of beans carry on from the body over a solid core, under a pile of 15 larger loose beans (22 x 16 mm) that all touch each other. It prints on its flat underside; a few small supports under the edges of the pile are optional. Two 4 x 4 mm pegs, hidden inside the top of the body, fit two sockets in its underside, so it sits one way round; a drop of glue holds it for good.
+Lid and lamp holder: the lid sits flush in the bottom ring and locks with a 30 degree turn of its three lugs, with a click at the end. An E14 holder on an M10 threaded tube (about 55 mm) stands on the post in the middle, held by a nut in the hexagon pocket underneath, which puts the bulb in the middle of the egg, about 118 mm above the table. The cable runs in the channel under the lid and leaves through the notch at the back, at table level. To change the bulb, turn the lid back and pull it down: the bulb comes out with it.
+Use a warm white (2700 K) frosted E14 G45 LED bulb of 5 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H97.1-2D.jpg|Coffee Bean Table Lamp, switched off and on;images/H97.2-2D.jpg|Coffee Bean Table Lamp, close-up of the glowing crease and the beans on top;images/H97.3-2D.jpg|Coffee Bean Table Lamp, styled on a coffee corner sideboard">
           <div class="thumb thumb-img-dark"><img src="images/H97.1-2D.jpg" alt="Coffee Bean Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
             <span class="card-tag">Code: H97 · Design File</span>
@@ -3587,7 +3587,9 @@ const PRODUCT_SPECS = {
        g:242,h:17,watertight:true,v:245,
        estNote:'Filament and print time are rough estimates (0.2 mm layers, 15% infill, single colour at typical modern printer speeds); a multi-colour print takes longer, and your slicer and settings will give different figures.'},
   // no model file yet: only the height is known
-  h97:{t:'obj',size:[null,null,270],fdm:true}
+  h97:{t:'obj',size:[177,177,271],fdm:true,parts:'3: the coffee bean lattice body, the crown with its pile of loose beans, and the lid with the lamp post',supports:false,sup:'Not needed (optional, a few under the edges of the crown pile)',
+       g:553,h:21,watertight:true,v:571,
+       estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill); your slicer and settings will give different figures.'}
 };
 
 function renderProductSpecs(id, subcat){

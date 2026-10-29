@@ -69,6 +69,8 @@ def attr(attrs, name):
 
 
 def parse_products(page):
+    # codes marked fdm:true in PRODUCT_SPECS are made only by 3D printing
+    fdm = set(re.findall(r'\b(h\d+):\{[^\n}]*\bfdm:true', page))
     products = []
     for m in re.finditer(r'<div class="card"([^>]*)>', page):
         attrs = m.group(1)
@@ -92,6 +94,7 @@ def parse_products(page):
             'thumb': (thumb.group(1), html.unescape(thumb.group(2))) if thumb else ('', ''),
             'gallery': gallery,
             'price': attr(attrs, 'data-price'),
+            'fdm': link.group(2) in fdm,
             'stamp': attrs + body[:body.find('<div class="card-footer">')],
         })
     return products
@@ -116,8 +119,9 @@ def clip(text, limit):
     return cut + '…'
 
 
-def product_title(name):
-    for t in (name + ' | Ceramic & Plaster File | ' + BRAND, name + ' Design File | ' + BRAND, name + ' | ' + BRAND):
+def product_title(name, fdm=False):
+    first = name + (' | 3D Print File | ' if fdm else ' | Ceramic & Plaster File | ') + BRAND
+    for t in (first, name + ' Design File | ' + BRAND, name + ' | ' + BRAND):
         if len(t) <= TITLE_MAX:
             return t
     return name + ' | ' + BRAND
@@ -216,7 +220,7 @@ def build_page(template, p, products):
     code_label = 'Code: ' + p['code'].upper() + ' · Design File'
 
     page = product_cleanup(template, p['code'])
-    page = set_head(page, product_title(p['name']), product_description(p), url, 'product', image_abs)
+    page = set_head(page, product_title(p['name'], p['fdm']), product_description(p), url, 'product', image_abs)
 
     schema = {
         '@context': 'https://schema.org',

@@ -2915,7 +2915,7 @@ Use a neutral white (4000 K) E14 LED bulb of 5 W or less, wired with a certified
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="lamps" data-model="models/H95-web.glb" data-price="10" onclick="location.href='/lamps/h95';" data-tech="Modeled at table-lamp size (280 mm tall on a 254 x 126 mm base), in two parts; nothing needs supports. Both parts need a 256 x 256 mm print bed, and the body is 245 mm tall, so the printer needs at least 250 mm of height. The 3MF splits each part into lapis blue, gold and white volumes, so a multi-colour printer prints the colours in one go; on a single-colour printer, print in lapis blue and paint the reliefs and rosettes.
+        <div class="card" data-subcat="lamps" data-model="models/H95-web.glb" data-exposure="0.75" data-price="10" onclick="location.href='/lamps/h95';" data-tech="Modeled at table-lamp size (280 mm tall on a 254 x 126 mm base), in two parts; nothing needs supports. Both parts need a 256 x 256 mm print bed, and the body is 245 mm tall, so the printer needs at least 250 mm of height. The 3MF splits each part into lapis blue, gold and white volumes, so a multi-colour printer prints the colours in one go; on a single-colour printer, print in lapis blue and paint the reliefs and rosettes.
 Body (both towers, the arched gate, the merlons and all the reliefs in one piece): printed upright at 0.2 mm layers. The lions, sirrush dragons and bulls stand 1.5 mm proud with 45 degree edges, the brick joints are 0.4 mm deep, and the round arch ends in a short flat crown that prints as a bridge.
 Light: the towers are hollow and open at the top, so the light rises between the stepped merlons, and rosette-shaped openings on the towers and inside the arch let it out as small stars. The bulbs change from above, through the open tower tops.
 Base (the plinth with its rosette band and the two lamp posts in one piece): printed flat. A plug ring on top locates each tower, and the body simply sits on the base.
@@ -2932,7 +2932,7 @@ Use two warm white (2700 K) frosted E14 LED bulbs of 5 W or less, wired with a c
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="lamps" data-model="models/H96-web.glb" data-price="10" onclick="location.href='/lamps/h96';" data-tech="Modeled at table-lamp size (250 mm tall, 271 mm with the bee, on a 127 x 110 mm hexagon), in 2 pieces: the lamp body, with its floor and lamp post, in one piece that needs no supports, and the 40 mm bee with its wings in one piece. The body needs a print bed of at least 130 x 130 mm and 250 mm of height. The 3MF splits the body into cream and translucent amber volumes and the bee into black and gold, so a multi-colour printer prints the honey in one go; on a single-colour printer, print the body in cream and tint the honey windows and drips with transparent amber glass paint.
+        <div class="card" data-subcat="lamps" data-model="models/H96-web.glb" data-exposure="0.75" data-price="10" onclick="location.href='/lamps/h96';" data-tech="Modeled at table-lamp size (250 mm tall, 271 mm with the bee, on a 127 x 110 mm hexagon), in 2 pieces: the lamp body, with its floor and lamp post, in one piece that needs no supports, and the 40 mm bee with its wings in one piece. The body needs a print bed of at least 130 x 130 mm and 250 mm of height. The 3MF splits the body into cream and translucent amber volumes and the bee into black and gold, so a multi-colour printer prints the honey in one go; on a single-colour printer, print the body in cream and tint the honey windows and drips with transparent amber glass paint.
 Body: 300 flat-topped hexagonal cells, 15 mm across, with 2.4 mm walls between them in a 3 mm shell; 135 of them hold honey, more of them towards the bottom, and 20 drips run down over the solid bottom band. The cell tops print as short bridges and the drips step out in 45 degree layers.
 Honey: each window is 1.2 mm of translucent amber, set back from the surface with a low dome, so the light glows through it; the cells with drips are filled to the brim. The open cells in the upper part let the light out and throw a honeycomb pattern on the wall.
 Lamp holder: the floor is printed with the body. An E14 holder on a 40 mm M10 threaded tube stands on the post in the middle, held by a nut in the hexagon pocket underneath, which puts the bulb about 107 mm above the table; the cable runs in the channel under the floor and leaves through the back wall, at table level. The top is open, so the bulb changes from above.
@@ -3769,6 +3769,8 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
     if(modelViewer){
       if(modelCol) modelCol.style.display = 'none';
       modelViewer.removeAttribute('src');
+      // light level of the 3D preview: 1 by default, a card can ask for less with data-exposure
+      modelViewer.setAttribute('exposure', card.getAttribute('data-exposure') || '1');
       if(modelSrc){
         const requestedId = id;
         resolveModelSrc(modelSrc, function(resolvedSrc){

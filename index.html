@@ -2932,16 +2932,17 @@ Use two warm white (2700 K) frosted E14 LED bulbs of 5 W or less, wired with a c
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="lamps" data-price="10" onclick="location.href='/lamps/h96';" data-tech="Designed for 3D printing at table-lamp size (about 350 mm tall), as a hexagonal body that stands straight on the table, with no separate plinth.
-Body and frame: matte warm cream PLA. The honeycomb walls between the cells stay thin and even, so the open cells read as clean hexagons.
-Honey cells and drips: translucent amber PLA or PETG. The filled cells and the drips over the lower edge glow golden when the lamp is on; on a single-colour printer, print the whole lamp in cream and fill the cells with amber.
-Bee: a small separate piece in matte black with gold wings that sits on the top rim.
+        <div class="card" data-subcat="lamps" data-model="models/H96-web.glb" data-price="10" onclick="location.href='/lamps/h96';" data-tech="Modeled at table-lamp size (250 mm tall, 264 mm with the bee, on a 127 x 110 mm hexagon), as one body with its floor plus a small bee and its two wings; the body needs no supports. It needs a print bed of at least 130 x 130 mm and 250 mm of height. The 3MF splits the body into cream and translucent amber volumes and the bee into black and gold, so a multi-colour printer prints the honey in one go; on a single-colour printer, print the body in cream and tint the honey windows and drips with transparent amber glass paint.
+Body: 300 flat-topped hexagonal cells, 15 mm across, with 2.4 mm walls between them in a 3 mm shell; 135 of them hold honey, more of them towards the bottom, and 20 drips run down over the solid bottom band. The cell tops print as short bridges and the drips step out in 45 degree layers.
+Honey: each window is 1.2 mm of translucent amber, set back from the surface with a low dome, so the light glows through it; the cells with drips are filled to the brim. The open cells in the upper part let the light out and throw a honeycomb pattern on the wall.
+Lamp holder: the floor is printed with the body. An E14 holder on a 40 mm M10 threaded tube stands on the post in the middle, held by a nut in the hexagon pocket underneath, which puts the bulb about 107 mm above the table; the cable runs in the channel under the floor and leaves through the back wall, at table level. The top is open, so the bulb changes from above.
+Bee: black with gold bands, printed on its flat belly (a few tree supports under the head help); the two gold wings print flat and their tabs glue into the slots on its back. A short piece of 1.75 mm filament in its belly pins it into the hole in the front right corner of the rim.
 Use a warm white (2700 K) frosted E14 LED bulb of 5 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H96.1-2D.jpg|Honeycomb Bee Table Lamp, switched off and on;images/H96.2-2D.jpg|Honeycomb Bee Table Lamp, close-up of the glowing honey cells and drips;images/H96.3-2D.jpg|Honeycomb Bee Table Lamp, styled on a kitchen table">
           <div class="thumb thumb-img-dark"><img src="images/H96.1-2D.jpg" alt="Honeycomb Bee Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
             <span class="card-tag">Code: H96 · Design File</span>
             <h3><a href="/lamps/h96">Honeycomb Bee Table Lamp</a></h3>
-            <p>Honeycomb table lamp design file for 3D printing, shown in warm cream with translucent amber honey: a tall hexagonal lamp covered in honeycomb cells, some left open and some filled with honey that drips over the lower edge, with a small black and gold bee resting on the rim. Switched off, the amber cells read like real honey caught in the comb; switched on, the hidden bulb lights them from within so they glow golden, while the open cells cast a hexagonal pattern of light and shadow on the wall around it. A warm piece for a bedside table, a kitchen shelf or a gift for honey lovers, 35 cm tall.</p>
+            <p>Honeycomb table lamp design file for 3D printing, shown in warm cream with translucent amber honey: a tall hexagonal lamp covered in honeycomb cells, some left open and some filled with honey that drips over the lower edge, with a small black and gold bee resting on the rim. Switched off, the amber cells read like real honey caught in the comb; switched on, the hidden bulb lights them from within so they glow golden, while the open cells cast a hexagonal pattern of light and shadow on the wall around it. A warm piece for a bedside table, a kitchen shelf or a gift for honey lovers, 25 cm tall.</p>
             <div class="card-footer">
               <span class="card-price">$10</span>
               <button type="button" class="card-add-cart">Add to Cart</button>
@@ -3566,8 +3567,9 @@ const PRODUCT_SPECS = {
   h95:{t:'obj',size:[254,126,280],fdm:true,parts:'2 (lapis blue body with both towers, gold reliefs and white rosettes; base with the two lamp posts)',supports:false,sup:'Not needed',
        g:1132,h:25,watertight:true,v:2105,
        estNote:'Filament and print time are rough estimates (0.2 mm layers, 15% infill); your slicer and settings will give different figures.'},
-  // no model file yet: only the height is known
-  h96:{t:'obj',size:[null,null,350],fdm:true}
+  h96:{t:'obj',size:[127,115,264],fdm:true,parts:'3 (cream body with amber honey cells, drips, floor and lamp post; black and gold bee; gold wing, printed twice)',supports:false,sup:'Not needed for the body; a few under the bee',
+       g:242,h:17,watertight:true,v:245,
+       estNote:'Filament and print time are rough estimates (0.2 mm layers, 15% infill, single colour at typical modern printer speeds); a multi-colour print takes longer, and your slicer and settings will give different figures.'}
 };
 
 function renderProductSpecs(id, subcat){

@@ -2999,9 +2999,12 @@ Use a small round warm or cool white E14 LED bulb, up to 35 mm across (mini glob
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="lamps" data-price="10" onclick="location.href='/lamps/h100';" data-tech="Made for 3D printing only. The dome workshop is a hollow shell with round windows and an open door; the light sits inside it, and the dome lifts off the base to change the bulb.
-Print the rocky base in dark grey, the dome in brown and the 18 ants in black. The ants are separate pieces that plug into the base, so each one prints upright on its own and keeps its tools crisp.
-Use a warm white (2700 K) LED bulb only, never incandescent, since PLA softens with heat; wire it with a certified lamp cord set and switch." data-gallery="images/H100.1-2D.jpg|Revolutionary Ants Table Lamp, switched off and on;images/H100.2-2D.jpg|Revolutionary Ants Table Lamp, close-up of the leader ant raising its fist;images/H100.3-2D.jpg|Revolutionary Ants Table Lamp, glowing on a workbench in a craftsman workshop">
+        <div class="card" data-subcat="lamps" data-model="models/H100-web.glb" data-price="10" onclick="location.href='/lamps/h100';" data-tech="Modeled at table-lamp size (117 mm tall, on a 240 mm rocky base), in 20 printed parts in three colours, joined without glue. The base needs a print bed of at least 245 x 245 mm.
+Base (dark grey): a layered rocky mound in one piece, 47 mm at its highest, with a flat seat and a collar for the dome and a socket for each ant.
+Dome workshop (brown, 80 mm across and 75 mm tall): a hollow 2.4 mm shell with an open arched door and three round windows; it sits on a round collar with the door to the front, and lifts off to change the bulb.
+Ants (black, 30 mm, 37 mm with the antennae): 18 ants, each holding its own tool, from shovels, rakes, hammers and picks to scythes, big scissors, baskets and food, with the leader at the front raising its fist. Each ant has a D-shaped peg under its feet that fits its own socket in the base, and all 18 print together on one plate.
+Lamp holder and cable: an E14 lamp holder sits 29 mm deep in the base under the dome, held from below by an M10 threaded tube and nut; the cord runs in a groove under the base and leaves at the back.
+Use a small round warm white (2700 K) E14 LED bulb, up to 35 mm across (mini globe) and 3 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H100.1-2D.jpg|Revolutionary Ants Table Lamp, switched off and on;images/H100.2-2D.jpg|Revolutionary Ants Table Lamp, close-up of the leader ant raising its fist;images/H100.3-2D.jpg|Revolutionary Ants Table Lamp, glowing on a workbench in a craftsman workshop">
           <div class="thumb thumb-img-dark"><img src="images/H100.1-2D.jpg" alt="Revolutionary Ants Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
             <span class="card-tag">Code: H100 · Design File</span>
@@ -3646,7 +3649,9 @@ const PRODUCT_SPECS = {
   h99:{t:'obj',size:[293,155,226],fdm:true,parts:'4 in one colour: the base, the large crane and two small cranes',supports:false,sup:'Not needed',
        g:485,h:21,watertight:true,
        estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill, at typical modern printer speeds); your slicer and settings will give different figures.'},
-  h100:{t:'obj',size:[null,null,null],fdm:true}
+  h100:{t:'obj',size:[241,240,117],fdm:true,parts:'20 in three colours: the rocky base, the dome workshop and 18 ants',supports:false,sup:'Not needed',
+       g:395,h:17,watertight:true,
+       estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill, at typical modern printer speeds); your slicer and settings will give different figures.'}
 };
 
 function renderProductSpecs(id, subcat){

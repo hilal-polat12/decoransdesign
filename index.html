@@ -2982,6 +2982,34 @@ Use a small round warm white (2700 K) E14 LED bulb, up to 35 mm across (mini glo
             </div>
           </div>
         </div>
+        <div class="card" data-subcat="lamps" data-price="10" onclick="location.href='/lamps/h99';" data-tech="Made for 3D printing only. Print the three cranes in translucent turquoise PLA so the light glows through every folded facet; the long oval base with its corals, shells and pebbles prints in the same colour.
+The cranes are hollow, so the light sits inside them. Fine layers (0.12-0.16 mm) keep the folded edges and wing tips crisp.
+Use LED lights only (small LED bulbs or an LED strip), never incandescent, since PLA softens with heat; wire them with a certified lamp cord set and switch." data-gallery="images/H99.1-2D.jpg|Origami Crane Trio Table Lamp, switched off and on;images/H99.2-2D.jpg|Origami Crane Trio Table Lamp, close-up of the cranes glowing turquoise;images/H99.3-2D.jpg|Origami Crane Trio Table Lamp, glowing on a coffee table in a colorful living room">
+          <div class="thumb thumb-img-dark"><img src="images/H99.1-2D.jpg" alt="Origami Crane Trio Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
+          <div class="card-body">
+            <span class="card-tag">Code: H99 · Design File</span>
+            <h3><a href="/lamps/h99">Origami Crane Trio Table Lamp</a></h3>
+            <p>Origami crane table lamp design file for 3D printing, shown in translucent turquoise: three folded paper cranes, a large one in the center and a smaller one on each side, standing in a row on a long oval base scattered with branching corals, seashells and pebbles. Every crane keeps the crisp folds of a real paper crane, with raised wings, a pointed neck and tail. Switched off, it reads as a calm sea-blue sculpture; switched on, the cranes glow from inside and every folded facet lights up in a different shade of turquoise. A gift with meaning, since the paper crane stands for luck and long life, for a console, a shelf, a bedroom or a Japanese-inspired corner.</p>
+            <div class="card-footer">
+              <span class="card-price">$10</span>
+              <button type="button" class="card-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-subcat="lamps" data-price="10" onclick="location.href='/lamps/h100';" data-tech="Made for 3D printing only. The dome workshop is a hollow shell with round windows and an open door; the light sits inside it, and the dome lifts off the base to change the bulb.
+Print the rocky base in dark grey, the dome in brown and the 18 ants in black. The ants are separate pieces that plug into the base, so each one prints upright on its own and keeps its tools crisp.
+Use a warm white (2700 K) LED bulb only, never incandescent, since PLA softens with heat; wire it with a certified lamp cord set and switch." data-gallery="images/H100.1-2D.jpg|Revolutionary Ants Table Lamp, switched off and on;images/H100.2-2D.jpg|Revolutionary Ants Table Lamp, close-up of the leader ant raising its fist;images/H100.3-2D.jpg|Revolutionary Ants Table Lamp, glowing on a workbench in a craftsman workshop">
+          <div class="thumb thumb-img-dark"><img src="images/H100.1-2D.jpg" alt="Revolutionary Ants Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
+          <div class="card-body">
+            <span class="card-tag">Code: H100 · Design File</span>
+            <h3><a href="/lamps/h100">Revolutionary Ants Table Lamp</a></h3>
+            <p>Ant colony table lamp design file for 3D printing, shown in black, brown and dark grey: eighteen little ants gathered on a wide rocky base in front of a round dome workshop, all facing forward and each holding its own tool, from shovels, rakes and hammers to a scythe, big scissors, baskets and food. At the front, the leader raises its fist in the air. Switched off, it reads as a playful sculpture full of characters; switched on, warm light pours out of the workshop's door and round windows and lights the crowd from behind. A story piece about teamwork and standing together, for a desk, a bookshelf or a gift for a team, a leader or anyone who loves tiny worlds.</p>
+            <div class="card-footer">
+              <span class="card-price">$10</span>
+              <button type="button" class="card-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
       </div>
 <script>
 // 24-hour deals: one design at a special price at a time. Times are UK time, written as UTC with "Z"
@@ -3610,7 +3638,10 @@ const PRODUCT_SPECS = {
        estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill); your slicer and settings will give different figures.'},
   h98:{t:'obj',size:[230,228,270],fdm:true,parts:'3: the base with the wave, the blue-grey shark top with black eyes, and the white shark belly',supports:false,sup:'Not needed',
        g:703,h:23,watertight:true,v:1036,
-       estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill, single colour at typical modern printer speeds); a multi-colour print takes longer, and your slicer and settings will give different figures.'}
+       estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill, single colour at typical modern printer speeds); a multi-colour print takes longer, and your slicer and settings will give different figures.'},
+  // no model file yet: size, parts and print figures come with the model
+  h99:{t:'obj',size:[null,null,null],fdm:true},
+  h100:{t:'obj',size:[null,null,null],fdm:true}
 };
 
 function renderProductSpecs(id, subcat){
@@ -3640,7 +3671,7 @@ function renderProductSpecs(id, subcat){
   const isWall = s.t === 'wall';
   const steep = s.overhang != null && s.overhang > 10;
 
-  rows.push(['Size', sizeText]);
+  if(known.length) rows.push(['Size', sizeText]);
   if(s.relief) rows.push(['Relief depth', s.relief + ' mm']);
   if(s.keyholes) rows.push(['Hanging', s.keyholes + ' built-in keyhole slots']);
   if(s.mirror) rows.push(['Mirror glass', s.mirror]);

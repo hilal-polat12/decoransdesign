@@ -3003,14 +3003,34 @@ Use a small round warm or cool white E14 LED bulb, up to 35 mm across (mini glob
 <script>
 // 24-hour deals: one design at a special price at a time. Times are UK time, written as UTC with "Z"
 // (the UK is on GMT = UTC until 28 March 2027; from then until late October, UK time is UTC+1, so
-// 00:00 UK time is written as the previous day's 23:00Z). The deal box always stays on the home page;
-// when the list runs out it shows the last piece at its normal price until a new deal is added here.
+// 00:00 UK time is written as the previous day's 23:00Z). The deal box always stays on the home page.
+// When the list runs out, the deals carry on by themselves: every 24 hours from the end of the last one,
+// the next design by code number (h87, h88, ...), skipping codes that are not on the site and going back
+// to h1 after the last one, at the same price as the last deal in the list. Add a line here to break in.
 window.DEALS = [
   {code: 'h91', price: 1, start: '2026-10-27T11:40:00Z', end: '2026-10-29T11:40:00Z'},
   {code: 'h85', price: 1, start: '2026-10-29T11:40:00Z', end: '2026-10-30T11:40:00Z'},
-  {code: 'h86', price: 1, start: '2026-10-30T11:40:00Z', end: '2026-10-31T11:40:00Z'}
+  {code: 'h86', price: 1, start: '2026-10-30T11:40:00Z', end: '2026-10-31T11:40:00Z'},
+  {code: 'h87', price: 1, start: '2026-11-01T11:40:00Z', end: '2026-11-02T11:40:00Z'}
 ];
 (function(list){
+  // after the last deal in the list, keep going one code number a day
+  var DAY = 864e5, last = list[list.length - 1], lastEnd = Date.parse(last.end);
+  if(Date.now() >= lastEnd){
+    var codes = window.PRODUCT_PATHS ? Object.keys(window.PRODUCT_PATHS)          // product pages carry the full list
+      : Array.prototype.map.call(document.querySelectorAll('.card[onclick]'), function(c){
+          return ((c.getAttribute('onclick').match(/\/(h\d+)'/) || [])[1]); }).filter(Boolean);
+    var num = function(c){ return parseInt(c.slice(1), 10); };
+    codes = codes.filter(function(c, i){ return codes.indexOf(c) === i; }).sort(function(a, b){ return num(a) - num(b); });
+    if(codes.length){
+      var k = Math.floor((Date.now() - lastEnd) / DAY);
+      var from = 0;                                                      // first code after the last deal's number
+      while(from < codes.length && num(codes[from]) <= num(last.code)) from++;
+      var s = lastEnd + k * DAY;
+      list = list.concat([{code: codes[(from + k) % codes.length], price: last.price,
+                           start: new Date(s).toISOString(), end: new Date(s + DAY).toISOString(), auto: true}]);
+    }
+  }
   var now = Date.now(), d = null, ended = false, i;
   for(i = 0; i < list.length; i++)
     if(now >= Date.parse(list[i].start) && now < Date.parse(list[i].end)) d = list[i];

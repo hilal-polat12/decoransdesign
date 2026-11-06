@@ -3687,7 +3687,6 @@ function renderProductSpecs(id, subcat){
   const kg = function(grams){ return grams >= 1000 ? (Math.round(grams / 100) / 10) + ' kg' : Math.round(grams / 10) * 10 + ' g'; };
   const SHRINK = 1.12;          // clay shrinks ~10-15% in drying and firing
   const KILN_MAX = 500;         // larger masters will not fit most studio kilns in one piece
-  const PLASTER_DENSITY = 1.2;  // g/cm3, set casting plaster
   const known = s.size.filter(function(n){ return n; });
   const sizeText = known.length < 3
     ? s.size[2] + ' mm tall'
@@ -3719,7 +3718,6 @@ function renderProductSpecs(id, subcat){
         : 'About ' + s.overhang + '%; prints in one piece']);
     }
 
-    if(s.v) rows.push(['Plaster', '≈ ' + kg(s.v * PLASTER_DENSITY) + ' for a solid cast']);
   }
 
   rows.push(['FDM 3D printing']);

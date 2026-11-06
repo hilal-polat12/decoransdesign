@@ -3712,14 +3712,13 @@ function renderProductSpecs(id, subcat){
     rows.push(['Plaster mold', isWall ? 'For slip casting or press molding' : 'For slip casting']);
     rows.push(['Master model', masterText + ' (scaled up 12% for shrinkage)']);
     rows.push(['Clay 3D printing', '1.5–2 mm nozzle, 0.8–1 mm layers, 3–4 mm walls']);
+    rows.push(['Plaster mold', 'Silicone mold']);
     if(s.overhang != null){
       rows.push(['Overhangs', steep
         ? 'About ' + s.overhang + '%; print overhanging parts separately and join them with slip'
         : 'About ' + s.overhang + '%; prints in one piece']);
     }
 
-    rows.push(['Plaster']);
-    rows.push(['Mold', 'Silicone mold']);
     if(s.v) rows.push(['Plaster', '≈ ' + kg(s.v * PLASTER_DENSITY) + ' for a solid cast']);
   }
 

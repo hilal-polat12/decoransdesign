@@ -3734,7 +3734,7 @@ function renderProductSpecs(id, subcat){
   const notes = [isWall || subcat === 'lamps'
     ? 'Modeled at real size; the model also scales freely.'
     : 'Modeled at the size above; the model also scales freely.'];
-  if(s.fdm) notes.push('Made for 3D printing only, so it is not suited to ceramic or plaster casting.');
+  if(s.fdm) notes.push('Made for 3D printing only.');
   if(bigForKiln && !s.fdm) notes.push('At this size the ceramic master may not fit your kiln; the model can be split for production, contact us for a split version.');
   if(s.g) notes.push(s.estNote || 'Filament and print time are rough estimates (1.2 mm walls, 15% infill); your slicer and settings will give different figures.');
   // small table lamps fit a print bed; only wall pieces and floor-height lamps need sections

@@ -8,7 +8,7 @@ Builds the site photos in images/ from the clean originals kept on this computer
 Reads H<code>.<1|2|3>-2D.jpg (or .png) from the originals folder (default: the Decorans-2D folder
 next to this repo), and for each one:
   - square or portrait photos: center-cropped to a 1024 x 1024 square
-  - landscape photos (wide room scenes): kept at their own ratio, longest side at most 1024
+  - landscape photos and every room scene (photo 3): kept at their own ratio, longest side at most 1024
   - a sparse, small diagonal "decoransdesign" watermark is drawn on top
 and writes images/H<code>.<n>-2D.jpg. The originals never go into the repo, which is public.
 #>
@@ -52,9 +52,9 @@ $done = 0
 foreach ($f in $files) {
   $img = [Drawing.Image]::FromFile($f.FullName)
   try {
-    if ($img.Width -gt $img.Height) {
-      # landscape: keep the ratio
-      $scale = [Math]::Min(1.0, $MAX / $img.Width)
+    if ($img.Width -gt $img.Height -or $f.Name -match '\.3-2D\.') {
+      # landscape, or the room scene (photo 3) at any ratio: keep the ratio so the product is never cut
+      $scale = [Math]::Min(1.0, $MAX / [Math]::Max($img.Width, $img.Height))
       $w = [int][Math]::Round($img.Width * $scale); $h = [int][Math]::Round($img.Height * $scale)
       $sx = 0; $sy = 0; $sw = $img.Width; $sh = $img.Height
     } else {

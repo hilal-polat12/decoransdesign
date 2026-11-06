@@ -1711,9 +1711,10 @@ Glazed, fired ceramic holds water; plaster and PLA pieces need a glass or plasti
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="vases" data-price="10" onclick="location.href='/vases/h86';" data-tech="Made for casting: print a master in PLA or resin, sand it smooth, then pour a silicone mold for plaster or a multi-part plaster mold for ceramic slip casting.
+        <div class="card" data-subcat="vases" data-model="models/H86-web.glb" data-price="10" onclick="location.href='/vases/h86';" data-tech="Made for casting: print a master in PLA or resin, sand it smooth, then pour a silicone mold for plaster or a multi-part plaster mold for ceramic slip casting.
 The wrap lies flush against the tulip and the ribbon tails are attached to the body, so the form has only shallow undercuts and releases cleanly from a silicone mold.
-FDM: prints upright with few supports, mostly under the ribbon knot and the lower edge of the wrap; 0.16 mm layers keep the folds smooth.
+The file is a hollow vase, 153 x 162 x 280 mm: 3 mm walls, a 4 mm floor and a wide opening inside the tulip petals, whose rounded tips sit level all round.
+FDM: prints upright in one piece; 0.16 mm layers keep the folds smooth.
 Clay 3D printing: 1.5-2 mm nozzle, 0.8-1 mm layers and 3-4 mm walls; print the ribbon knot as a separate piece and attach it with scoring and slip while leather-hard.
 For clay, scale the model up by about 12% to make up for drying and firing shrinkage.
 Glaze: a glossy fresh leaf green over the whole piece; the form also works well as a color series in butter yellow, blush pink or sky blue.
@@ -3636,7 +3637,9 @@ const PRODUCT_SPECS = {
   // no model file yet: only the height is known
   h84:{t:'obj',size:[null,null,300]},
   h85:{t:'obj',size:[null,null,250]},
-  h86:{t:'obj',size:[null,null,280]},
+  h86:{t:'obj',size:[153,162,280],fdm:true,parts:'1: the vase in one piece',supports:false,sup:'Not needed',
+       g:400,h:18,watertight:true,
+       estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill, at typical modern printer speeds); your slicer and settings will give different figures.'},
   h87:{t:'obj',size:[null,null,150]},
   h88:{t:'obj',size:[null,null,320]},
   h89:{t:'obj',size:[null,null,300]},

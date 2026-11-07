@@ -3010,11 +3010,13 @@ Use a small round warm white (2700 K) E14 LED bulb, up to 35 mm across (mini glo
             </div>
           </div>
         </div>
-        <div class="card" data-subcat="lamps" data-price="10" onclick="location.href='/lamps/h101';" data-tech="Designed as a table lamp in three printed parts: the lily pad base, the frog and the water lily shade.
-Lily pad base (sage green): a wide, flat leaf with soft veins and two small white lilies; the frog and the water lily sit on it.
-Frog (lime green): one figure with a ribbed, spring-like body, one hand on its belly and the other waving; the big eyes can be painted, or printed in colour on a multi-colour printer.
-Water lily (white): layered petals around the bulb; print the petals in translucent white PETG or PLA so the light glows through them.
-Use a small round warm white (2700 K) or neutral white (4000 K) LED bulb, 3 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H101.1-2D.jpg|Funny Frog Table Lamp, switched off and on;images/H101.2-2D.jpg|Funny Frog Table Lamp, close-up of the glowing water lily and the waving frog;images/H101.3-2D.jpg|Funny Frog Table Lamp, glowing on a desk in a cozy bedroom">
+        <div class="card" data-subcat="lamps" data-model="models/H101-web.glb" data-price="10" onclick="location.href='/lamps/h101';" data-tech="Modeled at table-lamp size (262 mm tall on a 250 mm round lily pad; the frog alone is 250 mm tall), in 11 printed parts, joined without glue. The pad needs a print bed of at least 250 x 250 mm and the frog a build height of at least 255 mm.
+Lily pad base (sage green): a round leaf with a notch and soft veins, 12 mm thick, with pegs for the frog and the two small lilies and a shallow seat for the lamp lily.
+Frog (lime green): one piece, with a ribbed, spring-like body, one hand on its belly and the other waving; two holes in the soles fit the pegs on the pad.
+Eyes: each eye is three pieces that press into one another, like the rings in the photos: a pale yellow eyeball fits a socket inside the green lid, an olive iris fits the eyeball and a black pupil fits the iris.
+Water lilies: the lamp lily (translucent white, 91 mm across) has two rings of petals and an open heart for the lamp holder; it lifts off to change the bulb. The two small lilies (white, 30 mm) sit on pegs.
+Lamp holder and cable: an E14 lamp holder stands inside the lamp lily, held from below by an M10 threaded tube and nut; the cord runs in a groove under the pad and leaves at the back.
+Use a small round warm white (2700 K) or neutral white (4000 K) E14 LED bulb, up to 35 mm across (mini globe) and 3 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H101.1-2D.jpg|Funny Frog Table Lamp, switched off and on;images/H101.2-2D.jpg|Funny Frog Table Lamp, close-up of the glowing water lily and the waving frog;images/H101.3-2D.jpg|Funny Frog Table Lamp, glowing on a desk in a cozy bedroom">
           <div class="thumb thumb-img-dark"><img src="images/H101.1-2D.jpg" alt="Funny Frog Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
             <span class="card-tag">Code: H101 · Design File</span>
@@ -3686,7 +3688,10 @@ const PRODUCT_SPECS = {
        g:485,h:21,watertight:true,
        estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill, at typical modern printer speeds); your slicer and settings will give different figures.'},  h100:{t:'obj',size:[242,200,250],fdm:true,parts:'4: the stone base with the wheat, the ant, the cicada and the glowing grain',supports:true,sup:'1 (the post under the ant)',
        g:610,h:26,watertight:true,
-       estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill, single colour at typical modern printer speeds); a multi-colour print takes longer, and your slicer and settings will give different figures.'}
+       estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill, single colour at typical modern printer speeds); a multi-colour print takes longer, and your slicer and settings will give different figures.'},
+  h101:{t:'obj',size:[250,250,262],fdm:true,parts:'11: the lily pad, the frog, the lamp lily, two small lilies and, for each eye, the eyeball, the iris and the pupil',supports:true,sup:'for the frog (the waving arm and the chin)',
+       g:810,h:34,watertight:true,
+       estNote:'Filament and print time are rough estimates (0.2 mm layers, 2 walls, 15% infill, at typical modern printer speeds); your slicer and settings will give different figures.'}
 };
 
 function renderProductSpecs(id, subcat){

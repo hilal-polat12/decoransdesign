@@ -1138,10 +1138,10 @@ footer{padding:44px 0 26px;}
     <a href="/" class="logo brand-lockup" id="logoHome" aria-label="Decorans Design, home"><img src="images/logo-mark.png" alt="" class="brand-mark" width="41" height="40"><span class="brand-word">Decorans Design</span><span class="logo-tagline">Original Décor Design Files</span></a>
     <nav class="navbar-inner" id="mainNav" aria-label="Collection">
       <a href="/" class="active subcat-nav-link" data-subcat="all">Home</a>
+      <a href="/lamps" class="subcat-nav-link" data-subcat="lamps">Lamps</a>
       <a href="/vases" class="subcat-nav-link" data-subcat="vases">Vases</a>
       <a href="/curios" class="subcat-nav-link" data-subcat="curios">Curios</a>
       <a href="/candle-holders" class="subcat-nav-link" data-subcat="candle-holders">Candle Holders</a>
-      <a href="/lamps" class="subcat-nav-link" data-subcat="lamps">Lamps</a>
       <a href="/figurines" class="subcat-nav-link" data-subcat="figurines">Figurines</a>
       <a href="/mirrors" class="subcat-nav-link" data-subcat="mirrors">Mirrors</a>
       <a href="/reliefs" class="subcat-nav-link" data-subcat="reliefs">Wall Reliefs</a>
@@ -1167,10 +1167,10 @@ footer{padding:44px 0 26px;}
     </div>
   </div>
   <div class="cat-tiles">
+    <a class="cat-tile" href="/lamps"><img src="images/H72.3-2D.jpg" alt="Crimson tree floor lamp lit in a living room" loading="lazy"><span>Lamps</span></a>
     <a class="cat-tile" href="/vases"><img src="images/H85.3-2D.jpg" alt="Navy lotus crown vase with white roses on a side table" loading="lazy"><span>Vases</span></a>
     <a class="cat-tile" href="/curios"><img src="images/H4.3-2D.jpg" alt="Interlocking gold ring curio styled in a room" loading="lazy"><span>Curios</span></a>
     <a class="cat-tile" href="/candle-holders"><img src="images/H90.3-2D.jpg" alt="Pair of violet orchid candle holders lit on a coffee table" loading="lazy"><span>Candle holders</span></a>
-    <a class="cat-tile" href="/lamps"><img src="images/H72.3-2D.jpg" alt="Crimson tree floor lamp lit in a living room" loading="lazy"><span>Lamps</span></a>
     <a class="cat-tile" href="/figurines"><img src="images/H65.3-2D.jpg" alt="Bremen Town Musicians figurine" loading="lazy"><span>Figurines</span></a>
     <a class="cat-tile" href="/mirrors"><img src="images/H70.3-2D.jpg" alt="Leopard jungle wall mirror styled above a console" loading="lazy"><span>Mirrors</span></a>
     <a class="cat-tile" href="/reliefs"><img src="images/H57.3-2D.jpg" alt="Twin peacocks floral wall relief" loading="lazy"><span>Wall reliefs</span></a>
@@ -3305,10 +3305,10 @@ window.DEALS = [
     <div class="footer-top">
       <div class="footer-mark"><img src="images/logo-full.png" alt="Decorans Design" class="footer-logo"></div>
       <nav class="footer-links" aria-label="Footer">
+        <a href="/lamps">Lamps</a>
         <a href="/vases">Vases</a>
         <a href="/curios">Curios</a>
         <a href="/candle-holders">Candle Holders</a>
-        <a href="/lamps">Lamps</a>
         <a href="/figurines">Figurines</a>
         <a href="/mirrors">Mirrors</a>
         <a href="/reliefs">Wall Reliefs</a>
@@ -3789,6 +3789,25 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
   const image = document.getElementById('productImage');
   const gallery = document.getElementById('productGallery');
   const modelViewer = document.getElementById('productModelViewer');
+// Vases: the viewer normally frames the sphere the model sweeps while it turns, so a slim vase sits small in a lot
+// of empty space and a wide one fills the frame. Frame vases by their height instead: every vase takes the same share
+// of the frame's height (as the wide H85 does), and its widest turn still fits across.
+const VASE_FILL_H = 0.82, VASE_FILL_W = 0.92, VASE_FOV = 30;
+function fitVaseCamera(){
+  if(!modelViewer || modelViewer.dataset.fit !== 'vase' || !modelViewer.loaded) return;
+  const d = modelViewer.getDimensions();                    // metres (x across, y up, z depth)
+  const w = modelViewer.clientWidth, h = modelViewer.clientHeight;
+  if(!d || !w || !h) return;
+  const half = Math.tan(VASE_FOV * Math.PI / 360);
+  const turn = Math.hypot(d.x, d.z);                       // widest the vase gets while it turns
+  const need = Math.max(d.y / VASE_FILL_H, turn / (VASE_FILL_W * w / h));
+  modelViewer.fieldOfView = VASE_FOV + 'deg';
+  modelViewer.cameraOrbit = 'auto auto ' + (need / (2 * half)).toFixed(4) + 'm';
+}
+if(modelViewer){
+  modelViewer.addEventListener('load', fitVaseCamera);
+  window.addEventListener('resize', fitVaseCamera);
+}
   const modelToggle = document.getElementById('productModelToggle');
   const modelWatermark = document.getElementById('productModelWatermark');
   const code = document.getElementById('productCode');
@@ -3889,6 +3908,10 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
       modelViewer.removeAttribute('src');
       // light level of the 3D preview: 1 by default, a card can ask for less with data-exposure
       modelViewer.setAttribute('exposure', card.getAttribute('data-exposure') || '1');
+      // vases are framed by their own height (see fitVaseCamera), so slim and wide vases look the same size
+      modelViewer.dataset.fit = card.getAttribute('data-subcat') === 'vases' ? 'vase' : '';
+      modelViewer.cameraOrbit = 'auto auto auto';
+      modelViewer.fieldOfView = 'auto';
       if(modelSrc){
         const requestedId = id;
         resolveModelSrc(modelSrc, function(resolvedSrc){

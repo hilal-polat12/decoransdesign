@@ -1092,7 +1092,7 @@ footer{padding:44px 0 26px;}
 .tech-list li::before{content:"";position:absolute;left:2px;top:23px;width:7px;height:7px;background:var(--bronze);}
 .product-lower{align-items:stretch;}
 .product-model-col{display:flex;flex-direction:column;}
-.product-model-col .product-model-box{flex:1;aspect-ratio:auto;min-height:300px;}
+.product-model-col .product-model-box{flex:none;aspect-ratio:1/1;min-height:300px;}   /* the same square frame on every product, whatever the length of the notes */
 .product-model-col{position:relative;}
 .product-model-col > .product-image-note{position:absolute;left:14px;bottom:10px;margin:0;z-index:5;pointer-events:none;color:rgba(255,255,255,.85);font-size:12px;}
 @media (max-width:800px){
@@ -3789,25 +3789,6 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
   const image = document.getElementById('productImage');
   const gallery = document.getElementById('productGallery');
   const modelViewer = document.getElementById('productModelViewer');
-// Vases: the viewer normally frames the sphere the model sweeps while it turns, so a slim vase sits small in a lot
-// of empty space and a wide one fills the frame. Frame vases by their height instead: every vase takes the same share
-// of the frame's height (as the wide H85 does), and its widest turn still fits across.
-const VASE_FILL_H = 0.82, VASE_FILL_W = 0.92, VASE_FOV = 30;
-function fitVaseCamera(){
-  if(!modelViewer || modelViewer.dataset.fit !== 'vase' || !modelViewer.loaded) return;
-  const d = modelViewer.getDimensions();                    // metres (x across, y up, z depth)
-  const w = modelViewer.clientWidth, h = modelViewer.clientHeight;
-  if(!d || !w || !h) return;
-  const half = Math.tan(VASE_FOV * Math.PI / 360);
-  const turn = Math.hypot(d.x, d.z);                       // widest the vase gets while it turns
-  const need = Math.max(d.y / VASE_FILL_H, turn / (VASE_FILL_W * w / h));
-  modelViewer.fieldOfView = VASE_FOV + 'deg';
-  modelViewer.cameraOrbit = 'auto auto ' + (need / (2 * half)).toFixed(4) + 'm';
-}
-if(modelViewer){
-  modelViewer.addEventListener('load', fitVaseCamera);
-  window.addEventListener('resize', fitVaseCamera);
-}
   const modelToggle = document.getElementById('productModelToggle');
   const modelWatermark = document.getElementById('productModelWatermark');
   const code = document.getElementById('productCode');
@@ -3908,10 +3889,6 @@ if(modelViewer){
       modelViewer.removeAttribute('src');
       // light level of the 3D preview: 1 by default, a card can ask for less with data-exposure
       modelViewer.setAttribute('exposure', card.getAttribute('data-exposure') || '1');
-      // vases are framed by their own height (see fitVaseCamera), so slim and wide vases look the same size
-      modelViewer.dataset.fit = card.getAttribute('data-subcat') === 'vases' ? 'vase' : '';
-      modelViewer.cameraOrbit = 'auto auto auto';
-      modelViewer.fieldOfView = 'auto';
       if(modelSrc){
         const requestedId = id;
         resolveModelSrc(modelSrc, function(resolvedSrc){

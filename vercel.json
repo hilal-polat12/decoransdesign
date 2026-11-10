@@ -6,6 +6,12 @@
     { "source": "/:cat(vases|curios|candle-holders|lamps|figurines|mirrors|reliefs)/:code(h\\d+)", "destination": "/p/:cat/:code.html" },
     { "source": "/:cat(vases|curios|candle-holders|lamps|figurines|mirrors|reliefs)", "destination": "/c/:cat.html" }
   ],
+  "headers": [
+    {
+      "source": "/((?!.*\\.(?:glb|jpe?g|png|webp|gif|svg|ico|css|js|json|xml|txt|csv|woff2?)$).*)",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }]
+    }
+  ],
   "redirects": [
     {
       "source": "/:path*",

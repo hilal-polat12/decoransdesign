@@ -3393,6 +3393,10 @@ window.DEALS = [
     }
   });
 
+  // Phone browsers (Instagram's in-app browser, Safari) can bring back an old saved copy of a
+  // page when going back; reload it so visitors always see the current site
+  window.addEventListener('pageshow', function(e){ if(e.persisted) window.location.reload(); });
+
   // On first load of the home page, start at the hero instead of jumping to the #home grid
   if('scrollRestoration' in history) history.scrollRestoration = 'manual';
   window.addEventListener('load', function(){

@@ -94,10 +94,18 @@ def parse_products(page):
             'thumb': (thumb.group(1), html.unescape(thumb.group(2))) if thumb else ('', ''),
             'gallery': gallery,
             'price': attr(attrs, 'data-price'),
+            'price_was': attr(attrs, 'data-price-was'),
             'fdm': link.group(2) in fdm,
             'stamp': attrs + body[:body.find('<div class="card-footer">')],
         })
     return products
+
+
+def price_html(p):
+    """Price text for a mini card, like window.priceHTML in index.html: old price struck through, 0 shown as FREE."""
+    esc = lambda s: html.escape(s, quote=True)
+    now = 'FREE' if p['price'] == '0' else '$' + esc(p['price'])
+    return ('<s class="price-was">$' + esc(p['price_was']) + '</s> ' if p['price_was'] else '') + now
 
 
 def category_intros(page):
@@ -269,7 +277,7 @@ def build_page(template, p, products):
         cards = ''.join(
             '<a class="mini-card" href="/' + q['cat'] + '/' + q['code'] + '"><div class="mini-thumb"><img loading="lazy" src="'
             + e(q['thumb'][0]) + '" alt="' + e(q['thumb'][1]) + '"></div><span class="mini-name">' + e(q['name']) + '</span>'
-            + ('<span class="mini-price">$' + e(q['price']) + '</span>' if q['price'] else '') + '</a>'
+            + ('<span class="mini-price">' + price_html(q) + '</span>' if q['price'] else '') + '</a>'
             for q in related)
         page = set_meta(page, r'<div id="productRelated" class="product-related"></div>',
                         '<div id="productRelated" class="product-related"><div class="block-head"><h2>More '

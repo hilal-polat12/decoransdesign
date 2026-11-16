@@ -51,7 +51,7 @@ CATEGORIES = {
     'reliefs': {
         'label': 'Wall Reliefs',
         'title': '3D Print, Plaster & Ceramic Wall Relief Design Files | Decorans Design',
-        'desc': 'Wall relief and panel design files for plaster casting, ceramic and 3D printing: layered scenes, mosaics and abstract panels at real wall size.',
+        'desc': 'Wall relief and panel design files for plaster casting, ceramic and 3D printing: layered scenes and abstract panels at real wall size.',
     },
 }
 

@@ -232,7 +232,7 @@ def build_page(template, p, products):
     url = SITE + '/' + p['cat'] + '/' + p['code']
     image = p['gallery'][0][0] if p['gallery'] else p['thumb'][0]
     image_abs = SITE + '/' + image
-    code_label = 'Code: ' + p['code'].upper() + ' · Design File'
+    code_label = 'Code: ' + p['code'].upper() + ' · STL & 3MF'
 
     page = product_cleanup(template, p['code'])
     page = set_head(page, product_title(p['name']), product_description(p), url, 'product', image_abs)
@@ -267,7 +267,9 @@ def build_page(template, p, products):
                     '<div id="productPage" class="product-page is-open page-visible" aria-hidden="false">')
     page = set_meta(page, r'<span id="productCode" class="product-code"></span>',
                     '<span id="productCode" class="product-code">' + e(code_label) + '</span>')
-    page = set_meta(page, r'<h2 id="productTitle"></h2>', '<h1 id="productTitle">' + e(p['name']) + '</h1>')
+    page = set_meta(page, r'<h2 class="product-title"><span id="productTitle"></span>(.*?)</h2>',
+                    '<h1 class="product-title"><span id="productTitle">' + e(p['name']) + '</span>'
+                    ' <span class="title-format">STL &amp; 3MF</span></h1>')
     page = set_meta(page, r'<p id="productDescription" class="product-description"></p>',
                     '<p id="productDescription" class="product-description">' + e(p['desc']) + '</p>')
     page = set_meta(page, r'<img id="productImage" src="" alt="">',
@@ -303,7 +305,7 @@ def build_category(template, key, products, intro):
     page = common_cleanup(template, {p['code'] for p in items})
     page = set_head(page, cat['title'], cat['desc'], url, 'website')
     page = set_meta(page, r'<h2 id="homeCatTitle" class="is-all">[^<]*</h2>',
-                    '<h1 id="homeCatTitle">' + e(cat['label']) + '</h1>')
+                    '<h1 id="homeCatTitle">' + e(cat['label']) + ' <span class="title-format">STL &amp; 3MF Files</span></h1>')
     page = set_meta(page, r'<p class="cat-intro" id="catIntro"></p>',
                     '<p class="cat-intro" id="catIntro">' + e(intro) + '</p>')
 

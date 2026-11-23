@@ -756,6 +756,8 @@ section.category{border-bottom:none;padding:88px 0 96px;}
 .cat-head{margin-bottom:44px;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:22px;}
 .cat-head h2,.cat-head h1,#homeCatTitle.is-all{display:block;font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(30px,4.2vw,60px);line-height:.95;letter-spacing:-0.01em;color:var(--bone);}
 .cat-count{font-size:13px;color:var(--ash);}
+/* "STL & 3MF" line under product and category headings */
+.title-format{display:block;margin-top:.4em;font-size:max(.4em,12px);font-weight:600;letter-spacing:.04em;line-height:1.1;color:var(--bronze);}
 .grid{grid-template-columns:repeat(3,1fr);gap:56px 28px;}
 .card{border:none;border-radius:0;background:transparent;overflow:visible;}
 .card:hover{box-shadow:none;border-color:transparent;transform:none;}
@@ -1225,7 +1227,7 @@ footer{padding:44px 0 26px;}
       </div>
       <div class="product-info">
         <span id="productCode" class="product-code"></span>
-        <h2 id="productTitle"></h2>
+        <h2 class="product-title"><span id="productTitle"></span> <span class="title-format">STL &amp; 3MF</span></h2>
         <p id="productDescription" class="product-description"></p>
         <div id="productSpecs" class="product-specs" style="display:none;">
           <span class="product-tech-label">Production Specs</span>
@@ -1303,7 +1305,7 @@ Check that all four legs sit evenly on the bed, and scale uniformly to keep the 
 Decorative dry vase: for water, print in PETG with solid walls and seal the inside." data-gallery="images/H1.1-2D.jpg|Biomechanical Parasitic Curio, studio view;images/H1.2-2D.jpg|Biomechanical Parasitic Curio, close-up detail;images/H1.3-2D.jpg|Biomechanical Parasitic Curio, styled in a room">
           <div class="thumb thumb-img-dark"><span class="thumb-best-badge">Best</span><img src="images/H1.1-2D.jpg" alt="Biomechanical Parasitic Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H1 · Design File</span>
+            <span class="card-tag">Code: H1 · STL &amp; 3MF</span>
             <h3><a href="/curios/h1">Biomechanical Parasitic Curio</a></h3>
             <p>Biomechanical vase design file for ceramic, plaster and 3D printing, shown in frosted emerald green: four twisting tubes spiral around an open, web-like core and rise into jagged and round openings. The lower body carries a raised honeycomb pattern, and four curved claw legs lift the vase off the shelf as if it has just stepped into place. Translucent green lets light pass through the thinner walls and the lattice inside, so the piece changes with every angle. A striking conversation piece for a bookshelf, desk or console.</p>
             <div class="card-footer">
@@ -1322,7 +1324,7 @@ Glaze: a dark bronze or iron glaze on the shaft, wiped back from the high points
 Glazed, fired ceramic holds water; plaster and PLA pieces need a glass or plastic liner for fresh flowers. For a glowing torch, use battery LED lights only, never an open flame." data-gallery="images/H2.1-2D.jpg|Torch Bloom Vase, studio view;images/H2.2-2D.jpg|Torch Bloom Vase, close-up detail;images/H2.3-2D.jpg|Torch Bloom Vase, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H2.1-2D.jpg" alt="Torch Bloom Vase, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H2 · Design File</span>
+            <span class="card-tag">Code: H2 · STL &amp; 3MF</span>
             <h3><a href="/vases/h2">Torch Bloom Vase</a></h3>
             <p>Torch vase design file for ceramic, plaster and 3D printing, shown with a hammered bronze finish: a faceted, tapering shaft rises from a round base plate to a banded collar, then bursts into torn, flame-shaped petals. The inside of the petals is finished in glossy amber-red, so the opening looks lit from within, especially with an LED tea light inside. Rigid geometry below and wild, flickering edges above make it a bold centerpiece for a mantel, shelf or dining table. Switched off, it reads as a sculpted bronze torch; with a warm LED inside, the red-orange petals glow like a flame caught in metal.</p>
             <div class="card-footer">
@@ -1341,7 +1343,7 @@ Glaze: glossy cobalt blue under a crackle glaze, so fine lines run beneath the s
 Glazed, fired ceramic holds water; plaster and PLA pieces need a glass or plastic liner for fresh flowers. A PLA or PETG print can also be sealed inside." data-gallery="images/H3.1-2D.jpg|Twisted Spiral Wave Vase, studio view;images/H3.2-2D.jpg|Twisted Spiral Wave Vase, close-up detail;images/H3.3-2D.jpg|Twisted Spiral Wave Vase, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H3.1-2D.jpg" alt="Twisted Spiral Wave Vase, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H3 · Design File</span>
+            <span class="card-tag">Code: H3 · STL &amp; 3MF</span>
             <h3><a href="/vases/h3">Twisted Spiral Wave Vase</a></h3>
             <p>Spiral vase design file for ceramic, plaster and 3D printing, shown in a glossy cobalt-blue crackle glaze: raised ridges wind around the body like a twisting wave and finish in a slanted, asymmetric rim. A fine crackle pattern runs beneath the gloss, giving the piece the depth of hand-glazed ceramic, and a small foot ring lifts it off the surface. Sized for fresh stems or dried flowers on a shelf, sideboard or bedside table. The ridges catch the light differently as you walk past, so the wave seems to keep turning around the body.</p>
             <div class="card-footer">
@@ -1358,7 +1360,7 @@ Gold finish: silk gold PLA as printed, or a gloss black primer with metallic gol
 Decorative curio: the ring at the top is part of the sculpture and it is not designed to hold water or stems." data-gallery="images/H4.1-2D.jpg|Interlocking Gold Ring Curio, studio view;images/H4.2-2D.jpg|Interlocking Gold Ring Curio, close-up detail;images/H4.3-2D.jpg|Interlocking Gold Ring Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H4.1-2D.jpg" alt="Interlocking Gold Ring Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H4 · Design File</span>
+            <span class="card-tag">Code: H4 · STL &amp; 3MF</span>
             <h3><a href="/curios/h4">Interlocking Gold Ring Curio</a></h3>
             <p>Ring curio design file for ceramic, plaster and 3D printing, shown in brushed gold: interlocking torus rings, each covered in fine concentric grooves, twist around one another beneath a wide, tilted top disc crowned with a polished inner ring. The rings seem to hold each other in balance, and the sculpture stands on a round base plate with small ball feet. The grooves catch the light differently on every curve, so the piece changes as you walk around it. A statement object for a coffee table, a bookshelf or a desk.</p>
             <div class="card-footer">
@@ -1375,7 +1377,7 @@ Color: translucent purple paint or tinted resin, darker at the base, with a dark
 Plastic is not heat-proof: use an LED candle, or a real candle only inside a metal or glass cup insert." data-gallery="images/H5.1-2D.jpg|Amethyst Candle Holder, studio view;images/H5.2-2D.jpg|Amethyst Candle Holder, close-up detail;images/H5.3-2D.jpg|Amethyst Candle Holder, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H5.1-2D.jpg" alt="Amethyst Candle Holder, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H5 · Design File</span>
+            <span class="card-tag">Code: H5 · STL &amp; 3MF</span>
             <h3><a href="/candle-holders/h5">Amethyst Candle Holder</a></h3>
             <p>Amethyst crystal candle holder design file for ceramic, plaster and 3D printing: translucent purple crystal points rise around a central cup, fading from deep violet at the root to pale lavender at the tips. A rough, rocky base scattered with small crystal chips makes the cluster look freshly split from a geode. With an LED pillar candle inside, light glows softly through the crystals. A striking accent for a mantel, dining table or meditation corner.</p>
             <div class="card-footer">
@@ -1392,7 +1394,7 @@ Glossy burgundy: silk red PLA, or wine-red paint with a gloss clear coat.
 Decorative curio: the tube mouths are part of the sculpture and it is not designed to hold water." data-gallery="images/H6.1-2D.jpg|Burgundy Bloom Cluster Curio, studio view;images/H6.2-2D.jpg|Burgundy Bloom Cluster Curio, close-up detail;images/H6.3-2D.jpg|Burgundy Bloom Cluster Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H6.1-2D.jpg" alt="Burgundy Bloom Cluster Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H6 · Design File</span>
+            <span class="card-tag">Code: H6 · STL &amp; 3MF</span>
             <h3><a href="/curios/h6">Burgundy Bloom Cluster Curio</a></h3>
             <p>Organic curio design file for ceramic, plaster and 3D printing, shown in glossy burgundy: a cluster of slender tubes rises from a base of rounded, grape-like beads, each tube flaring into its own trumpet-shaped mouth at a different height. Between the tubes, an open honeycomb lattice fills the center and lets light through, like the inside of a coral or a seed pod. The sculpture stands on a thin round base plate. A bold, living form for a shelf, a console or a sideboard.</p>
             <div class="card-footer">
@@ -1409,7 +1411,7 @@ Plastic is not heat-proof: add a metal taper cup insert and never leave a lit ca
 30% or more infill in the tray keeps the holder stable." data-gallery="images/H7.1-2D.jpg|Terracotta Twist Candle Holder, studio view;images/H7.2-2D.jpg|Terracotta Twist Candle Holder, close-up detail;images/H7.3-2D.jpg|Terracotta Twist Candle Holder, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H7.1-2D.jpg" alt="Terracotta Twist Candle Holder, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H7 · Design File</span>
+            <span class="card-tag">Code: H7 · STL &amp; 3MF</span>
             <h3><a href="/candle-holders/h7">Terracotta Twist Candle Holder</a></h3>
             <p>Taper candle holder design file for ceramic, plaster and 3D printing, shown with a glossy terracotta glaze: two sculpted blades twist around each other and meet at a round cup that holds a standard taper candle. The holder stands on a wide drip tray that catches wax. Streaks in the glaze follow the twist like brushwork on hand-made ceramic. A warm, modern piece for a dining table, windowsill or mantel.</p>
             <div class="card-footer">
@@ -1429,7 +1431,7 @@ Glaze: a soft matte sage green. Painted PLA: sage green matte PLA as printed, or
 The glass insert holds the water, so the sleeve itself does not need to be watertight." data-gallery="images/H8.1-2D.jpg|Sage Spiral Glass-Insert Vase, studio view;images/H8.2-2D.jpg|Sage Spiral Glass-Insert Vase, close-up detail;images/H8.3-2D.jpg|Sage Spiral Glass-Insert Vase, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H8.1-2D.jpg" alt="Sage Spiral Glass-Insert Vase, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H8 · Design File</span>
+            <span class="card-tag">Code: H8 · STL &amp; 3MF</span>
             <h3><a href="/vases/h8">Sage Spiral Glass-Insert Vase</a></h3>
             <p>Spiral vase design file for ceramic, plaster and 3D printing, shown in matte sage green: a rippled ribbon winds up from a solid base to a top collar, wrapped around a clear glass cylinder that holds the water. The textured band gives the surface a soft, velvety look, while the glass keeps the stems visible between the turns. Made for tulips and fresh flowers on a table or sideboard. The glass cylinder is not included; the sleeve is sized around a standard cylinder vase. Change the flowers and the glass stays clear, while the sage ribbon frames every stem like a hand-wrapped sleeve.</p>
             <div class="card-footer">
@@ -1448,7 +1450,7 @@ Glaze: a translucent amber or honey glaze that pools darker in the spiral ribs. 
 Glazed, fired ceramic holds water; plaster and PLA pieces need a glass or plastic liner for fresh flowers. Check stability with water inside before use, and add weight to the base if printing larger." data-gallery="images/H9.1-2D.jpg|Amber Figure-Eight Vase, studio view;images/H9.2-2D.jpg|Amber Figure-Eight Vase, close-up detail;images/H9.3-2D.jpg|Amber Figure-Eight Vase, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H9.1-2D.jpg" alt="Amber Figure-Eight Vase, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H9 · Design File</span>
+            <span class="card-tag">Code: H9 · STL &amp; 3MF</span>
             <h3><a href="/vases/h9">Amber Figure-Eight Vase</a></h3>
             <p>Leaning bud vase design file for ceramic, plaster and 3D printing, shown in translucent amber: two stacked bulbs form a figure-eight silhouette that tilts to one side on a frosted trapezoid base. The lower bulb carries spiral ribs, the upper bulb is smooth with a single groove band, and the neck ends in a small pouring lip. Light passes through the amber like coloured glass. Perfect for daisies or a few wildflower stems on a shelf or windowsill. Seen from the side, the leaning silhouette gives even a single stem a playful, hand-blown look.</p>
             <div class="card-footer">
@@ -1467,7 +1469,7 @@ Glaze: a metallic violet or plum lustre over a dark base. Painted PLA: gloss bla
 Glazed, fired ceramic holds water; plaster and PLA pieces need a glass or plastic liner for fresh flowers. A small glass liner also suits a few slim stems." data-gallery="images/H10.1-2D.jpg|Violet Stacked Ring Vase, studio view;images/H10.2-2D.jpg|Violet Stacked Ring Vase, close-up detail;images/H10.3-2D.jpg|Violet Stacked Ring Vase, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H10.1-2D.jpg" alt="Violet Stacked Ring Vase, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H10 · Design File</span>
+            <span class="card-tag">Code: H10 · STL &amp; 3MF</span>
             <h3><a href="/vases/h10">Violet Stacked Ring Vase</a></h3>
             <p>Stacked ring vase design file for ceramic, plaster and 3D printing, shown in metallic violet: tapering rings rise from a wide base to a narrow neck, each with its own surface: brushed, mirror-polished, hammered, fine-ribbed and dotted. Light behaves differently on every ring, so the vase shimmers between violet, plum and blue. A tabletop vase for dried lavender or a few slim stems on a shelf or console. Every texture is part of the model, so the effect stays whether it is printed, cast in plaster or glazed in ceramic.</p>
             <div class="card-footer">
@@ -1484,7 +1486,7 @@ Jade finish: semi-gloss jade green; paint the base stone gray with a light dry-b
 The tendril nest inside the cup is the finest detail, so test-print it at your chosen scale first." data-gallery="images/H11.1-2D.jpg|Jade Tendril Curio, studio view;images/H11.2-2D.jpg|Jade Tendril Curio, close-up detail;images/H11.3-2D.jpg|Jade Tendril Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H11.1-2D.jpg" alt="Jade Tendril Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H11 · Design File</span>
+            <span class="card-tag">Code: H11 · STL &amp; 3MF</span>
             <h3><a href="/curios/h11">Jade Tendril Curio</a></h3>
             <p>Sculpture design file for ceramic, plaster and 3D printing, shown in polished jade green: an egg-shaped bud cup opens at the top into a jagged, torn rim, with a nest of small curling tendrils inside. Tentacle-like tendrils with fine suction-cup detail wrap the cup and twist down into the stem. The piece stands on a round, stone-textured base, and the smooth jade tones against the gray stone give it the feel of a carved gemstone curio.</p>
             <div class="card-footer">
@@ -1501,7 +1503,7 @@ Rust finish: dark brown base, sponged orange and ochre, then a black wash in the
 Remove supports from the branch tips carefully with flush cutters." data-gallery="images/H12.1-2D.jpg|Rust Tangle Curio, studio view;images/H12.2-2D.jpg|Rust Tangle Curio, close-up detail;images/H12.3-2D.jpg|Rust Tangle Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H12.1-2D.jpg" alt="Rust Tangle Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H12 · Design File</span>
+            <span class="card-tag">Code: H12 · STL &amp; 3MF</span>
             <h3><a href="/curios/h12">Rust Tangle Curio</a></h3>
             <p>Sculpture design file for ceramic, plaster and 3D printing, shown with a weathered rust finish: a tangled ball of looping cords anchors a twisted, braided stem that branches into seven different ends: a lotus flower, an arrowhead, a zigzag coil, a trumpet flower, a textured sphere, a ribbed disc and a trident. The rusted-iron look, darker in the knots and brighter on the raised edges, makes it read like wrought metal. A curious centerpiece for a shelf, desk or studio.</p>
             <div class="card-footer">
@@ -1518,7 +1520,7 @@ Matte black PLA as printed, or matte black paint with a stone-texture spray for 
 Do not sand the grooves; they carry the design." data-gallery="images/H13.1-2D.jpg|Black Infinity Knot Sculpture, studio view;images/H13.2-2D.jpg|Black Infinity Knot Sculpture, close-up detail;images/H13.3-2D.jpg|Black Infinity Knot Sculpture, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H13.1-2D.jpg" alt="Black Infinity Knot Sculpture, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H13 · Design File</span>
+            <span class="card-tag">Code: H13 · STL &amp; 3MF</span>
             <h3><a href="/curios/h13">Black Infinity Knot Sculpture</a></h3>
             <p>Knot sculpture design file for ceramic, plaster and 3D printing, shown in matte black: one continuous ribbon loops into an endless knot with three upper loops and interlocking lower curves. Fine grooves run along the length of the ribbon, and the stone-like matte surface absorbs the light so the silhouette stands out sharply. The knot rests on a round, flat base. A minimal modern object for a bookshelf, desk or coffee table.</p>
             <div class="card-footer">
@@ -1535,7 +1537,7 @@ Satin teal: metallic teal PLA, or teal paint with a satin clear coat.
 If supports are difficult, split the sphere cluster off in your slicer and glue it on after printing." data-gallery="images/H14.1-2D.jpg|Teal Disc-Stack Curio, studio view;images/H14.2-2D.jpg|Teal Disc-Stack Curio, close-up detail;images/H14.3-2D.jpg|Teal Disc-Stack Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H14.1-2D.jpg" alt="Teal Disc-Stack Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H14 · Design File</span>
+            <span class="card-tag">Code: H14 · STL &amp; 3MF</span>
             <h3><a href="/curios/h14">Teal Disc-Stack Curio</a></h3>
             <p>Balance sculpture design file for ceramic, plaster and 3D printing, shown in satin teal: a stepped, spiral-grooved dome supports a swaying column of thin, tilted discs, each leaning at a slightly different angle. The column ends in a flat top plate holding five textured spheres: smooth, dimpled, spiky, fluted and faceted. The metallic teal finish softens the light across every disc. A playful sculpture for a shelf or side table.</p>
             <div class="card-footer">
@@ -1552,7 +1554,7 @@ Terracotta finish: matte terracotta paint with a light brown wash in the grooves
 Seal with a matte varnish to keep the clay look." data-gallery="images/H15.1-2D.jpg|Terracotta Spiral Snail Curio, studio view;images/H15.2-2D.jpg|Terracotta Spiral Snail Curio, close-up detail;images/H15.3-2D.jpg|Terracotta Spiral Snail Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H15.1-2D.jpg" alt="Terracotta Spiral Snail Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H15 · Design File</span>
+            <span class="card-tag">Code: H15 · STL &amp; 3MF</span>
             <h3><a href="/curios/h15">Terracotta Spiral Snail Curio</a></h3>
             <p>Snail figurine design file for ceramic, plaster and 3D printing, shown in matte terracotta: a snail with a deeply coiled, finely grooved shell stretches forward on its foot, eye stalks raised. It sits on a round plinth decorated with a carved scrolling-vine border. The warm clay color and hand-carved texture give it the look of a small museum piece. A charming accent for a shelf, desk or garden room.</p>
             <div class="card-footer">
@@ -1569,7 +1571,7 @@ Matte mauve PLA as printed, or dusty-mauve matte paint over a light primer.
 Scale uniformly; the thin crescent is the most delicate part." data-gallery="images/H16.1-2D.jpg|Mauve Geometric Stack Curio, studio view;images/H16.2-2D.jpg|Mauve Geometric Stack Curio, close-up detail;images/H16.3-2D.jpg|Mauve Geometric Stack Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H16.1-2D.jpg" alt="Mauve Geometric Stack Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H16 · Design File</span>
+            <span class="card-tag">Code: H16 · STL &amp; 3MF</span>
             <h3><a href="/curios/h16">Mauve Geometric Stack Curio</a></h3>
             <p>Stacking sculpture design file for ceramic, plaster and 3D printing, shown in matte mauve: eleven different forms stack into a single totem, from a twisted rope ring, a knurled band and a smooth pebble to a faceted ring with an infinity cut-out, a crescent, a wave-textured cushion, a dimpled disc, a ribbed drum, a hexagon and a grid-textured square block on a smooth base ring. Every layer has its own shape and surface, so the eye keeps finding new details. A soft-toned statement piece for a shelf or console.</p>
             <div class="card-footer">
@@ -1586,7 +1588,7 @@ Silver finish: gloss black primer with chrome or silver paint; mask the stippled
 Designed as a tabletop piece, not for wall mounting." data-gallery="images/H17.1-2D.jpg|Silver Breaking Wave Curio, studio view;images/H17.2-2D.jpg|Silver Breaking Wave Curio, close-up detail;images/H17.3-2D.jpg|Silver Breaking Wave Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H17.1-2D.jpg" alt="Silver Breaking Wave Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H17 · Design File</span>
+            <span class="card-tag">Code: H17 · STL &amp; 3MF</span>
             <h3><a href="/curios/h17">Silver Breaking Wave Curio</a></h3>
             <p>Wave sculpture design file for ceramic, plaster and 3D printing, shown in polished silver: a breaking wave curls upward into a spiral crest, built from layered bands with different finishes: brushed, stippled, fluted, hammered and mirror-smooth. The contrast between the surfaces makes the wave look as if it is still moving. It stands on a round, stepped base. An elegant desk or shelf sculpture for coastal and modern interiors.</p>
             <div class="card-footer">
@@ -1605,7 +1607,7 @@ Glaze: a matte stone-gray glaze with a sandy texture, like cast concrete. Painte
 Glazed, fired ceramic holds water; plaster and PLA pieces need a glass or plastic liner for fresh flowers. Small water tubes in each stem also work; test each mouth with water for leaks before arranging flowers." data-gallery="images/H18.1-2D.jpg|Stone Triple Horn Vase, studio view;images/H18.2-2D.jpg|Stone Triple Horn Vase, close-up detail;images/H18.3-2D.jpg|Stone Triple Horn Vase, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H18.1-2D.jpg" alt="Stone Triple Horn Vase, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H18 · Design File</span>
+            <span class="card-tag">Code: H18 · STL &amp; 3MF</span>
             <h3><a href="/vases/h18">Stone Triple Horn Vase</a></h3>
             <p>Three-stem vase design file for ceramic, plaster and 3D printing, shown in matte stone gray: three horn-shaped stems braid together above a round base and open at different heights into flared mouths: one fluted with a ruffled rim, one tall trumpet with a ring-dot pattern and one covered in scales with a curled lip. The sandy stone texture gives it the feel of cast concrete. Arrange ranunculus, olive branches or dried grasses across the three openings. Each mouth sits at its own height and angle, so even three single stems read as a full arrangement.</p>
             <div class="card-footer">
@@ -1622,7 +1624,7 @@ The open diamond cut-outs make it a decorative piece; it does not hold water.
 Lightly sand the panel edges for crisp, clean folds." data-gallery="images/H19.1-2D.jpg|Walnut Faceted Origami Curio, studio view;images/H19.2-2D.jpg|Walnut Faceted Origami Curio, close-up detail;images/H19.3-2D.jpg|Walnut Faceted Origami Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H19.1-2D.jpg" alt="Walnut Faceted Origami Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H19 · Design File</span>
+            <span class="card-tag">Code: H19 · STL &amp; 3MF</span>
             <h3><a href="/curios/h19">Walnut Faceted Origami Curio</a></h3>
             <p>Geometric sculpture design file for ceramic, plaster and 3D printing, shown with a walnut wood finish: angular folded panels cross and interlock into a tall, origami-like tower with diamond-shaped openings, rising from a stepped hexagonal base. Wood grain runs across every facet, giving the sharp geometry a warm, natural feel. Striking on a travertine or oak sideboard, a bookshelf or an entryway console.</p>
             <div class="card-footer">
@@ -1641,7 +1643,7 @@ Glaze: deep violet at the foot fading to soft lavender toward the rim, in a matt
 Glazed, fired ceramic holds water; plaster and PLA pieces need a glass or plastic liner for fresh flowers. A glass test-tube liner also suits a few long stems." data-gallery="images/H20.1-2D.jpg|Violet Tiered Trumpet Vase, studio view;images/H20.2-2D.jpg|Violet Tiered Trumpet Vase, close-up detail;images/H20.3-2D.jpg|Violet Tiered Trumpet Vase, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H20.1-2D.jpg" alt="Violet Tiered Trumpet Vase, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H20 · Design File</span>
+            <span class="card-tag">Code: H20 · STL &amp; 3MF</span>
             <h3><a href="/vases/h20">Violet Tiered Trumpet Vase</a></h3>
             <p>Tiered vase design file for ceramic, plaster and 3D printing, shown in matte violet: stacked sections, a ribbed foot drum, a fluted cylinder, a scale-covered collar, a spiral-grooved neck and a flared trumpet rim, rise in one continuous form. The color fades from deep violet at the base to soft lavender at the rim. Tall and slender, it suits calla lilies or a few long stems on a sideboard or console. Every section has its own pattern, so the vase reads like a stack of small turned vessels balanced on its ribbed foot.</p>
             <div class="card-footer">
@@ -1658,7 +1660,7 @@ Bronze look: black primer, bronze or copper dry-brush on the raised surfaces, a 
 Decorative curio: it is not designed to hold water or stems." data-gallery="images/H76.1-2D.jpg|Bronze Openwork Owl Curio, studio view;images/H76.2-2D.jpg|Bronze Openwork Owl Curio, close-up detail;images/H76.3-2D.jpg|Bronze Openwork Owl Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H76.1-2D.jpg" alt="Bronze Openwork Owl Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H76 · Design File</span>
+            <span class="card-tag">Code: H76 · STL &amp; 3MF</span>
             <h3><a href="/curios/h76">Bronze Openwork Owl Curio</a></h3>
             <p>Owl curio design file for ceramic, plaster and 3D printing, shown in aged bronze: a perched owl sculpted as an open lattice, its body, wings and tail pierced with rounded organic openings, standing on a gnarled stump base. A heart-shaped facial disc with deep round eyes and a small hooked beak gives it a calm, watchful look, and touches of green patina settle into the recesses like weathered cast metal. In side light the openings throw a dappled shadow pattern onto the wall behind it. A quiet statement piece for a bookshelf, a desk or a mantel.</p>
             <div class="card-footer">
@@ -1675,7 +1677,7 @@ Keep walls at 3-4 mm; scale the model up by about 12% to make up for drying and 
 Dry slowly under plastic for several days, bisque fire, then glaze: amber-ochre on the body breaking dark brown in the scales, celadon green on the mountain pooling emerald in the crevices, and glaze fire to the temperature of your clay body." data-gallery="images/H81.1-2D.jpg|Sacred Mountain Tortoise Curio, studio view;images/H81.2-2D.jpg|Sacred Mountain Tortoise Curio, close-up detail;images/H81.3-2D.jpg|Sacred Mountain Tortoise Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H81.1-2D.jpg" alt="Sacred Mountain Tortoise Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H81 · Design File</span>
+            <span class="card-tag">Code: H81 · STL &amp; 3MF</span>
             <h3><a href="/curios/h81">Sacred Mountain Tortoise Curio</a></h3>
             <p>Tortoise curio design file for ceramic, plaster and 3D printing, shown glazed in amber and celadon: an ancient giant tortoise walks slowly forward, its long wrinkled neck lifted and its wise, heavy-lidded face turned to the light. Deeply sculpted scales cover its legs, and the shell plates with their growth rings rise and turn into a sacred mountain of rocky cliffs and terraced slopes, with a winding path, a carved waterfall and a small pagoda near the summit. In feng shui the tortoise stands for protection and steady support. A storytelling centerpiece for a desk, a console or a bookshelf.</p>
             <div class="card-footer">
@@ -1693,7 +1695,7 @@ Fired ceramic is safe for a real tealight; keep the candle in its metal cup and 
 Dry slowly, bisque fire, then glaze: deep sapphire blue reactive glaze that pools darker in the wrinkles, and antique gold on the saddle border, the tassels and the cup rim as an overglaze in a third, lower firing." data-gallery="images/H82.1-2D.jpg|Sapphire Elephant Candle Holder, studio view;images/H82.2-2D.jpg|Sapphire Elephant Candle Holder, close-up detail;images/H82.3-2D.jpg|Sapphire Elephant Candle Holder, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H82.1-2D.jpg" alt="Sapphire Elephant Candle Holder, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H82 · Design File</span>
+            <span class="card-tag">Code: H82 · STL &amp; 3MF</span>
             <h3><a href="/candle-holders/h82">Sapphire Elephant Candle Holder</a></h3>
             <p>Elephant tealight holder design file for ceramic, plaster and 3D printing, shown glazed in deep sapphire blue: a young elephant stands on four sturdy legs with its trunk raised high in a joyful curve and a gentle smile beneath small tusks. Flowing, wave-like wrinkles cover its whole body, and the blue settles darker into every fold. On its back a ceremonial saddle cloth with an antique gold geometric border and tassels carries a gold-rimmed cup for a tealight. A symbol of wisdom and good luck, it glows warmly on a coffee table, a mantel or a dining table.</p>
             <div class="card-footer">
@@ -1710,7 +1712,7 @@ Dry slowly under plastic, bisque fire, then glaze: mint and celadon on the outer
 Decorative curio: it is not designed to hold water." data-gallery="images/H83.1-2D.jpg|Nautilus Ocean World Curio, studio view;images/H83.2-2D.jpg|Nautilus Ocean World Curio, close-up detail;images/H83.3-2D.jpg|Nautilus Ocean World Curio, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H83.1-2D.jpg" alt="Nautilus Ocean World Curio, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H83 · Design File</span>
+            <span class="card-tag">Code: H83 · STL &amp; 3MF</span>
             <h3><a href="/curios/h83">Nautilus Ocean World Curio</a></h3>
             <p>Nautilus curio design file for ceramic, plaster and 3D printing, shown glazed in mint, pearl and deep teal: a nautilus shell stands upright on a rocky sea-stone base, its outer shell ribbed and striped in soft celadon, its front cut open to reveal the spiral chambers. Each chamber holds a miniature underwater world in relief: branching corals with gold tips, sea anemones, swaying seaweed and schools of tiny fish, spiraling inward to a small gold medallion with a sunken temple at the very center. A piece that rewards a closer look, for a console, an entryway or a bookshelf.</p>
             <div class="card-footer">
@@ -1727,7 +1729,7 @@ Keep walls at 3-4 mm; scale the model up by about 12% to make up for drying and 
 Dry slowly under plastic, bisque fire, then glaze: peach-beige satin on the face and neck, lavender violet on the hair and the sprigs, pooling darker in the grooves, and cream on the base." data-gallery="images/H84.1-2D.jpg|Lavender Muse Bust, studio view;images/H84.2-2D.jpg|Lavender Muse Bust, close-up detail;images/H84.3-2D.jpg|Lavender Muse Bust, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H84.1-2D.jpg" alt="Lavender Muse Bust, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H84 · Design File</span>
+            <span class="card-tag">Code: H84 · STL &amp; 3MF</span>
             <h3><a href="/curios/h84">Lavender Muse Bust</a></h3>
             <p>Bust design file for ceramic, plaster and 3D printing, shown glazed in peach-beige and lavender violet: a serene young woman with closed eyes and a gentle smile, her long, wavy hair sculpted in deep flowing ridges. Toward the back of her head the hair sweeps away and turns into a dense cluster of lavender sprigs with countless tiny buds, as if the calm of the face had grown into a field of flowers. She stands on a round cream base. A restful piece for a bedside table, a dressing table or a reading corner.</p>
             <div class="card-footer">
@@ -1746,7 +1748,7 @@ Glaze: deep navy blue at the foot fading upward to light sky blue on the petal t
 Glazed, fired ceramic holds water; plaster and PLA pieces need a glass or plastic liner for fresh flowers." data-gallery="images/H85.1-2D.jpg|Navy Lotus Crown Vase, studio view;images/H85.2-2D.jpg|Navy Lotus Crown Vase, close-up detail;images/H85.3-2D.jpg|Navy Lotus Crown Vase, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H85.1-2D.jpg" alt="Navy Lotus Crown Vase, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H85 · Design File</span>
+            <span class="card-tag">Code: H85 · STL &amp; 3MF</span>
             <h3><a href="/vases/h85">Navy Lotus Crown Vase</a></h3>
             <p>Lotus vase design file for ceramic, plaster and 3D printing, shown in a satin glaze that fades from deep navy at the foot to light sky blue at the rim: a full, rounded body wrapped in three staggered rows of pointed lotus petals, each one carved with fine vein lines and lying close against the vase. The top row rises a little higher and opens slightly outward, forming a soft crown of petal tips around the opening. The color deepens in every fold, so the petals read like a lotus opening from dark water into light. Made for white roses or a loose garden bouquet on a console, a sideboard or a dining table.</p>
             <div class="card-footer">
@@ -1765,7 +1767,7 @@ Glaze: a glossy fresh leaf green over the whole piece; the form also works well 
 Glazed, fired ceramic holds water; plaster and PLA pieces need a glass or plastic liner for fresh flowers." data-gallery="images/H86.1-2D.jpg|Green Tulip Bouquet Vase, studio view;images/H86.2-2D.jpg|Green Tulip Bouquet Vase, close-up detail;images/H86.3-2D.jpg|Green Tulip Bouquet Vase, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H86.1-2D.jpg" alt="Green Tulip Bouquet Vase, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H86 · Design File</span>
+            <span class="card-tag">Code: H86 · STL &amp; 3MF</span>
             <h3><a href="/vases/h86">Green Tulip Bouquet Vase</a></h3>
             <p>Bouquet vase design file for ceramic, plaster and 3D printing, shown in a glossy fresh leaf green: the vase is shaped like a florist's bouquet, a closed tulip of broad, smooth petals forming the opening, wrapped below in a softly folded sleeve that crosses over at the front. A ribbon is tied in a loose knot around the waist, its two long tails flowing down the gently creased body. Filled with a cloud of gypsophila it looks like a bouquet that never wilts. A cheerful piece for a kitchen table, a windowsill or a spring gift.</p>
             <div class="card-footer">
@@ -1783,7 +1785,7 @@ Glaze: soft butter-cream on the flower and buds, muted sage green on the stems, 
 Fired ceramic and plaster are safe for a real tealight in its metal cup; use an LED tealight in PLA or resin prints, and never leave a candle burning unattended." data-gallery="images/H87.1-2D.jpg|Magnolia Bud Candle Holder, studio view;images/H87.2-2D.jpg|Magnolia Bud Candle Holder, close-up detail;images/H87.3-2D.jpg|Magnolia Bud Candle Holder, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H87.1-2D.jpg" alt="Magnolia Bud Candle Holder, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H87 · Design File</span>
+            <span class="card-tag">Code: H87 · STL &amp; 3MF</span>
             <h3><a href="/candle-holders/h87">Magnolia Bud Candle Holder</a></h3>
             <p>Magnolia tealight holder design file for ceramic, plaster and 3D printing, shown in butter-cream and sage green: an open magnolia flower with thick, smooth petals cradles a tealight at its center, ringed by eight closed buds that lean in on short, sturdy stems. Broad leaves with carved veins lie flat on a soft oval tray, so the whole piece reads as one blossoming branch laid on a plate. Lit at night, the inner petals glow warm against the cool green. A calm centerpiece for a coffee table, a dining table or a bedside table.</p>
             <div class="card-footer">
@@ -1801,7 +1803,7 @@ Glaze: glossy tangerine orange on the rim fading to apricot inside the flower, a
 Use real candles only in fired ceramic or plaster pieces; use an LED taper in PLA or resin prints, and never leave a candle burning unattended." data-gallery="images/H88.1-2D.jpg|Orange Morning Glory Candle Holder, studio view;images/H88.2-2D.jpg|Orange Morning Glory Candle Holder, close-up detail;images/H88.3-2D.jpg|Orange Morning Glory Candle Holder, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H88.1-2D.jpg" alt="Orange Morning Glory Candle Holder, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H88 · Design File</span>
+            <span class="card-tag">Code: H88 · STL &amp; 3MF</span>
             <h3><a href="/candle-holders/h88">Orange Morning Glory Candle Holder</a></h3>
             <p>Morning glory candle holder design file for ceramic, plaster and 3D printing, shown in glossy tangerine and olive green: a single morning glory flower opens at the top of a tall stem, its wide trumpet ending in a soft, wavy rim that holds a slim taper candle. A leafy vine winds around the stem from the base up to the flower, and a long leaf rises beside the bloom. The piece stands on three broad leaves joined into a flat, stable foot. Set in pairs, they turn a dinner table into a small garden by candlelight.</p>
             <div class="card-footer">
@@ -1819,7 +1821,7 @@ Glaze: deep peacock teal fading to turquoise on the ring, royal blue on the neck
 Keep at least 10-12 cm between the flame and the inside of the ring. Use real candles only in fired ceramic or plaster pieces, an LED candle in PLA or resin prints, and never leave a candle burning unattended." data-gallery="images/H89.1-2D.jpg|Peacock Ring Candle Holder, studio view;images/H89.2-2D.jpg|Peacock Ring Candle Holder, close-up detail;images/H89.3-2D.jpg|Peacock Ring Candle Holder, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H89.1-2D.jpg" alt="Peacock Ring Candle Holder, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H89 · Design File</span>
+            <span class="card-tag">Code: H89 · STL &amp; 3MF</span>
             <h3><a href="/candle-holders/h89">Peacock Ring Candle Holder</a></h3>
             <p>Peacock candle holder design file for ceramic, plaster and 3D printing, shown in peacock teal, royal blue and soft gold: the bird's tail sweeps up and around in one thick ring that frames it like a moon, carved inside and out with flowing feathers and small gold-and-blue eyes. The peacock sits at the bottom of the ring, its body forming a deep cup for a pillar candle, its slender neck turned away from the flame and topped with a fan-shaped gold crest. Lit at night, the candle glows on the inside of the ring. A statement piece for a coffee table, a sideboard or a mantel.</p>
             <div class="card-footer">
@@ -1837,7 +1839,7 @@ Glaze: glossy violet on the petals and foot, fading to lilac at the edges, sage 
 Use real tealights only in fired ceramic or plaster pieces, an LED tealight in PLA or resin prints, and never leave a candle burning unattended." data-gallery="images/H90.1-2D.jpg|Violet Orchid Candle Holder, studio view;images/H90.2-2D.jpg|Violet Orchid Candle Holder, close-up detail;images/H90.3-2D.jpg|Violet Orchid Candle Holder, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H90.1-2D.jpg" alt="Violet Orchid Candle Holder, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H90 · Design File</span>
+            <span class="card-tag">Code: H90 · STL &amp; 3MF</span>
             <h3><a href="/candle-holders/h90">Violet Orchid Candle Holder</a></h3>
             <p>Orchid tealight holder design file for ceramic, plaster and 3D printing, shown in glossy violet with gold edges: a goblet-shaped holder whose cup is wrapped in broad phalaenopsis orchid petals, each one fading from deep violet to soft lilac and outlined with a thin gold line. A tealight sits in the gold-rimmed cup above a slender sage green stem, embraced by two long leaves, on a round violet foot. Made in pairs it is an elegant gift, and it brings a touch of color to a coffee table, a dressing table or a festive table.</p>
             <div class="card-footer">
@@ -1856,7 +1858,7 @@ Weight the base and leave a cable channel of at least 8 mm through it.
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H21.1-2D.jpg|Brass Spiral Ribbon Floor Lamp, studio view;images/H21.2-2D.jpg|Brass Spiral Ribbon Floor Lamp, close-up detail;images/H21.3-2D.jpg|Brass Spiral Ribbon Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H21.1-2D.jpg" alt="Brass Spiral Ribbon Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H21 · Design File</span>
+            <span class="card-tag">Code: H21 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h21">Brass Spiral Ribbon Floor Lamp</a></h3>
             <p>Spiral floor lamp design file for ceramic, plaster and 3D printing, shown in brushed brass: a single hammered ribbon coils around a frosted cylindrical shade, widening as it descends from the domed brass cap to the round stepped base. Switched on, the shade glows warm amber and the ribbon throws curved bands of light and shadow across the wall and floor. The hammered texture catches the light on every turn, so the lamp reads as a sculpture by day and a soft ambient light by night. A striking accent for a living room corner, an entryway or a bedroom.</p>
             <div class="card-footer">
@@ -1875,7 +1877,7 @@ Weight the base and leave a cable channel of at least 8 mm through it.
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H22.1-2D.jpg|Ivory Textured Column Floor Lamp, studio view;images/H22.2-2D.jpg|Ivory Textured Column Floor Lamp, close-up detail;images/H22.3-2D.jpg|Ivory Textured Column Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H22.1-2D.jpg" alt="Ivory Textured Column Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H22 · Design File</span>
+            <span class="card-tag">Code: H22 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h22">Ivory Textured Column Floor Lamp</a></h3>
             <p>Column floor lamp design file for ceramic, plaster and 3D printing, shown in warm ivory: a stack of rounded rings, each with its own texture, rises between a flared top rim and a stepped base. Woven, dimpled, ribbed, rope-twisted and smooth bands alternate up the column, so the surface changes as you walk around it. Printed in translucent filament and lit from inside, the whole column glows like alabaster, every texture outlined in warm light. A calm, tactile lamp for a living room corner, a bedroom or a hallway.</p>
             <div class="card-footer">
@@ -1894,7 +1896,7 @@ Weight the round base and run a cable channel of at least 8 mm up through the co
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H23.1-2D.jpg|Charcoal Wave Tendril Floor Lamp, studio view;images/H23.2-2D.jpg|Charcoal Wave Tendril Floor Lamp, close-up detail;images/H23.3-2D.jpg|Charcoal Wave Tendril Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H23.1-2D.jpg" alt="Charcoal Wave Tendril Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H23 · Design File</span>
+            <span class="card-tag">Code: H23 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h23">Charcoal Wave Tendril Floor Lamp</a></h3>
             <p>Sculptural floor lamp design file for ceramic, plaster and 3D printing, shown in matte charcoal: a slender column bends in soft waves from a round base and bursts at the top into a crown of thin, curling tendrils. Four rings of round perforations circle the body, and when the lamp is lit they scatter dots of warm light across the walls, floor and furniture. Dark and quiet by day, starry and atmospheric by night, it brings a graphic, organic line to a living room corner or a reading nook.</p>
             <div class="card-footer">
@@ -1913,7 +1915,7 @@ Weight the base, leave a cable channel of at least 8 mm and fit the light source
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H24.1-2D.jpg|Amber Leaf Floor Lamp, studio view;images/H24.2-2D.jpg|Amber Leaf Floor Lamp, close-up detail;images/H24.3-2D.jpg|Amber Leaf Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H24.1-2D.jpg" alt="Amber Leaf Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H24 · Design File</span>
+            <span class="card-tag">Code: H24 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h24">Amber Leaf Floor Lamp</a></h3>
             <p>Leaf floor lamp design file for ceramic, plaster and 3D printing, shown in translucent amber: pairs of large veined leaves overlap in tiers around a textured central core, each tip curling outward, above a round stepped base. Lit from inside, the amber glows like blown glass, with every vein and leaf edge traced in golden light. The layered leaves give the lamp the look of a stylized plant or a flame, warm and decorative even when switched off. A glowing focal point for a living room, a lounge corner or the space beside a sofa.</p>
             <div class="card-footer">
@@ -1932,7 +1934,7 @@ Weight the base and run a cable channel of at least 8 mm up through the column.
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H25.1-2D.jpg|Midnight Blue Lantern Floor Lamp, studio view;images/H25.2-2D.jpg|Midnight Blue Lantern Floor Lamp, close-up detail;images/H25.3-2D.jpg|Midnight Blue Lantern Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H25.1-2D.jpg" alt="Midnight Blue Lantern Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H25 · Design File</span>
+            <span class="card-tag">Code: H25 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h25">Midnight Blue Lantern Floor Lamp</a></h3>
             <p>Lantern floor lamp design file for ceramic, plaster and 3D printing, shown in matte midnight blue: a hexagonal base carries a column wrapped in diagonal spiral ribs, topped by a round disc with concentric grooves and a slatted cylindrical lantern. Inside the lantern, a frosted light tube glows through the vertical slats and throws striped light across the wall and floor. Strong architectural lines make it a modern, industrial-style piece for a living room, a study or a reading corner.</p>
             <div class="card-footer">
@@ -1950,7 +1952,7 @@ Weight the round base so the tall, slim column stands firmly.
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H26.1-2D.jpg|Silver Crescent Moon Floor Lamp, studio view;images/H26.2-2D.jpg|Silver Crescent Moon Floor Lamp, close-up detail;images/H26.3-2D.jpg|Silver Crescent Moon Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H26.1-2D.jpg" alt="Silver Crescent Moon Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H26 · Design File</span>
+            <span class="card-tag">Code: H26 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h26">Silver Crescent Moon Floor Lamp</a></h3>
             <p>Crescent moon floor lamp design file for ceramic, plaster and 3D printing, shown in brushed silver: seven crescents stack along a slim central light rod, each with its own metal finish, from mirror-polished to fluted, sandblasted and hammered. Switched on, the rod glows warm white in the gaps between the moons and outlines every curve in light. The repeated crescent shape gives the lamp a calm rhythm, like moon phases stacked in a column, on a round brushed-metal base. An elegant, modern accent for a bedroom, a living room or a hallway.</p>
             <div class="card-footer">
@@ -1969,7 +1971,7 @@ Weight the base and leave a cable channel of at least 8 mm through it.
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H27.1-2D.jpg|Champagne Gold Cage Floor Lamp, studio view;images/H27.2-2D.jpg|Champagne Gold Cage Floor Lamp, close-up detail;images/H27.3-2D.jpg|Champagne Gold Cage Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H27.1-2D.jpg" alt="Champagne Gold Cage Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H27 · Design File</span>
+            <span class="card-tag">Code: H27 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h27">Champagne Gold Cage Floor Lamp</a></h3>
             <p>Cage floor lamp design file for ceramic, plaster and 3D printing, shown in champagne gold: twisted rope-style posts hold a stack of rings around a frosted light column, crowned by a round top ring and a domed finial. Each ring has its own texture, knurled, ribbed, hammered, smooth or tubular, so the light catches differently at every level. Switched on, the central column glows warm white between the rings, giving the piece the feel of a luxurious lantern. A refined accent for a living room, a lounge or a hotel-style bedroom.</p>
             <div class="card-footer">
@@ -1987,7 +1989,7 @@ Weight the round base so the tiers stay steady.
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H28.1-2D.jpg|Terracotta Tiered Bowl Floor Lamp, studio view;images/H28.2-2D.jpg|Terracotta Tiered Bowl Floor Lamp, close-up detail;images/H28.3-2D.jpg|Terracotta Tiered Bowl Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H28.1-2D.jpg" alt="Terracotta Tiered Bowl Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H28 · Design File</span>
+            <span class="card-tag">Code: H28 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h28">Terracotta Tiered Bowl Floor Lamp</a></h3>
             <p>Tiered floor lamp design file for ceramic, plaster and 3D printing, shown in matte terracotta: three fluted bowls of decreasing size stack along a slim stem, topped by a small mushroom-shaped dome and set on a round base. The bowl interiors are finished in pale unglazed clay, so when the lamp is lit each tier fills with warm light like a softly glowing fountain. Ribbed and fluted outer surfaces give it a handmade, earthy character that suits Mediterranean, boho and natural interiors.</p>
             <div class="card-footer">
@@ -2005,7 +2007,7 @@ The form leans to one side, so add a steel weight plate inside the plinth and ru
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H29.1-2D.jpg|Coral Sculpture Floor Lamp, studio view;images/H29.2-2D.jpg|Coral Sculpture Floor Lamp, close-up detail;images/H29.3-2D.jpg|Coral Sculpture Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H29.1-2D.jpg" alt="Coral Sculpture Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H29 · Design File</span>
+            <span class="card-tag">Code: H29 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h29">Coral Sculpture Floor Lamp</a></h3>
             <p>Sculptural floor lamp design file for ceramic, plaster and 3D printing, shown in weathered dark bronze: an organic, coral-like form twists upward from a square black plinth, its fronds pierced by rounded open cells. Lit from inside, the pale inner surfaces glow warm gold and project a web of branching shadows across the wall. Rough, smoky outer surfaces contrast with the light-catching interior, so the piece reads as a gallery sculpture by day and a dramatic light installation at night. A statement piece for a living room, a lounge or a hallway.</p>
             <div class="card-footer">
@@ -2024,7 +2026,7 @@ Weight the domed root base so the wide crown stays balanced.
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H30.1-2D.jpg|Forest Green Palm Tree Floor Lamp, studio view;images/H30.2-2D.jpg|Forest Green Palm Tree Floor Lamp, close-up detail;images/H30.3-2D.jpg|Forest Green Palm Tree Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H30.1-2D.jpg" alt="Forest Green Palm Tree Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H30 · Design File</span>
+            <span class="card-tag">Code: H30 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h30">Forest Green Palm Tree Floor Lamp</a></h3>
             <p>Palm tree floor lamp design file for ceramic, plaster and 3D printing, shown in matte forest green: a slender textured trunk rises from a domed base of sculpted roots into a crown of broad, finely veined leaves. The light source sits hidden in the crown, so when it is switched on the leaves glow from beneath and wash the wall and ceiling with warm light. Botanical and calm, it brings a natural, tropical touch to a living room corner, a bedroom or a reading nook.</p>
             <div class="card-footer">
@@ -2041,7 +2043,7 @@ Two-tone finish: matte black base, then mask along the body line and airbrush or
 A light gray dry-brush on the black fur and a gloss coat on the eyes and nose bring out the detail." data-gallery="images/H31.1-2D.jpg|Honey Badger Figurine, studio view;images/H31.2-2D.jpg|Honey Badger Figurine, close-up detail;images/H31.3-2D.jpg|Honey Badger Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H31.1-2D.jpg" alt="Honey Badger Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H31 · Design File</span>
+            <span class="card-tag">Code: H31 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h31">Honey Badger Figurine</a></h3>
             <p>Honey badger figurine design file for ceramic, plaster and 3D printing: caught mid-stride with a cheerful, open-mouthed grin, the badger carries its signature silvery-gray saddle over a deep matte black body, with finely sculpted fur and thick front claws. Low, sturdy and planted on all four legs, it has a bold two-tone silhouette that reads clearly from across a room. A playful accent for a bookshelf, a desk or a kids' room.</p>
             <div class="card-footer">
@@ -2058,7 +2060,7 @@ Fur finish: warm white base, a light cream or gray wash in the fur grooves, then
 Paint the hat red with white trim, and gloss the eyes and nose." data-gallery="images/H32.1-2D.jpg|Polar Bear Figurine, studio view;images/H32.2-2D.jpg|Polar Bear Figurine, close-up detail;images/H32.3-2D.jpg|Polar Bear Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H32.1-2D.jpg" alt="Polar Bear Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H32 · Design File</span>
+            <span class="card-tag">Code: H32 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h32">Polar Bear Figurine</a></h3>
             <p>Polar bear figurine design file for ceramic, plaster and 3D printing: a smiling polar bear sits with its front paws resting between its legs, wearing a red Santa hat with white fur trim and a pom-pom. Dense, finely sculpted fur in creamy white gives it a soft, huggable look, and the red hat draws the eye straight to the friendly face. A cheerful holiday decoration for a mantel, a shelf or a Christmas table, and a sweet keepsake all year round.</p>
             <div class="card-footer">
@@ -2075,7 +2077,7 @@ Finish: metallic silver base, layered teal, emerald and violet candy paints, gol
 Seal with a satin clear coat, adding gloss only on the feather eyes." data-gallery="images/H33.1-2D.jpg|Peacock Figurine, studio view;images/H33.2-2D.jpg|Peacock Figurine, close-up detail;images/H33.3-2D.jpg|Peacock Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H33.1-2D.jpg" alt="Peacock Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H33 · Design File</span>
+            <span class="card-tag">Code: H33 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h33">Peacock Figurine</a></h3>
             <p>Peacock figurine design file for ceramic, plaster and 3D printing: a peacock stands on slender bronze legs with its tail fanned wide behind it and a delicate crest on its head. Iridescent blue and violet run down the neck into a chest of emerald scales, and every tail feather fades from turquoise to gold and copper, ending in a glossy sapphire eye ringed in gold. The enamel-like color makes it shimmer as the light moves. A jewel-toned statement piece for a shelf, a console or a mantel.</p>
             <div class="card-footer">
@@ -2092,7 +2094,7 @@ Rainbow finish: white primer, then airbrush or blend the color bands along the d
 Finish with a gloss clear coat for the enamel-like shine shown." data-gallery="images/H34.1-2D.jpg|Rainbow Lion Figurine, studio view;images/H34.2-2D.jpg|Rainbow Lion Figurine, close-up detail;images/H34.3-2D.jpg|Rainbow Lion Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H34.1-2D.jpg" alt="Rainbow Lion Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H34 · Design File</span>
+            <span class="card-tag">Code: H34 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h34">Rainbow Lion Figurine</a></h3>
             <p>Lion figurine design file for ceramic, plaster and 3D printing, shown in vivid rainbow colors: a standing lion with a long, wind-swept mane and a tufted tail, its coat painted in flowing bands of red, orange, yellow, green, blue and violet. Realistic muscle and paw detail keep the pose powerful, while the glossy multicolor finish turns it into a bold pop-art piece. A striking accent for a kids' room, a colorful living room or a creative studio.</p>
             <div class="card-footer">
@@ -2108,7 +2110,7 @@ Use 0.12-0.16 mm layers, or resin for the finest feather detail; hollow resin pr
 Finish: pale pink base, coral and deep pink blended along the wings and neck, a black beak tip, then a satin or gloss clear coat." data-gallery="images/H35.1-2D.jpg|Flamingo Figurine, studio view;images/H35.2-2D.jpg|Flamingo Figurine, close-up detail;images/H35.3-2D.jpg|Flamingo Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H35.1-2D.jpg" alt="Flamingo Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H35 · Design File</span>
+            <span class="card-tag">Code: H35 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h35">Flamingo Figurine</a></h3>
             <p>Flamingo figurine design file for ceramic, plaster and 3D printing, shown in pink and coral: a flamingo balances on one slender leg with the other tucked up beneath its body, its long neck curving into a graceful S. Soft feather detail shifts from pale pink to deep coral along the wings, and the black-tipped beak completes the classic silhouette. A light, elegant accent for a bathroom shelf, a bedroom or a tropical-themed corner.</p>
             <div class="card-footer">
@@ -2125,7 +2127,7 @@ Charcoal finish: black primer, dark gray base, a lighter gray dry-brush on the r
 Paint the eyes pale blue and add a gloss dot to bring them to life." data-gallery="images/H36.1-2D.jpg|Black Wolf Figurine, studio view;images/H36.2-2D.jpg|Black Wolf Figurine, close-up detail;images/H36.3-2D.jpg|Black Wolf Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H36.1-2D.jpg" alt="Black Wolf Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H36 · Design File</span>
+            <span class="card-tag">Code: H36 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h36">Black Wolf Figurine</a></h3>
             <p>Wolf figurine design file for ceramic, plaster and 3D printing, shown in matte charcoal: a wolf stands alert on all four legs, ears pricked forward and head raised, with icy blue eyes. Dense, velvety fur and realistic muscle detail give it a calm, watchful presence. A strong, quiet piece for a bookshelf, a study or a rustic living room.</p>
             <div class="card-footer">
@@ -2142,7 +2144,7 @@ Finish: teal base, a darker blue-green wash in the recesses, a turquoise dry-bru
 Paint the suction cups a paler tone so they stand out." data-gallery="images/H37.1-2D.jpg|Octopus Figurine, studio view;images/H37.2-2D.jpg|Octopus Figurine, close-up detail;images/H37.3-2D.jpg|Octopus Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H37.1-2D.jpg" alt="Octopus Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H37 · Design File</span>
+            <span class="card-tag">Code: H37 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h37">Octopus Figurine</a></h3>
             <p>Octopus figurine design file for ceramic, plaster and 3D printing, shown in deep teal: a rounded mantle rises above eight tentacles that spread and curl across the surface, each lined with finely sculpted suction cups. Mottled teal and turquoise tones give the skin a soft, wet-looking depth. A calm, sculptural accent for a bathroom, a coastal-style shelf or a desk.</p>
             <div class="card-footer">
@@ -2158,7 +2160,7 @@ Use 0.12-0.16 mm layers so the layered feathers stay distinct.
 Finish: dark brown base, gold and ochre dry-brush on the head, shoulders and feather edges, a yellow beak and talons, and a matte clear coat." data-gallery="images/H38.1-2D.jpg|Golden Eagle Figurine, studio view;images/H38.2-2D.jpg|Golden Eagle Figurine, close-up detail;images/H38.3-2D.jpg|Golden Eagle Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H38.1-2D.jpg" alt="Golden Eagle Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H38 · Design File</span>
+            <span class="card-tag">Code: H38 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h38">Golden Eagle Figurine</a></h3>
             <p>Eagle figurine design file for ceramic, plaster and 3D printing, shown in deep brown and gold: a golden eagle stands with its wings spread wide and its head turned forward, sharp curved talons gripping the ground. Every feather is sculpted in layers, darkening from gold on the head and shoulders to deep brown at the wing tips. A powerful, dramatic piece for a study, an office or an entryway console.</p>
             <div class="card-footer">
@@ -2175,7 +2177,7 @@ Finish: gray stone with a dark wash, iridescent pink, gold and turquoise on the 
 Paint the hair warm brown with lighter highlights on the waves." data-gallery="images/H39.1-2D.jpg|Mermaid Figurine, studio view;images/H39.2-2D.jpg|Mermaid Figurine, close-up detail;images/H39.3-2D.jpg|Mermaid Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H39.1-2D.jpg" alt="Mermaid Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H39 · Design File</span>
+            <span class="card-tag">Code: H39 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h39">Mermaid Figurine</a></h3>
             <p>Mermaid figurine design file for ceramic, plaster and 3D printing: a mermaid sits on a weathered rock, her long wavy hair falling down her back and her iridescent tail curling down the side of the stone into a violet fin. Shimmering scales shift from pink and gold to turquoise and lavender against the gray rock. A dreamy accent for a bathroom, a girl's bedroom or a coastal-themed shelf.</p>
             <div class="card-footer">
@@ -2191,7 +2193,7 @@ Use 0.12-0.16 mm layers, or resin for the finest scale texture.
 Finish: white primer, pastel rainbow colors blended along the body, pearl or iridescent paint on the wings and a gloss clear coat." data-gallery="images/H40.1-2D.jpg|Winged Unicorn Figurine, studio view;images/H40.2-2D.jpg|Winged Unicorn Figurine, close-up detail;images/H40.3-2D.jpg|Winged Unicorn Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H40.1-2D.jpg" alt="Winged Unicorn Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H40 · Design File</span>
+            <span class="card-tag">Code: H40 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h40">Winged Unicorn Figurine</a></h3>
             <p>Winged unicorn figurine design file for ceramic, plaster and 3D printing: a unicorn stands on all four legs with feathered wings raised and a spiral horn, its coat covered in a shimmering, scale-like texture. Pastel rainbow colors flow from pink and coral through yellow and blue to violet, and the mane falls in soft waves. A magical centerpiece for a child's bedroom, a playroom or a fantasy-themed shelf.</p>
             <div class="card-footer">
@@ -2209,7 +2211,7 @@ The round mirror glass is not included: have it cut locally to fit the recess, a
 Add a wall-mount bracket or keyhole hangers rated for the finished weight." data-gallery="images/H41.1-2D.jpg|Twig Nest Round Wall Mirror, studio view;images/H41.2-2D.jpg|Twig Nest Round Wall Mirror, close-up detail;images/H41.3-2D.jpg|Twig Nest Round Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H41.1-2D.jpg" alt="Twig Nest Round Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H41 · Design File</span>
+            <span class="card-tag">Code: H41 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h41">Twig Nest Round Wall Mirror</a></h3>
             <p>Round wall mirror design file for ceramic, plaster and 3D printing, shown in a natural driftwood finish: hundreds of twisting twigs weave into a deep, nest-like wreath around a smooth walnut inner ring and a gold-leaf band. Tucked between the branches are small turquoise stones, raw amethyst crystals, gold leaves and copper wire, like treasures gathered into a bird's nest. A warm, organic statement mirror for an entryway console, a boho living room or a reading corner.</p>
             <div class="card-footer">
@@ -2228,7 +2230,7 @@ The octagonal mirror glass is not included: have it cut locally to fit the reces
 Add a wall-mount bracket or keyhole hangers rated for the finished weight." data-gallery="images/H42.1-2D.jpg|Origami Star Wall Mirror, studio view;images/H42.2-2D.jpg|Origami Star Wall Mirror, close-up detail;images/H42.3-2D.jpg|Origami Star Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H42.1-2D.jpg" alt="Origami Star Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H42 · Design File</span>
+            <span class="card-tag">Code: H42 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h42">Origami Star Wall Mirror</a></h3>
             <p>Origami wall mirror design file for ceramic, plaster and 3D printing: sharp folded panels in deep teal burst outward into a star around an octagonal walnut frame, with smaller folded accents in mustard, coral, violet and mint. Every crease looks hand-folded from heavy paper, so the frame changes as light moves across the facets. A bold, geometric mirror for a living room, home office or kids' room.</p>
             <div class="card-footer">
@@ -2246,7 +2248,7 @@ The round mirror glass is not included: have it cut locally to fit the recess, a
 Add a wall-mount bracket or keyhole hangers rated for the finished weight." data-gallery="images/H43.1-2D.jpg|Red Rabbit Wall Mirror, studio view;images/H43.2-2D.jpg|Red Rabbit Wall Mirror, close-up detail;images/H43.3-2D.jpg|Red Rabbit Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H43.1-2D.jpg" alt="Red Rabbit Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H43 · Design File</span>
+            <span class="card-tag">Code: H43 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h43">Red Rabbit Wall Mirror</a></h3>
             <p>Rabbit wall mirror design file for ceramic, plaster and 3D printing, shown covered in glossy red tiles: a sitting rabbit with tall ears, dark glass eyes and fine gold whiskers frames a round mirror on its chest. Gold bands outline the mirror, the eyes and the curve of the back leg, giving it the shimmer of stained glass. A playful, eye-catching mirror for a hallway, nursery or living room wall.</p>
             <div class="card-footer">
@@ -2264,7 +2266,7 @@ Paint the frame wood-brown.
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H44.1-2D.jpg|Forest Wildlife Wall Relief, studio view;images/H44.2-2D.jpg|Forest Wildlife Wall Relief, close-up detail;images/H44.3-2D.jpg|Forest Wildlife Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H44.1-2D.jpg" alt="Forest Wildlife Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H44 · Design File</span>
+            <span class="card-tag">Code: H44 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h44">Forest Wildlife Wall Relief</a></h3>
             <p>Forest wall relief design file for ceramic, plaster and 3D printing: a framed landscape in layered relief, with towering pines, a winding river and snow-capped mountains under a golden sun. An eagle soars over the trees, a family of deer grazes by the water and rabbits sit in the foreground grass. Rich greens, river blues and warm earth tones give the scene real depth. A warm, nature-filled piece for a living room, a cabin or a study.</p>
             <div class="card-footer">
@@ -2282,7 +2284,7 @@ Glow-in-the-dark paint on the stars gives a night-light effect.
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H45.1-2D.jpg|Galaxy Wall Relief, studio view;images/H45.2-2D.jpg|Galaxy Wall Relief, close-up detail;images/H45.3-2D.jpg|Galaxy Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H45.1-2D.jpg" alt="Galaxy Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H45 · Design File</span>
+            <span class="card-tag">Code: H45 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h45">Galaxy Wall Relief</a></h3>
             <p>Galaxy wall relief design file for ceramic, plaster and 3D printing: a glowing spiral galaxy swirls across a deep navy sky, surrounded by pink and turquoise nebulae, a ringed planet, moons and scattered stars, all in raised relief inside a slim silver frame. Golden highlights at the core fade to violet and blue along the arms. A dreamy statement piece for a bedroom, a kids' room or a space-themed study.</p>
             <div class="card-footer">
@@ -2299,7 +2301,7 @@ Finish: warm gold sky, deep blue lake and foliage layered in red, orange and yel
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H46.1-2D.jpg|Autumn Landscape Wall Relief, studio view;images/H46.2-2D.jpg|Autumn Landscape Wall Relief, close-up detail;images/H46.3-2D.jpg|Autumn Landscape Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H46.1-2D.jpg" alt="Autumn Landscape Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H46 · Design File</span>
+            <span class="card-tag">Code: H46 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h46">Autumn Landscape Wall Relief</a></h3>
             <p>Autumn wall relief design file for ceramic, plaster and 3D printing: red, orange and gold trees frame a winding, leaf-covered path that leads past a bench to a calm lake, with soft hills and a glowing setting sun behind. Falling leaves drift across the scene, and the layered relief gives it real depth. A warm, cozy piece for a living room, a reading corner or an entryway.</p>
             <div class="card-footer">
@@ -2317,7 +2319,7 @@ Paint the frame matte black.
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H47.1-2D.jpg|Girl in the Crowd Wall Relief, studio view;images/H47.2-2D.jpg|Girl in the Crowd Wall Relief, close-up detail;images/H47.3-2D.jpg|Girl in the Crowd Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H47.1-2D.jpg" alt="Girl in the Crowd Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H47 · Design File</span>
+            <span class="card-tag">Code: H47 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h47">Girl in the Crowd Wall Relief</a></h3>
             <p>Wall relief design file for ceramic, plaster and 3D printing: a crowd of simplified, faceless gray figures fills the frame, and in the middle stands a single little girl in a bright red raincoat and boots, holding a yellow umbrella. The muted crowd makes her color the whole story of the piece. A quiet, thought-provoking relief in a slim black frame for a living room, a hallway or a study.</p>
             <div class="card-footer">
@@ -2334,7 +2336,7 @@ Finish: charcoal-brown background with a lighter dry-brush on the torn edges, wa
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H48.1-2D.jpg|Anguish Figure Wall Relief, studio view;images/H48.2-2D.jpg|Anguish Figure Wall Relief, close-up detail;images/H48.3-2D.jpg|Anguish Figure Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H48.1-2D.jpg" alt="Anguish Figure Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H48 · Design File</span>
+            <span class="card-tag">Code: H48 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h48">Anguish Figure Wall Relief</a></h3>
             <p>Figure wall relief design file for ceramic, plaster and 3D printing: a woman bursts out of a dark, torn-edged panel, head thrown back in a scream, her long hair whipping around her and her hands clawing at the air. Deep charcoal tones surround the warm, carved figure, and the rough broken edges make the panel look as if it is tearing open. An intense, expressive art piece for a studio, a gallery wall or a dramatic modern interior.</p>
             <div class="card-footer">
@@ -2352,7 +2354,7 @@ Paint the ornate frame gold with a dark wash in the scrollwork.
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H49.1-2D.jpg|Critique of Capitalism Wall Relief, studio view;images/H49.2-2D.jpg|Critique of Capitalism Wall Relief, close-up detail;images/H49.3-2D.jpg|Critique of Capitalism Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H49.1-2D.jpg" alt="Critique of Capitalism Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H49 · Design File</span>
+            <span class="card-tag">Code: H49 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h49">Critique of Capitalism Wall Relief</a></h3>
             <p>Wealth is not shared, it is staged. This wall relief design file sets a banquet table high in the frame, where richly dressed feasters laugh and raise their glasses over plates piled high. Below them, carved in gray, shadowed relief, kneeling figures hold out empty bowls: close enough to see the feast, never close enough to reach it. Framed in ornate gold, the piece asks plainly who is invited to wealth, and who is only invited to hunger.</p>
             <div class="card-footer">
@@ -2369,7 +2371,7 @@ Bronze finish: black primer, a bronze dry-brush on the raised figures, a dark wa
 Built-in keyhole slots on the back make hanging easy; use screws rated for the finished weight." data-gallery="images/H50.1-2D.jpg|Battlefield Wall Relief, studio view;images/H50.2-2D.jpg|Battlefield Wall Relief, close-up detail;images/H50.3-2D.jpg|Battlefield Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><span class="thumb-best-badge">Best</span><img src="images/H50.1-2D.jpg" alt="Battlefield Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H50 · Design File</span>
+            <span class="card-tag">Code: H50 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h50">Battlefield Wall Relief</a></h3>
             <p>Battle wall relief design file for ceramic, plaster and 3D printing: two medieval armies clash across a wide battlefield of more than fifty knights, horsemen and fallen soldiers, with swords crossed at the center, fires burning on the horizon and storm clouds rolling overhead. Bronze and steel tones give it the look of a cast metal panel, set in a dark frame with crossed-sword details. A dramatic piece for a study, a game room or a history lover's wall.</p>
             <div class="card-footer">
@@ -2386,7 +2388,7 @@ Finish: coral and salmon tones with a white dry-brush on the branches, and gloss
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H51.1-2D.jpg|Coral Reef Wave Relief, studio view;images/H51.2-2D.jpg|Coral Reef Wave Relief, close-up detail;images/H51.3-2D.jpg|Coral Reef Wave Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H51.1-2D.jpg" alt="Coral Reef Wave Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H51 · Design File</span>
+            <span class="card-tag">Code: H51 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h51">Coral Reef Wave Relief</a></h3>
             <p>Coral reef wall relief design file for ceramic, plaster and 3D printing: branching coral, starfish, shells and sea urchins in coral-pink, salmon and white wrap around a glossy turquoise whirlpool, with tiny seahorses drifting in its current lines. The unframed, irregular edge follows the reef itself. A fresh, coastal statement piece for a bathroom, a beach house or a bright living room.</p>
             <div class="card-footer">
@@ -2403,7 +2405,7 @@ Finish: dark gray rock with a light dry-brush, translucent purple and blue on th
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H52.1-2D.jpg|Geode Burst Wall Relief, studio view;images/H52.2-2D.jpg|Geode Burst Wall Relief, close-up detail;images/H52.3-2D.jpg|Geode Burst Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H52.1-2D.jpg" alt="Geode Burst Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H52 · Design File</span>
+            <span class="card-tag">Code: H52 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h52">Geode Burst Wall Relief</a></h3>
             <p>Geode wall relief design file for ceramic, plaster and 3D printing: sharp amethyst and quartz crystals burst from a rough charcoal-gray rock shell, deep purple at the jagged edges and fading to pale blue and clear facets in the center. Glossy crystal points against the matte stone give it the look of a freshly split geode. An unframed, organic statement piece for a living room, a meditation space or a modern office.</p>
             <div class="card-footer">
@@ -2420,7 +2422,7 @@ Fluorescent orange paint in the veins glows under a warm or UV accent light.
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H53.1-2D.jpg|Volcanic Eruption Wall Relief, studio view;images/H53.2-2D.jpg|Volcanic Eruption Wall Relief, close-up detail;images/H53.3-2D.jpg|Volcanic Eruption Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H53.1-2D.jpg" alt="Volcanic Eruption Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H53 · Design File</span>
+            <span class="card-tag">Code: H53 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h53">Volcanic Eruption Wall Relief</a></h3>
             <p>Volcano wall relief design file for ceramic, plaster and 3D printing: glowing lava veins run through a rough black basalt shell and pool into a fiery crater at the center, shading from red to orange and yellow. The oval form has jagged, naturally broken edges and no frame. A bold, dramatic piece for a living room, a game room or a modern office.</p>
             <div class="card-footer">
@@ -2436,7 +2438,7 @@ Glass look: print in translucent yellow and orange PETG, or paint transparent ca
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H54.1-2D.jpg|Phoenix Glass Relief, studio view;images/H54.2-2D.jpg|Phoenix Glass Relief, close-up detail;images/H54.3-2D.jpg|Phoenix Glass Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H54.1-2D.jpg" alt="Phoenix Glass Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H54 · Design File</span>
+            <span class="card-tag">Code: H54 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h54">Phoenix Glass Relief</a></h3>
             <p>Phoenix wall relief design file for ceramic, plaster and 3D printing: hundreds of angled shards form a phoenix in flight, wings and tail spread wide, glowing gold at the body and deepening to orange and garnet red toward the feather tips. Every facet catches the light like stained glass, so the bird seems to shimmer as you walk past. Hung without a frame, its jagged outline is the bird itself. A radiant centerpiece for a living room, an entryway or the wall above a bed.</p>
             <div class="card-footer">
@@ -2453,7 +2455,7 @@ Paint the frame matte black.
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H55.1-2D.jpg|Moon Phases Glass Relief, studio view;images/H55.2-2D.jpg|Moon Phases Glass Relief, close-up detail;images/H55.3-2D.jpg|Moon Phases Glass Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H55.1-2D.jpg" alt="Moon Phases Glass Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H55 · Design File</span>
+            <span class="card-tag">Code: H55 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h55">Moon Phases Glass Relief</a></h3>
             <p>Moon phases wall relief design file for ceramic, plaster and 3D printing: seven lunar phases, from new moon through the full moon at the center and back, are built from faceted silver and indigo shards on a black background scattered with hundreds of tiny star fragments. Set in a slim dark frame, every facet catches its own point of light. A calm, celestial piece for a bedroom, the wall above a sofa or a meditation space.</p>
             <div class="card-footer">
@@ -2470,7 +2472,7 @@ Finish: gray street and buildings with colorful signs, bright coats on each figu
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H56.1-2D.jpg|Probabilities of Thought Wall Relief, studio view;images/H56.2-2D.jpg|Probabilities of Thought Wall Relief, close-up detail;images/H56.3-2D.jpg|Probabilities of Thought Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H56.1-2D.jpg" alt="Probabilities of Thought Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H56 · Design File</span>
+            <span class="card-tag">Code: H56 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h56">Probabilities of Thought Wall Relief</a></h3>
             <p>Wall relief design file for ceramic, plaster and 3D printing: a busy city crossing under neon signs and tall buildings, filled with people in brightly colored coats, but every head is a white die with black pips. The realistic street and the uncanny dice heads make it a playful, surreal piece about chance and thought. Set in a slim dark frame, it suits a living room, a game room or a creative office.</p>
             <div class="card-footer">
@@ -2486,7 +2488,7 @@ Finish: deep green background, teal and emerald peacocks with copper-gold eye sp
 Built-in keyhole slots on the back make hanging easy; use screws rated for the finished weight." data-gallery="images/H57.1-2D.jpg|Twin Peacocks Floral Wall Relief, studio view;images/H57.2-2D.jpg|Twin Peacocks Floral Wall Relief, close-up detail;images/H57.3-2D.jpg|Twin Peacocks Floral Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H57.1-2D.jpg" alt="Twin Peacocks Floral Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H57 · Design File</span>
+            <span class="card-tag">Code: H57 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h57">Twin Peacocks Floral Wall Relief</a></h3>
             <p>Peacock wall relief design file for ceramic, plaster and 3D printing: two peacocks stand face to face on a carved rock beneath a golden arch, their long tails sweeping down in a symmetrical fan of teal and emerald with copper-gold eyes. Pale pink lotus and peony blooms and soft green leaves curl around them, all set inside an ornate gold baroque frame. An elegant, romantic piece for a living room, a bedroom or a dining room.</p>
             <div class="card-footer">
@@ -2502,7 +2504,7 @@ Finish: golden-ochre comb with an amber wash in the cells, gloss varnish on the 
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H58.1-2D.jpg|Honeycomb Queen Bee Wall Relief, studio view;images/H58.2-2D.jpg|Honeycomb Queen Bee Wall Relief, close-up detail;images/H58.3-2D.jpg|Honeycomb Queen Bee Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H58.1-2D.jpg" alt="Honeycomb Queen Bee Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H58 · Design File</span>
+            <span class="card-tag">Code: H58 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h58">Honeycomb Queen Bee Wall Relief</a></h3>
             <p>Honeycomb wall relief design file for ceramic, plaster and 3D printing: worker bees crawl over a field of hexagonal comb, some tucked into open cells and others resting on top, while golden honey fills the deepest cells. A larger queen bee sits at the center among her attendants. With no frame, the edge breaks into whole and half cells like a piece taken from a real hive. A warm, natural accent for a kitchen, a dining room or a garden room.</p>
             <div class="card-footer">
@@ -2518,7 +2520,7 @@ Finish: deep indigo base, navy and violet nodes with a plum dry-brush on the con
 Built-in keyhole slots on the back make hanging easy; use screws rated for the finished weight." data-gallery="images/H59.1-2D.jpg|Connection Wall Panel, studio view;images/H59.2-2D.jpg|Connection Wall Panel, close-up detail;images/H59.3-2D.jpg|Connection Wall Panel, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H59.1-2D.jpg" alt="Connection Wall Panel, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H59 · Design File</span>
+            <span class="card-tag">Code: H59 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h59">Connection Wall Panel</a></h3>
             <p>Abstract wall panel design file for ceramic, plaster and 3D printing: dozens of organic, flower-like nodes spread across a deep indigo background, some standing alone and others linked to their neighbors by fine, branching filaments, like neurons or a mycelium network. The tones shift from navy blue to violet and plum where the clusters connect. Framed in a slim matching border, it is a quiet, thought-provoking piece for an office, a study or a modern living room.</p>
             <div class="card-footer">
@@ -2535,7 +2537,7 @@ Finish: sandy ochre surface, a darker terracotta wash inside the tunnels and glo
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H60.1-2D.jpg|Ant Colony Wall Panel, studio view;images/H60.2-2D.jpg|Ant Colony Wall Panel, close-up detail;images/H60.3-2D.jpg|Ant Colony Wall Panel, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H60.1-2D.jpg" alt="Ant Colony Wall Panel, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H60 · Design File</span>
+            <span class="card-tag">Code: H60 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h60">Ant Colony Wall Panel</a></h3>
             <p>Ant colony wall panel design file for ceramic, plaster and 3D printing: a network of winding tunnels and rounded chambers is carved into a sandy terracotta surface, as if cut straight from the ground. Dozens of red ants march along the passages and gather in the chambers, and the fine granular texture reads like packed earth. Framed in a slim wood-tone border, it is a curious, nature-inspired piece for a study, a kids' room or an office.</p>
             <div class="card-footer">
@@ -2554,7 +2556,7 @@ The oval mirror glass is not included: have it cut locally to fit the opening, a
 Add a wall-mount bracket or keyhole hangers rated for the finished weight." data-gallery="images/H61.1-2D.jpg|Ancient Ruin Arch Wall Mirror, studio view;images/H61.2-2D.jpg|Ancient Ruin Arch Wall Mirror, close-up detail;images/H61.3-2D.jpg|Ancient Ruin Arch Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H61.1-2D.jpg" alt="Ancient Ruin Arch Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H61 · Design File</span>
+            <span class="card-tag">Code: H61 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h61">Ancient Ruin Arch Wall Mirror</a></h3>
             <p>Ruin wall mirror design file for ceramic, plaster and 3D printing: a tall oval mirror sits inside a crumbling stone archway, with a fluted classical column on one side and broken masonry, loose rubble and rusted rebar on the other. Weathered limestone tones, chipped edges and a carved keystone make it look rescued from an archaeological site. A dramatic, sculptural mirror for an entryway, living room or modern minimalist interior.</p>
             <div class="card-footer">
@@ -2572,7 +2574,7 @@ The round mirror glass (about 345 mm, 3-4 mm thick) is not included: have it cut
 Built-in keyhole slots on the back make hanging easy; use screws rated for the finished weight." data-gallery="images/H62.1-2D.jpg|Space Explorer Round Wall Mirror, studio view;images/H62.2-2D.jpg|Space Explorer Round Wall Mirror, close-up detail;images/H62.3-2D.jpg|Space Explorer Round Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H62.1-2D.jpg" alt="Space Explorer Round Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H62 · Design File</span>
+            <span class="card-tag">Code: H62 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h62">Space Explorer Round Wall Mirror</a></h3>
             <p>Space wall mirror design file for ceramic, plaster and 3D printing: a wide round frame painted as a deep navy galaxy with violet and teal nebula swirls, set with raised planets, a ringed Saturn, a blasting rocket, astronauts, moons, satellites, constellations and glowing stars. Every element sits in relief, so kids can trace the whole solar system around the glass. A dreamy centerpiece for a children's bedroom, playroom or space-themed study.</p>
             <div class="card-footer">
@@ -2589,7 +2591,7 @@ Finish: warm brown and burgundy near the figure, fading to cooler, darker tones 
 Built-in keyhole slots on the back make hanging easy; use screws rated for the finished weight." data-gallery="images/H63.1-2D.jpg|Meal Eaten Alone Wall Relief, studio view;images/H63.2-2D.jpg|Meal Eaten Alone Wall Relief, close-up detail;images/H63.3-2D.jpg|Meal Eaten Alone Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H63.1-2D.jpg" alt="Meal Eaten Alone Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H63 · Design File</span>
+            <span class="card-tag">Code: H63 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h63">Meal Eaten Alone Wall Relief</a></h3>
             <p>One chair is filled tonight, and it is his own. This wall relief carves an elderly man seated alone at a table built for many, elbow propped, chin resting on his hand, gaze lowered in quiet thought. Down both sides, empty plates and folded napkins stretch into the dark, each place setting untouched, waiting for guests long gone. Warm light gathers close around him and fades to cooler shadow toward the table's far ends, so distance itself carries the weight of being alone. Framed in dark wood for hanging.</p>
             <div class="card-footer">
@@ -2606,7 +2608,7 @@ Finish: glossy red-brown on the ant, sandy olive on the cicada and translucent p
 For stable display, glue the feet to a small base." data-gallery="images/H64.1-2D.jpg|Ant-Cicada Figurine, studio view;images/H64.2-2D.jpg|Ant-Cicada Figurine, close-up detail;images/H64.3-2D.jpg|Ant-Cicada Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H64.1-2D.jpg" alt="Ant-Cicada Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H64 · Design File</span>
+            <span class="card-tag">Code: H64 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h64">Ant-Cicada Figurine</a></h3>
             <p>Fable figurine design file for ceramic, plaster and 3D printing, inspired by Aesop's The Ant and the Cicada: a stiff, scowling ant stands with its arms crossed while a carefree, laughing cicada drapes an arm over its shoulder. Glossy red-brown armor on the ant and warm sandy-olive tones with translucent veined wings on the cicada set the two characters apart. Irritation on one side, easy amusement on the other, caught in a single moment. A witty gift for a shelf, a desk or a kids' room.</p>
             <div class="card-footer">
@@ -2623,7 +2625,7 @@ Finish: gray donkey, tan-and-white hound, striped gray-brown cat, a red, orange 
 For a garden corner, print in PETG and seal with a UV-resistant clear coat." data-gallery="images/H65.1-2D.jpg|Bremen Town Musicians Figurine, studio view;images/H65.2-2D.jpg|Bremen Town Musicians Figurine, close-up detail;images/H65.3-2D.jpg|Bremen Town Musicians Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H65.1-2D.jpg" alt="Bremen Town Musicians Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H65 · Design File</span>
+            <span class="card-tag">Code: H65 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h65">Bremen Town Musicians Figurine</a></h3>
             <p>Bremen Town Musicians figurine design file for ceramic, plaster and 3D printing, inspired by the Grimm fairy tale: a donkey, a hound, a tabby cat and a rooster stack into one singing tower on a round cobblestone base. The gray donkey carries the group with its head thrown back, the tan-and-white hound and the striped cat climb above it, and the rooster crows from the top with its wings spread. Every open mouth points skyward, so the whole piece reads as a single chorus. A joyful accent for a shelf, a kids' room or a garden corner.</p>
             <div class="card-footer">
@@ -2639,7 +2641,7 @@ Keep the ears, the cheese and the crow&#x27;s tail at 2 mm or thicker below the 
 Finish: orange-red fur with a darker wash, white chest and tail tip, black legs, a gloss blue-black crow and a warm yellow cheese." data-gallery="images/H66.1-2D.jpg|Fox-Crow Figurine, studio view;images/H66.2-2D.jpg|Fox-Crow Figurine, close-up detail;images/H66.3-2D.jpg|Fox-Crow Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H66.1-2D.jpg" alt="Fox-Crow Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H66 · Design File</span>
+            <span class="card-tag">Code: H66 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h66">Fox-Crow Figurine</a></h3>
             <p>Fable figurine design file for ceramic, plaster and 3D printing, inspired by Aesop's The Fox and the Crow: a red fox sits with its bushy, white-tipped tail wrapped around its paws while a glossy blue-black crow perches on its head, holding a wedge of cheese just out of reach. The fox wears a hopeful, knowing smile, turning the classic fable into a playful standoff. Rich orange fur, a crisp white chest and black legs make the colors pop. A charming gift for a shelf, a desk or a kids' room.</p>
             <div class="card-footer">
@@ -2658,7 +2660,7 @@ Paint the frame dark wood-brown, or build it from real timber.
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H67.1-2D.jpg|Tree of Life Wall Relief, studio view;images/H67.2-2D.jpg|Tree of Life Wall Relief, close-up detail;images/H67.3-2D.jpg|Tree of Life Wall Relief, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H67.1-2D.jpg" alt="Tree of Life Wall Relief, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H67 · Design File</span>
+            <span class="card-tag">Code: H67 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h67">Tree of Life Wall Relief</a></h3>
             <p>Roots spreading wide and branches reaching upward, an ancient tree rises through the heart of this wall relief as the anchor of a swirling cosmic scene. Around it, flowing bands curl into spirals and waves, carrying a radiant sun on one side and a crescent moon with scattered stars on the other, as if day and night were orbiting the tree together. Weathered copper, ochre and aged bronze tones ride the raised forms, while deep blue and verdigris green settle into the recesses, giving the whole surface the feel of an old hand-carved artifact. Framed in dark reclaimed wood for hanging.</p>
             <div class="card-footer">
@@ -2676,7 +2678,7 @@ The teardrop mirror field (about 195 x 240 mm) is completely flat: have the glas
 Two keyhole slots are built into the back of the top piece, 212 mm apart; hang it on screws and wall anchors rated for about 1 kg." data-gallery="images/H68.1-2D.jpg|Gold Melting Drip Wall Mirror, studio view;images/H68.2-2D.jpg|Gold Melting Drip Wall Mirror, close-up detail;images/H68.3-2D.jpg|Gold Melting Drip Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H68.1-2D.jpg" alt="Gold Melting Drip Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H68 · Design File</span>
+            <span class="card-tag">Code: H68 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h68">Gold Melting Drip Wall Mirror</a></h3>
             <p>Melting wall mirror design file for ceramic, plaster and 3D printing, shown in polished gold: a smooth, rounded frame slumps at the bottom and runs down the wall in long, liquid drips, as if the mirror were slowly melting in the heat. The glossy gold surface catches the light along every curve, making it a striking surrealist accent. A statement mirror for a modern living room, bedroom or a bold dark-green feature wall.</p>
             <div class="card-footer">
@@ -2694,7 +2696,7 @@ The centre is a flat, single-colour circle 203 mm across with a 3 mm lip all the
 Two keyhole slots are built into the back of the top pieces, 110 mm apart; hang it on screws and wall anchors rated for about 1.5 kg." data-gallery="images/H69.1-2D.jpg|Wise Owl Wall Mirror, studio view;images/H69.2-2D.jpg|Wise Owl Wall Mirror, close-up detail;images/H69.3-2D.jpg|Wise Owl Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H69.1-2D.jpg" alt="Wise Owl Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H69 · Design File</span>
+            <span class="card-tag">Code: H69 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h69">Wise Owl Wall Mirror</a></h3>
             <p>Owl wall mirror design file for ceramic, plaster and 3D printing, shown with a carved wood finish: an owl with outstretched wings, amber glass eyes and feathered ear tufts wraps its body around a round beveled mirror, its talons gripping a leafy branch below. Gold-tipped feathers and gemstone-like inlays of turquoise, lapis, amber and stone fill the wings and crown. A warm, rustic mirror for a library, entryway console or cozy living room.</p>
             <div class="card-footer">
@@ -2712,7 +2714,7 @@ The mirror field keeps its free-form shape (about 274 x 300 mm) and is completel
 Two keyhole slots are built into the back of the top pieces, 90 mm apart; hang it on screws and wall anchors rated for about 2 kg." data-gallery="images/H70.1-2D.jpg|Leopard Jungle Wall Mirror, studio view;images/H70.2-2D.jpg|Leopard Jungle Wall Mirror, close-up detail;images/H70.3-2D.jpg|Leopard Jungle Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><span class="thumb-best-badge">Best</span><img src="images/H70.1-2D.jpg" alt="Leopard Jungle Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H70 · Design File</span>
+            <span class="card-tag">Code: H70 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h70">Leopard Jungle Wall Mirror</a></h3>
             <p>Leopard wall mirror design file for ceramic, plaster and 3D printing: a snarling leopard crouches along the top of an organic, branch-shaped frame, claws hooked over the wood and tail curling down the side. Twisting jungle limbs, glossy green leaves and leopard-spot carving wrap around a free-form beveled mirror. A bold safari statement piece for an entryway console, living room or boho interior.</p>
             <div class="card-footer">
@@ -2730,7 +2732,7 @@ The centre is a flat, single-colour circle 254 mm across with a 3 mm lip all the
 Two keyhole slots are built into the back of the top pieces, 130 mm apart; hang it on screws and wall anchors rated for about 3 kg." data-gallery="images/H77.1-2D.jpg|Chameleon Eye Wall Mirror, studio view;images/H77.2-2D.jpg|Chameleon Eye Wall Mirror, close-up detail;images/H77.3-2D.jpg|Chameleon Eye Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H77.1-2D.jpg" alt="Chameleon Eye Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H77 · Design File</span>
+            <span class="card-tag">Code: H77 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h77">Chameleon Eye Wall Mirror</a></h3>
             <p>Chameleon wall mirror design file for ceramic, plaster and 3D printing: a sculpted chameleon head in profile, with a large round mirror set where its eye would be. Wrinkled eyelid folds ring the glass, a short snout with a nostril and a firm mouth line points to one side, and a spiky brow ridge climbs into the head crest. Pebbled moss green scales carry bands of turquoise and yellow, with a row of rust orange scales along the brow. A playful, tropical statement mirror for an entryway, a boho living room or a plant-filled corner.</p>
             <div class="card-footer">
@@ -2750,7 +2752,7 @@ Finish: deep petrol green base, a lighter teal dry-brush along the raised thread
 Two keyhole slots are built into the back of the top cocoon pieces, 120 mm apart; hang it on screws and wall anchors rated for about 2 kg." data-gallery="images/H78.1-2D.jpg|Moth Cocoon Wall Mirror, studio view;images/H78.2-2D.jpg|Moth Cocoon Wall Mirror, close-up detail;images/H78.3-2D.jpg|Moth Cocoon Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H78.1-2D.jpg" alt="Moth Cocoon Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H78 · Design File</span>
+            <span class="card-tag">Code: H78 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h78">Moth Cocoon Wall Mirror</a></h3>
             <p>Moth wall mirror design file for ceramic, plaster and 3D printing: a tall oval silk cocoon torn open at its center, with a round mirror set inside the opening. Bands of thread wrap the cocoon in crossing diagonals, the torn edges curl back in frayed ribbons, and taut silk strands anchor each corner to the wall. A single luna-style moth with gold eye-spots and feathery antennae rests on the edge of the tear. Finished in deep petrol green, it brings a dark botanical, gothic touch to a bedroom, a hallway or a reading nook.</p>
             <div class="card-footer">
@@ -2768,7 +2770,7 @@ The centre is a flat, single-colour circle 233 mm across with a 3 mm lip all the
 Two keyhole slots are built into the back of the top pieces, 180 mm apart; hang it on screws and wall anchors rated for about 2.5 kg." data-gallery="images/H79.1-2D.jpg|Cracked Earth Wall Mirror, studio view;images/H79.2-2D.jpg|Cracked Earth Wall Mirror, close-up detail;images/H79.3-2D.jpg|Cracked Earth Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H79.1-2D.jpg" alt="Cracked Earth Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H79 · Design File</span>
+            <span class="card-tag">Code: H79 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h79">Cracked Earth Wall Mirror</a></h3>
             <p>Cracked earth wall mirror design file for ceramic, plaster and 3D printing: a round mirror sits like the last pool of water in a ring of drought-dried clay. A smooth inner band with fine ripple rings surrounds the glass, then breaks outward into thick plates divided by deep cracks, their outer edges curling up and away from the wall. The color shifts from damp terracotta near the mirror to dusty ochre at the dry rim. An earthy, desert-modern mirror for an entryway, a living room or a wabi-sabi interior.</p>
             <div class="card-footer">
@@ -2787,7 +2789,7 @@ The centre is a flat, single-colour disc about 238 mm across: the round mirror g
 Two keyhole slots are built into the back of the top pieces, 180 mm apart; hang it on screws and wall anchors rated for about 2.5 kg." data-gallery="images/H80.1-2D.jpg|Cityscape Wall Mirror, studio view;images/H80.2-2D.jpg|Cityscape Wall Mirror, close-up detail;images/H80.3-2D.jpg|Cityscape Wall Mirror, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H80.1-2D.jpg" alt="Cityscape Wall Mirror, wall mirror design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H80 · Design File</span>
+            <span class="card-tag">Code: H80 · STL &amp; 3MF</span>
             <h3><a href="/mirrors/h80">Cityscape Wall Mirror</a></h3>
             <p>Cityscape wall mirror design file for ceramic, plaster and 3D printing: a miniature city seen from above circles a large round mirror, like a skyline built around a lake. Hundreds of small building blocks with flat rooftops and inner courtyards line radial streets and curved ring roads, and a stepped skyscraper tower rises above the top edge. In matte charcoal, the blocks throw crisp shadows that shift with the light through the day. An architectural statement mirror for a modern loft, an office or an entryway, and a fitting gift for architects and city lovers.</p>
             <div class="card-footer">
@@ -2806,7 +2808,7 @@ Lay all the pieces out dry before gluing to check the alignment.
 Add keyhole hangers or a French cleat rated for the finished weight." data-gallery="images/H71.1-2D.jpg|Modern Abstract Wall Panel, studio view;images/H71.2-2D.jpg|Modern Abstract Wall Panel, close-up detail;images/H71.3-2D.jpg|Modern Abstract Wall Panel, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H71.1-2D.jpg" alt="Modern Abstract Wall Panel, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H71 · Design File</span>
+            <span class="card-tag">Code: H71 · STL &amp; 3MF</span>
             <h3><a href="/reliefs/h71">Modern Abstract Wall Panel</a></h3>
             <p>Interlocking arches, stacked blocks and flowing wave bands rise from the wall in several sculpted layers, creating real depth and shadow play. Deep navy, terracotta, ochre gold and bronze tones meet soft cream and charcoal accents, each piece carrying its own surface character from brushed metal sheen to fine grain and woven texture. Set against a slim dark frame outline, the composition deliberately breaks past its edges, giving the wall a bold sculptural presence that reads like an abstract landscape in relief.</p>
             <div class="card-footer">
@@ -2826,7 +2828,7 @@ Add a steel weight plate inside the base to balance the branch spread.
 Use low-heat LED bulbs or LED strips only, wired with a certified lamp cord set and switch." data-gallery="images/H72.1-2D.jpg|Crimson Tree Floor Lamp, studio view;images/H72.2-2D.jpg|Crimson Tree Floor Lamp, close-up detail;images/H72.3-2D.jpg|Crimson Tree Floor Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><span class="thumb-best-badge">Best</span><img src="images/H72.1-2D.jpg" alt="Crimson Tree Floor Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H72 · Design File</span>
+            <span class="card-tag">Code: H72 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h72">Crimson Tree Floor Lamp</a></h3>
             <p>Tree floor lamp design file for ceramic, plaster and 3D printing, shown in glossy crimson red: two ribbons twist together into a trunk that branches upward, carrying lace-like leaves with cut-out veins and frosted globe lights along every limb. Switched on, the globes glow warm white and the perforated leaves cast drifting leaf shadows over the walls. A bold, romantic statement piece for a living room, an entryway or a bedroom, sculptural by day and enchanting at night.</p>
             <div class="card-footer">
@@ -2844,7 +2846,7 @@ The splayed feet share one flat contact plane; threaded inserts under the feet a
 Finish: light gray grout base, tiles hand-painted in turquoise, cobalt and white with blue-and-white floral panels, gold on the engraved bands, multicolor wing feathers and a glossy red crest, then a gloss clear coat on the tiles only." data-gallery="images/H73.1-2D.jpg|Colorful Crane Figurine, studio view;images/H73.2-2D.jpg|Colorful Crane Figurine, close-up detail;images/H73.3-2D.jpg|Colorful Crane Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><span class="thumb-best-badge">Best</span><img src="images/H73.1-2D.jpg" alt="Colorful Crane Figurine, figurine design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H73 · Design File</span>
+            <span class="card-tag">Code: H73 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h73">Colorful Crane Figurine</a></h3>
             <p>Crane figurine design file for ceramic, plaster and 3D printing, shown in colorful tiles: a tall crane stands on two slender legs with both wings lifted high in a wide V, its head turned to the side beneath a glossy red crest. Turquoise and cobalt tiles cover the long neck and body, blue-and-white floral ceramic panels sit on the breast, and engraved gold bands circle the neck and chest. The wings fan out in millefiori discs, eye-pattern glass and feather-shaped tiles in yellow, orange, red and violet, while the tiles continue down pink and turquoise legs to the splayed feet. A joyful statement piece for a sunlit entryway, a living room or a covered balcony.</p>
             <div class="card-footer">
@@ -2861,7 +2863,7 @@ Finish: matte black limbs and ear patches, a warm off-white head and belly with 
 For a balcony or garden, print in PETG and seal with a UV-resistant clear coat." data-gallery="images/H74.1-2D.jpg|Laughing Panda Figurine, studio view;images/H74.2-2D.jpg|Laughing Panda Figurine, close-up detail;images/H74.3-2D.jpg|Laughing Panda Figurine, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H74.1-2D.jpg" alt="Laughing Panda Figurine, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H74 · Design File</span>
+            <span class="card-tag">Code: H74 · STL &amp; 3MF</span>
             <h3><a href="/figurines/h74">Laughing Panda Figurine</a></h3>
             <p>Head thrown back in a wide, happy laugh, this panda figurine sits with its legs stretched forward and a fresh stalk of bamboo gripped in both front paws. Thick black fur on the arms, legs and ears meets a soft cream belly and face, every tuft sculpted so the coat looks warm and fluffy even in stillness. Rounded paw pads turn toward the viewer, while the open mouth and crinkled eye patches give it an easy, infectious good mood. Its relaxed seated pose settles naturally onto a balcony, a garden corner, or a sunny spot beside the sofa.</p>
             <div class="card-footer">
@@ -2879,7 +2881,7 @@ Finish: warm ivory body, gray to charcoal wings, antique bronze legs and feet, b
 Use a low-heat LED bulb only, wired with a certified lamp cord set and switch." data-gallery="images/H75.1-2D.jpg|Swan Table Lamp, studio view;images/H75.2-2D.jpg|Swan Table Lamp, close-up detail;images/H75.3-2D.jpg|Swan Table Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H75.1-2D.jpg" alt="Swan Table Lamp, design file, studio view" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H75 · Design File</span>
+            <span class="card-tag">Code: H75 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h75">Swan Table Lamp</a></h3>
             <p>Swan table lamp design file for 3D printing, shown in ivory and smoky gray: the swan rises on bronze legs from a round black plinth, wings spread wide and head lifted with its beak open to the sky. A warm light glows inside its translucent body, neck and head, while sculpted feathers fade from ivory on the body to charcoal on the flight feathers. Elegant and classic, it suits a desk, a bedside table or a bookshelf as both a lamp and a sculpture.</p>
             <div class="card-footer">
@@ -2897,7 +2899,7 @@ Bottom lid: push it in with the three lugs in their slots and turn it about 35 d
 Use an E14 LED bulb of 5 W or less only (the top is closed, so keep the heat low), wired with a certified lamp cord set and switch." data-gallery="images/H91.1-2D.jpg|Hidden Garden Table Lamp, switched off and on;images/H91.2-2D.jpg|Hidden Garden Table Lamp, close-up detail;images/H91.3-2D.jpg|Hidden Garden Table Lamp, styled in a room">
           <div class="thumb thumb-img-dark"><img src="images/H91.1-2D.jpg" alt="Hidden Garden Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H91 · Design File</span>
+            <span class="card-tag">Code: H91 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h91">Hidden Garden Table Lamp</a></h3>
             <p>Lithophane table lamp design file for 3D printing, shown with a walnut frame and white panels: a hexagonal lantern whose lithophane shade, closed by a white hexagon on top, sits in a slim walnut frame on a stepped hexagonal base. Switched off, the panels look plain white with only a faint relief; switched on, light passing through their changing thickness reveals an Iznik garden of tulips, carnations and saz leaves in warm amber tones. A quiet surprise for a bedside table, a reading corner or a gift, and at 25 cm tall it prints on most home printers.</p>
             <div class="card-footer">
@@ -2914,7 +2916,7 @@ Bottom lid: a square plate that closes the whole base, fixed with four M3 x 12 c
 Use an E14 LED bulb of 5 W or less only, wired with a certified lamp cord set and switch." data-gallery="images/H92.1-2D.jpg|Pyramidion Table Lamp, switched off and on;images/H92.2-2D.jpg|Pyramidion Table Lamp, close-up of the glowing Eye of Horus;images/H92.3-2D.jpg|Pyramidion Table Lamp, styled on a sideboard">
           <div class="thumb thumb-img-dark"><img src="images/H92.1-2D.jpg" alt="Pyramidion Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H92 · Design File</span>
+            <span class="card-tag">Code: H92 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h92">Pyramidion Table Lamp</a></h3>
             <p>Pyramid table lamp design file for 3D printing, shown in warm stone white with a brushed gold capstone: a hollow pyramid whose top piece, the pyramidion, floats above it on four slim gold rods that follow the pyramid's edges. Each face carries one Egyptian symbol in low relief: the Ankh, the Eye of Horus, a papyrus column and the winged sun disk. Switched off, they read as quiet carvings in stone; switched on, the hidden bulb shines through the thinner wall behind them, the symbols glow amber from within and warm light rises through the gap under the capstone. A striking piece for a desk, a sideboard or a gift, 25 cm tall on a 25 cm square base.</p>
             <div class="card-footer">
@@ -2932,7 +2934,7 @@ Bottom lid: a hexagonal plate that seats in the chamfered rebate under the plint
 Use an E14 LED bulb of 5 W or less only, wired with a certified lamp cord set and switch." data-gallery="images/H93.1-2D.jpg|Anatolian Tower Table Lamp, switched off and on;images/H93.2-2D.jpg|Anatolian Tower Table Lamp, close-up of a glowing girih panel;images/H93.3-2D.jpg|Anatolian Tower Table Lamp, styled in a living room">
           <div class="thumb thumb-img-dark"><img src="images/H93.1-2D.jpg" alt="Anatolian Tower Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H93 · Design File</span>
+            <span class="card-tag">Code: H93 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h93">Anatolian Tower Table Lamp</a></h3>
             <p>Hexagonal table lamp design file for 3D printing, inspired by the kümbet tomb towers of Seljuk Anatolia and shown in soft terracotta with cream panels and a sand-coloured roof. Six pointed arches frame panels carved with an eight-pointed star girih, and a low pyramid roof rests above the body on six slim rods. Switched off, the panels read as quiet stone carving; switched on, the hidden bulb shines through the thin panels, the star lattice glows amber and warm light spills from under the roof. A warm, architectural piece for a living room, a reading corner or a gift, 28 cm tall.</p>
             <div class="card-footer">
@@ -2950,7 +2952,7 @@ Lamp holder: an E14 holder on a standard M10 threaded nipple stands on the post 
 Use a neutral white (4000 K) E14 LED bulb of 5 W or less, wired with a certified lamp cord set and switch: warm white light would turn the green glow yellow." data-gallery="images/H94.1-2D.jpg|Ancient Greek Table Lamp, switched off and on;images/H94.2-2D.jpg|Ancient Greek Table Lamp, close-up of the glowing meander wall;images/H94.3-2D.jpg|Ancient Greek Table Lamp, styled in a study">
           <div class="thumb thumb-img-dark"><img src="images/H94.1-2D.jpg" alt="Ancient Greek Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H94 · Design File</span>
+            <span class="card-tag">Code: H94 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h94">Ancient Greek Table Lamp</a></h3>
             <p>Classical Greek temple table lamp design file for 3D printing, shown in soft olive green: fluted Doric columns stand on a three-step base around an inner wall carved with Greek key meanders, under a meander frieze, a dentil cornice, two pediments crowned with small acroteria and a ribbed tiled roof. Switched off, it reads as a calm temple in olive stone; switched on, a hidden bulb lights the inner wall and the roof from within, the meander bands appear as dark lines in a soft green glow and the columns stand out as silhouettes. A quietly striking piece for a study, a bookshelf or a gift, 28 cm tall on a 24 cm square base.</p>
             <div class="card-footer">
@@ -2967,7 +2969,7 @@ Lamp holders: an E14 holder on a 100 mm M10 threaded tube in each post, held by 
 Use two warm white (2700 K) frosted E14 LED bulbs of 5 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H95.1-2D.jpg|Babylon Fortress Table Lamp, switched off and on;images/H95.2-2D.jpg|Babylon Fortress Table Lamp, close-up of a gold dragon relief and the glowing rosettes;images/H95.3-2D.jpg|Babylon Fortress Table Lamp, styled in a study">
           <div class="thumb thumb-img-dark"><img src="images/H95.1-2D.jpg" alt="Babylon Fortress Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H95 · Design File</span>
+            <span class="card-tag">Code: H95 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h95">Babylon Fortress Table Lamp</a></h3>
             <p>Babylonian fortress table lamp design file for 3D printing, inspired by the Ishtar Gate of ancient Babylon and shown in deep lapis blue with gold reliefs: a tall central arch between two crenellated towers, the glazed brick walls carrying rows of striding lions, sirrush dragons and aurochs bulls, framed by bands of white and gold rosettes. Switched off, it reads as a calm blue and gold monument; switched on, a hidden bulb in each tower sends warm light up out of the open tower tops, casting the jagged crenellations as shadows on the wall, while small rosette openings on the towers glow like stars and the archway fills with a soft golden light. A striking piece for a study, a bookshelf or a gift, 28 cm tall.</p>
             <div class="card-footer">
@@ -2984,7 +2986,7 @@ Bee: 40 mm long and in one piece, with a black body, gold bands and gold wings r
 Use a warm white (2700 K) frosted E14 LED bulb of 5 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H96.1-2D.jpg|Honeycomb Bee Table Lamp, switched off and on;images/H96.2-2D.jpg|Honeycomb Bee Table Lamp, close-up of the glowing honey cells and drips;images/H96.3-2D.jpg|Honeycomb Bee Table Lamp, styled on a kitchen table">
           <div class="thumb thumb-img-dark"><img src="images/H96.1-2D.jpg" alt="Honeycomb Bee Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H96 · Design File</span>
+            <span class="card-tag">Code: H96 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h96">Honeycomb Bee Table Lamp</a></h3>
             <p>Honeycomb table lamp design file for 3D printing, shown in warm cream with translucent amber honey: a tall hexagonal lamp covered in honeycomb cells, some left open and some filled with honey that drips over the lower edge, with a small black and gold bee resting on the rim. Switched off, the amber cells read like real honey caught in the comb; switched on, the hidden bulb lights them from within so they glow golden, while the open cells cast a hexagonal pattern of light and shadow on the wall around it. A warm piece for a bedside table, a kitchen shelf or a gift for honey lovers, 25 cm tall.</p>
             <div class="card-footer">
@@ -3000,7 +3002,7 @@ Lid and lamp holder: the lid sits flush in the bottom ring and locks with a 30 d
 Use a warm white (2700 K) frosted E14 G45 LED bulb of 5 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H97.1-2D.jpg|Coffee Bean Table Lamp, switched off and on;images/H97.2-2D.jpg|Coffee Bean Table Lamp, close-up of the glowing crease and the beans on top;images/H97.3-2D.jpg|Coffee Bean Table Lamp, styled on a coffee corner sideboard">
           <div class="thumb thumb-img-dark"><img src="images/H97.1-2D.jpg" alt="Coffee Bean Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H97 · Design File</span>
+            <span class="card-tag">Code: H97 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h97">Coffee Bean Table Lamp</a></h3>
             <p>Coffee bean table lamp design file for 3D printing, shown in deep coffee brown: a tall egg-shaped lamp built from hundreds of small coffee beans in neat rows, with the S-shaped crease of a giant bean running down the front and a pile of loose beans spread across the top. Switched off, it reads as one big roasted bean; switched on, the hidden bulb sends a bright line of warm light through the crease and glows between every bean, scattering small points of light on the wall around it. A warm piece for a coffee corner, a kitchen shelf or a gift for coffee lovers, 27 cm tall.</p>
             <div class="card-footer">
@@ -3017,7 +3019,7 @@ Lamp holder and cable: an E14 lamp holder sits in a round seat behind the open j
 Use a small round warm white (2700 K) E14 LED bulb, up to 35 mm across (mini globe or C35) and 3 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H98.1-2D.jpg|Shark Table Lamp, switched off and on;images/H98.2-2D.jpg|Shark Table Lamp, close-up of the bulb glowing in the open jaws;images/H98.3-2D.jpg|Shark Table Lamp, glowing on a desk in a surf-themed room">
           <div class="thumb thumb-img-dark"><img src="images/H98.1-2D.jpg" alt="Shark Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H98 · Design File</span>
+            <span class="card-tag">Code: H98 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h98">Shark Table Lamp</a></h3>
             <p>Shark table lamp design file for 3D printing, shown in blue-grey and white: a shark leaping out of a breaking wave on a round base, its body curved and its jaws wide open around a light bulb, with gill slits, a sharp dorsal fin and a crescent tail. Switched off, it reads as a striking ocean sculpture; switched on, the bulb lights up inside the mouth and the rows of teeth glow warm against the dark. A bold piece for a desk, a surf or beach-themed room, a kid's bedroom or a gift for shark and ocean lovers, 27 cm tall.</p>
             <div class="card-footer">
@@ -3034,7 +3036,7 @@ Lamp holder and cable: an E14 lamp holder sits 22 mm deep in the base under the 
 Use a small round warm or cool white E14 LED bulb, up to 35 mm across (mini globe) and 3 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H99.1-2D.jpg|Origami Crane Trio Table Lamp, switched off and on;images/H99.2-2D.jpg|Origami Crane Trio Table Lamp, close-up of the cranes glowing turquoise;images/H99.3-2D.jpg|Origami Crane Trio Table Lamp, glowing on a coffee table in a colorful living room">
           <div class="thumb thumb-img-dark"><img src="images/H99.1-2D.jpg" alt="Origami Crane Trio Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H99 · Design File</span>
+            <span class="card-tag">Code: H99 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h99">Origami Crane Trio Table Lamp</a></h3>
             <p>Origami crane table lamp design file for 3D printing, shown in translucent turquoise: three folded paper cranes, a large one in the center and a smaller one on each side, standing in a row on a long oval base dotted with branching corals. Every crane keeps the crisp folds of a real paper crane, with raised wings, a pointed neck and tail. Switched off, it reads as a calm sea-blue sculpture; switched on, the cranes glow from inside and every folded facet lights up in a different shade of turquoise. A gift with meaning, since the paper crane stands for luck and long life, for a console, a shelf, a bedroom or a Japanese-inspired corner.</p>
             <div class="card-footer">
@@ -3051,7 +3053,7 @@ Lamp holder and cable: an E14 lamp holder stands inside the grain, held from bel
 Use a small round warm white (2700 K) E14 LED bulb, up to 35 mm across (mini globe) and 3 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H100.1-2D.jpg|Ant-Cicada Table Lamp, switched off and on;images/H100.2-2D.jpg|Ant-Cicada Table Lamp, close-up of the glowing grain and the laughing cicada;images/H100.3-2D.jpg|Ant-Cicada Table Lamp, glowing on a bookshelf in a cozy living room">
           <div class="thumb thumb-img-dark"><img src="images/H100.1-2D.jpg" alt="Ant-Cicada Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H100 · Design File</span>
+            <span class="card-tag">Code: H100 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h100">Ant-Cicada Table Lamp</a></h3>
             <p>Ant and cicada table lamp design file for 3D printing, shown in reddish brown, sage green and warm tan: the two heroes of the old fable side by side on a round earthy base between ears of wheat. The grumpy, hard-working ant hugs a giant grain of wheat, while the carefree cicada leans on its shoulder, laughing, one hand on its hip. Switched off, it reads as a funny storybook sculpture; switched on, the grain glows warm from inside and lights both faces. A playful piece for a desk, a bookshelf, a kid's room or a gift for anyone who loves fables, with a wink at work and play.</p>
             <div class="card-footer">
@@ -3069,7 +3071,7 @@ Lamp holder and cable: an E14 lamp holder stands inside the lamp lily, held from
 Use a small round warm white (2700 K) or neutral white (4000 K) E14 LED bulb, up to 35 mm across (mini globe) and 3 W or less, wired with a certified lamp cord set and switch." data-gallery="images/H101.1-2D.jpg|Funny Frog Table Lamp, switched off and on;images/H101.2-2D.jpg|Funny Frog Table Lamp, close-up of the glowing water lily and the waving frog;images/H101.3-2D.jpg|Funny Frog Table Lamp, glowing on a desk in a cozy bedroom">
           <div class="thumb thumb-img-dark"><img src="images/H101.1-2D.jpg" alt="Funny Frog Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H101 · Design File</span>
+            <span class="card-tag">Code: H101 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h101">Funny Frog Table Lamp</a></h3>
             <p>Frog table lamp design file for 3D printing, shown in lime green on a sage green lily pad: a cheerful cartoon frog with big round eyes and a wide grin stands on a water lily leaf, one hand on its belly and the other waving hello. Its ribbed, spring-like body gives it a bouncy, playful pose. Next to it, a large white water lily holds the bulb: switched off, the petals stay pure white; switched on, the flower glows from inside and lights the frog and the leaf. A fun piece for a desk, a bedside table or a kid's room, and a happy gift for anyone who loves frogs.</p>
             <div class="card-footer">
@@ -3088,7 +3090,7 @@ Lamp holder and cable: an E14 lamp holder hangs upside down from the dome ceilin
 Use a G45 E14 LED bulb (45 mm globe), 5 W or less, warm or cool white (the green beam colours the light), wired with a certified lamp cord set and switch." data-gallery="images/H102.1-2D.jpg|UFO Abduction Honey Badger Table Lamp, switched off and on;images/H102.2-2D.jpg|UFO Abduction Honey Badger Table Lamp, close-up of the honey badger in the glowing green beam;images/H102.3-2D.jpg|UFO Abduction Honey Badger Table Lamp, glowing green on a desk in a space-themed room">
           <div class="thumb thumb-img-dark"><span class="thumb-free-badge">Free</span><img src="images/H102.1-2D.jpg" alt="UFO Abduction Honey Badger Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H102 · Design File</span>
+            <span class="card-tag">Code: H102 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h102">UFO Abduction Honey Badger Table Lamp</a></h3>
             <p>UFO table lamp design file for 3D printing, shown in shiny silver with a transparent green beam: a classic flying saucer is beaming up a honey badger, and the badger is not going quietly. It tumbles upside down onto a patch of green grass, mouth open in protest and claws in the air, its silver-white mantle running from head to tail. Switched off, the clear green beam shows every detail of the stubborn little hero; switched on, the beam glows alien green, the portholes and rim lights shine and the badger hangs in the light. A funny piece for a desk, a gaming setup or a sci-fi shelf, and a perfect gift for anyone who knows a honey badger never gives up.</p>
             <div class="card-footer">
@@ -3107,7 +3109,7 @@ Lamp holder and cable: an E14 lamp holder with an M10 threaded tube fits a boss 
 Use a G45 E14 LED bulb (45 mm globe), 5 W or less, warm white, wired with a certified lamp cord set and switch." data-gallery="images/H103.1-2D.jpg|Bubble T-Rex Table Lamp, switched off and on;images/H103.2-2D.jpg|Bubble T-Rex Table Lamp, close-up of the T-Rex in its shower cap above the glowing bubbles;images/H103.3-2D.jpg|Bubble T-Rex Table Lamp, glowing on a shelf above a child's desk">
           <div class="thumb thumb-img-dark"><img src="images/H103.1-2D.jpg" alt="Bubble T-Rex Table Lamp, design file, switched off and on" loading="lazy" width="1024" height="1024"></div>
           <div class="card-body">
-            <span class="card-tag">Code: H103 · Design File</span>
+            <span class="card-tag">Code: H103 · STL &amp; 3MF</span>
             <h3><a href="/lamps/h103">Bubble T-Rex Table Lamp</a></h3>
             <p>T-Rex bath lamp design file for 3D printing, shown in white with a sage green dinosaur: a happy T-Rex in a polka-dot shower cap relaxes in a clawfoot bathtub piled high with bubbles, eyes closed and smiling, its little hands resting on the foam while two yellow rubber ducks keep it company on the rim. The tub stands on four silver clawfeet. Switched off, the frosted bubbles look like a real bubble bath; switched on, the whole heap of foam glows warm from inside and lights the tub and the T-Rex. A fun piece for a kid's room, a bathroom shelf or a bedside table, and a sweet gift for any dinosaur lover.</p>
             <div class="card-footer">
@@ -3909,7 +3911,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
     cards.forEach(function(item){
       if(card) return;
       const tag = item.querySelector('.card-tag');
-      if(tag && tag.textContent.trim().toLowerCase() === ('code: '+id).toLowerCase() + ' · design file'){
+      if(tag && tag.textContent.trim().toLowerCase() === ('code: '+id).toLowerCase() + ' · stl & 3mf'){
         card = item;
       }
     });
@@ -3929,7 +3931,7 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
     const p = card.querySelector('.card-body p');
     const tag = card.querySelector('.card-tag');
 
-    code.textContent = tag ? tag.textContent : ('Code: '+id.toUpperCase()+' · Design File');
+    code.textContent = tag ? tag.textContent : ('Code: '+id.toUpperCase()+' · STL & 3MF');
     title.textContent = h3 ? h3.textContent : '';
     const priceVal = card.getAttribute('data-price');
     if(price) price.textContent = priceVal ? (priceVal === '0' ? 'FREE' : '$'+priceVal) : '';
@@ -4181,6 +4183,13 @@ const DEFAULT_DESC = metaDescEl ? metaDescEl.getAttribute('content') : '';
       if(val === 'all') catTitle.textContent = 'New arrivals';
       else if(val === 'every') catTitle.textContent = 'All pieces';
       else catTitle.textContent = activeLink ? activeLink.textContent : 'All pieces';
+      if(val !== 'all'){
+        // the file formats under every category heading, as build_pages.py writes them
+        const fmt = document.createElement('span');
+        fmt.className = 'title-format';
+        fmt.textContent = 'STL & 3MF Files';
+        catTitle.append(' ', fmt);
+      }
       catTitle.classList.toggle('is-all', val === 'all');
     }
     if(viewAll) viewAll.style.display = (val === 'all') ? '' : 'none';

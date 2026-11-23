@@ -20,40 +20,42 @@ BRAND = 'Decorans Design'
 CATEGORIES = {
     'vases': {
         'label': 'Vases',
-        'title': '3D Print, Plaster & Ceramic Vase Design Files | Decorans Design',
-        'desc': 'Vase design files for ceramic slip casting, plaster casting and 3D printing: twisted, ringed, spiral and petal forms. STL, OBJ, 3MF, GLB files.',
+        'title': 'Vase STL & 3MF Files | 3D Print, Plaster & Ceramic',
+        'desc': 'Vase STL and 3MF files for 3D printing, ceramic slip casting and plaster casting: twisted, ringed, spiral and petal forms. OBJ and GLB included.',
     },
     'curios': {
         'label': 'Curios',
-        'title': '3D Print, Plaster & Ceramic Curio Design Files | Decorans Design',
-        'desc': 'Curio and decorative sculpture design files for ceramic slip casting, plaster casting and 3D printing. STL, OBJ, 3MF, GLB with a commercial license.',
+        'title': 'Curio STL & 3MF Files | 3D Print, Plaster & Ceramic',
+        'desc': 'Curio and decorative sculpture STL and 3MF files for 3D printing, ceramic slip casting and plaster casting. OBJ and GLB included, commercial license.',
     },
     'candle-holders': {
         'label': 'Candle Holders',
-        'title': '3D Print, Plaster & Ceramic Candle Holder Files | Decorans Design',
-        'desc': 'Candle holder design files for ceramic slip casting, plaster casting and 3D printing: tealight, taper and pillar holders. STL, OBJ, 3MF, GLB files.',
+        'title': 'Candle Holder STL & 3MF Files | 3D Print, Plaster & Ceramic',
+        'desc': 'Candle holder STL and 3MF files for 3D printing, ceramic slip casting and plaster casting: tealight, taper and pillar holders. OBJ and GLB included.',
     },
     'lamps': {
         'label': 'Lamps',
-        'title': '3D Print, Plaster & Ceramic Lamp Design Files | Decorans Design',
-        'desc': 'Floor and table lamp design files for 3D printing, plaster and ceramic: sculptural floor lamps made in sections and 3D printed table lamps that glow through their panels, lit with low-heat LEDs.',
+        'title': 'Lamp STL & 3MF Files | 3D Print, Plaster & Ceramic',
+        'desc': 'Lamp STL and 3MF files for 3D printing, plaster and ceramic: sculptural floor lamps made in sections and 3D printed table lamps lit with low-heat LEDs.',
     },
     'figurines': {
         'label': 'Figurines',
-        'title': '3D Print, Plaster & Ceramic Figurine Design Files | Decorans Design',
-        'desc': 'Figurine design files for ceramic slip casting, plaster casting and 3D printing: animals, fables and fantasy characters sculpted in detail.',
+        'title': 'Figurine STL & 3MF Files | 3D Print, Plaster & Ceramic',
+        'desc': 'Figurine STL and 3MF files for 3D printing, ceramic slip casting and plaster casting: animals, fables and fantasy characters sculpted in detail.',
     },
     'mirrors': {
         'label': 'Mirrors',
-        'title': '3D Print, Plaster & Ceramic Mirror Design Files | Decorans Design',
-        'desc': 'Wall mirror frame design files for plaster, ceramic and 3D printing: sculpted animal, nature and fantasy frames. Have the glass cut locally.',
+        'title': 'Mirror STL & 3MF Files | 3D Print, Plaster & Ceramic',
+        'desc': 'Wall mirror frame STL and 3MF files for 3D printing, plaster and ceramic: sculpted animal, nature and fantasy frames. Have the glass cut locally.',
     },
     'reliefs': {
         'label': 'Wall Reliefs',
-        'title': '3D Print, Plaster & Ceramic Wall Relief Design Files | Decorans Design',
-        'desc': 'Wall relief and panel design files for plaster casting, ceramic and 3D printing: layered scenes and abstract panels at real wall size.',
+        'title': 'Wall Relief STL & 3MF Files | 3D Print, Plaster & Ceramic',
+        'desc': 'Wall relief STL and 3MF files for 3D printing, plaster casting and ceramic: layered scenes and abstract panels at real wall size.',
     },
 }
+# every design ships these files; shown in the product structured data
+FILE_FORMATS = '3D print file (STL, OBJ, 3MF, GLB)'
 
 TITLE_MAX = 60
 DESC_MAX = 155
@@ -128,18 +130,22 @@ def clip(text, limit):
     return cut + '…'
 
 
-def product_title(name, fdm=False):
-    first = name + (' | 3D Print File | ' if fdm else ' | Ceramic & Plaster File | ') + BRAND
-    for t in (first, name + ' Design File | ' + BRAND, name + ' | ' + BRAND):
+def product_title(name):
+    """The file formats people search for (STL, 3MF) come right after the name. The brand is
+    added only when it fits: Google shows the site name above the result anyway."""
+    for t in (name + ' STL & 3MF | 3D Print File | ' + BRAND, name + ' STL & 3MF | 3D Print File',
+              name + ' STL & 3MF File'):
         if len(t) <= TITLE_MAX:
             return t
-    return name + ' | ' + BRAND
+    return name + ' STL & 3MF'
 
 
 def product_description(p):
     text = first_sentence(p['desc'])
-    if 'design file' not in text:
-        text = p['name'] + ': design file for ceramic, plaster and 3D printing. ' + text
+    if 'design file' in text:
+        text = text.replace('design file', 'STL & 3MF file', 1)
+    else:
+        text = p['name'] + ': STL & 3MF file for ceramic, plaster and 3D printing. ' + text
     return clip(text, DESC_MAX)
 
 
@@ -229,7 +235,7 @@ def build_page(template, p, products):
     code_label = 'Code: ' + p['code'].upper() + ' · Design File'
 
     page = product_cleanup(template, p['code'])
-    page = set_head(page, product_title(p['name'], p['fdm']), product_description(p), url, 'product', image_abs)
+    page = set_head(page, product_title(p['name']), product_description(p), url, 'product', image_abs)
 
     schema = {
         '@context': 'https://schema.org',
@@ -239,7 +245,7 @@ def build_page(template, p, products):
         'description': p['desc'],
         'image': [SITE + '/' + src for src, _ in p['gallery']] or [image_abs],
         'brand': {'@type': 'Brand', 'name': BRAND},
-        'category': cat['label'],
+        'category': FILE_FORMATS,
         'url': url,
     }
     if p['price']:
